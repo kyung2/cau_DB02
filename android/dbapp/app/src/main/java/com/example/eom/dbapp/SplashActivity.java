@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 Intent mainIntent;
                 //이 if 문이 로그인이 되어 있는지 아닌지를 본다.
-                if(SplashActivity.this.getSharedPreferences(MySharedPreferences.NAME,0).getBoolean(MySharedPreferences.IS_LOGIN,false)){
+                if(SplashActivity.this.getSharedPreferences(MySharedPreferences.NAME,0).getBoolean(MySharedPreferences.IS_LOGIN,true)){
                     mainIntent= new Intent(SplashActivity.this,MainActivity.class);
                 }else{
                     mainIntent= new Intent(SplashActivity.this,LoginActivity.class);
