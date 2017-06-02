@@ -25,7 +25,7 @@ SECRET_KEY = 'luvf$jf)nih-%&%=j@vk-)p+2_+d#=gpa)mejl!s=cnvw3swne'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".goorm.io"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -75,9 +75,13 @@ WSGI_APPLICATION = 'server.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'DBProject2',
+        'USER': 'root',
+        'PASSWORD': 'sangwon0001',
+        'HOST': 'sangwon0001.hopto.org',
+        'PORT': '3306',
     }
 }
 
