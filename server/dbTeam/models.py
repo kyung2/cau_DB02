@@ -14,8 +14,8 @@ class preSchool(models.Model):
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
-    latitude = models.DecimalField()
-    longitude = models.DecimalField()
+    latitude = models.FloatField()
+    longitude = models.FloatField()
     operation_state = models.CharField(max_length=11)
     tel = models.CharField(max_length=11)
     Fax = models.CharField(max_length=11)
@@ -42,24 +42,14 @@ class teacher(models.Model):
     sex = models.CharField(max_length=11)
     type = models.CharField(max_length=11)
 
-class teacherQualification(models.Model):
-    teacher_id = models.ForeignKey(teacher)  #pk
-    teacher_qualification = models.ForeignKey(qualification) #pk #fk
-    detailed_type = models.CharField(max_length=45) #pk #fk
-
 class qualification(models.Model):
     teacher_qualification = models.CharField(max_length=11) #pk
     detailed_type = models.CharField(max_length=11) #pk
 
-
-
-class preSchoolEvaluation(models.Model):
-    user_id = models.ForeignKey(user, on_delete=models.CASCADE)  #pk #fk
-    preSchool_id = models.ForeignKey(preSchool, on_delete=models.CASCADE) #pk #fk
-    grade = models.CharField(max_length=11)
-    grade_date = models.DateField()
-    comment = models.CharField(max_length=11)
-    comment_date = models.DateField()
+class teacherQualification(models.Model):
+    teacher_id = models.ForeignKey(teacher)  #pk
+    teacher_qualification = models.ForeignKey(qualification) #pk #fk
+    detailed_type = models.CharField(max_length=45) #pk #fk
 
 class user(models.Model):
     user_id = models.CharField(max_length=11) #pk
@@ -69,14 +59,14 @@ class user(models.Model):
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
 
-class kidsCafeEvaluation(models.Model):
+class preSchoolEvaluation(models.Model):
     user_id = models.ForeignKey(user, on_delete=models.CASCADE)  #pk #fk
-    kids_cafe_id = models.ForeignKey(kidsCafe, on_delete=models.CASCADE) #pk #fk
+    preSchool_id = models.ForeignKey(preSchool, on_delete=models.CASCADE) #pk #fk
     grade = models.CharField(max_length=11)
     grade_date = models.DateField()
     comment = models.CharField(max_length=11)
     comment_date = models.DateField()
-##
+
 class kidsCafe(models.Model):
     name = models.CharField(max_length=11)
     permit_date = models.DateField()
@@ -88,9 +78,18 @@ class kidsCafe(models.Model):
     mutiple_use = models.CharField(max_length=11)
     facility_size = models.IntegerField()
     hygiene_name = models.CharField(max_length=11)
-    longitude = models.DecimalField()
-    latitude = models.DecimalField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
 
+
+class kidsCafeEvaluation(models.Model):
+    user_id = models.ForeignKey(user, on_delete=models.CASCADE)  #pk #fk
+    kids_cafe_id = models.ForeignKey(kidsCafe, on_delete=models.CASCADE) #pk #fk
+    grade = models.CharField(max_length=11)
+    grade_date = models.DateField()
+    comment = models.CharField(max_length=11)
+    comment_date = models.DateField()
+##
 
 class kidsCenter(models.Model):
     name = models.CharField(max_length=11)
@@ -100,8 +99,8 @@ class kidsCenter(models.Model):
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
     capacity = models.IntegerField()
-    longitude = models.DecimalField()
-    latitude = models.DecimalField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
 
 class elemSchool(models.Model):
     name = models.CharField(max_length=11)
@@ -112,8 +111,8 @@ class elemSchool(models.Model):
     address = models.CharField(max_length=11)
     homepage = models.CharField(max_length=11)
     public_private = models.CharField(max_length=11)
-    longitude = models.DecimalField()
-    latitude = models.DecimalField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
 
 
 class childCareCenter(models.Model):
@@ -123,8 +122,8 @@ class childCareCenter(models.Model):
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
-    longitude = models.DecimalField()
-    latitude = models.DecimalField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
 
 
 class safeArea(models.Model):
@@ -137,8 +136,8 @@ class safeArea(models.Model):
     NumofCCTV = models.IntegerField()
     road_width = models.IntegerField()
     postcode = models.CharField(max_length=11)
-    longitude = models.DecimalField()
-    latitude = models.DecimalField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
 
 
 class hospital(models.Model):
@@ -149,8 +148,8 @@ class hospital(models.Model):
     si_gun_gu= models.CharField(max_length=11)
     address = models.CharField(max_length=11)
     designated_date = models.DateField()
-    longitude = models.DecimalField()
-    latitude = models.DecimalField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
 
 
 class walfareService(models.Model):
@@ -175,8 +174,8 @@ class trafficAccidentArea(models.Model):
     death_cnt = models.IntegerField()
     serious_cnt = models.IntegerField()
     light_cnt = models.IntegerField()
-    longitude = models.DecimalField()
-    latitude = models.DecimalField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
 
 
 class playPacility(models.Model):
@@ -190,5 +189,5 @@ class playPacility(models.Model):
     public_private = models.CharField(max_length=11)
     indoor_outdoor = models.CharField(max_length=11)
     is_excellent = models.CharField(max_length=11)
-    longitude = models.DecimalField()
-    latitude = models.DecimalField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
