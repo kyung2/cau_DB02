@@ -23,7 +23,7 @@
             android:label="@string/title_activity_login" />
         <activity
             android:name=".JoinActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label="@string/title_activity_join"></activity>
         <activity
             android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -37,10 +37,7 @@
             android:name=".FunctionsActivity"
             android:label="@string/title_activity_functions"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".JoinActivity"
-            android:label="@string/title_activity_join"></activity>
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+
         <activity
         android:name=".PreSchoolListActivity"
         android:label="@string/title_activity_functions"
