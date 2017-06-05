@@ -90,10 +90,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this,PreSchoolListActivity.class));
         } else if (id == R.id.nav_slideshow) {
             startActivity(new Intent(MainActivity.this,KidsCafeListActivity.class));
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_detail_pre) {
+            startActivity(new Intent(MainActivity.this,DetailPreSchoolActivity.class));
 
-        } else if (id == R.id.nav_share) {
-
+        } else if (id == R.id.nav_detail_kid) {
+            startActivity(new Intent(MainActivity.this,DetailKidsCafeActivity.class));
         } else if (id == R.id.nav_send) {
 
         } else if (id == R.id.nav_login) {
