@@ -75,6 +75,8 @@ public class JoinActivity extends AppCompatActivity {
         findViewById(R.id.input_child_age).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                // 아이나이 (Child Age)
                 new DatePickerDialog(JoinActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
