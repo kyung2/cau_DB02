@@ -67,7 +67,7 @@ public class JoinActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
     private RadioButton radioButton;
-    public int year,month,day;
+    public int year=2014,month=0,day=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +78,7 @@ public class JoinActivity extends AppCompatActivity {
 
                 // 아이나이 (Child Age)
                 new DatePickerDialog(JoinActivity.this, new DatePickerDialog.OnDateSetListener() {
+
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
                         JoinActivity.this.year = year;

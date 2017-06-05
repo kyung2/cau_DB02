@@ -245,6 +245,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
     }
+    //이 커서가 결국은 그 모지 ??? 그 db에서 쓰는 커서니까 이걸로 입털자 커서로더 찾앗구
 
     @Override
     public Loader<Cursor> onCreateLoader(int i, Bundle bundle) {
