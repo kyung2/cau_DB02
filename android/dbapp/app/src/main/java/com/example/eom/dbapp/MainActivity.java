@@ -94,7 +94,11 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
-        }
+        } else if (id == R.id.nav_login) {
+            startActivity(new Intent(MainActivity.this,LoginActivity.class));
+        } else if (id == R.id.nav_join) {
+            startActivity(new Intent(MainActivity.this,JoinActivity.class));
+        } else {}
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
