@@ -3,6 +3,7 @@ package com.example.eom.dbapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.app.DatePickerDialog;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -27,6 +28,7 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -65,15 +67,30 @@ public class JoinActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
     private RadioButton radioButton;
+    public int year,month,day;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
-
+        findViewById(R.id.input_child_age).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new DatePickerDialog(JoinActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        JoinActivity.this.year = year;
+                        JoinActivity.this.month = month+1;
+                        JoinActivity.this.day = day;
+                        ((TextView)JoinActivity.this.findViewById(R.id.input_child_age)).setText(""+year+"-"+month+"-"+day);
+                    }
+                }, year, month, day).show();
+            }
+        });
 
         final RadioGroup rg = (RadioGroup)findViewById(R.id.radio_group);
 
     }
+
 
 
 }
