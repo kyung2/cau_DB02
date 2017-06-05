@@ -4,117 +4,107 @@ from django.db import models
 # Create your models here.
 
 class preSchool(models.Model):
-    name = models.CharField(max_length=45)
-    type = models.DateField()
-    permit_date = models.CharField(max_length=11)
-    pause_start_date = models.CharField(max_length=11)
-    pause_end_date = models.CharField(max_length=11)
-    close_date = models.CharField(max_length=11)
+    name = models.CharField(max_length=11)
+    type = models.CharField(max_length=11)
+    permit_date = models.DateField()
+    pause_start_date = models.DateField
+    pause_end_date = models.DateField()
+    close_date = models.DateField()
     postcode = models.CharField(max_length=11)
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
+    latitude = models.DecimalField()
+    longitude = models.DecimalField()
     operation_state = models.CharField(max_length=11)
     tel = models.CharField(max_length=11)
+    Fax = models.CharField(max_length=11)
+    capacity = models.IntegerField()
+    school_bus = models.IntegerField()
+    playground_num = models.IntegerField()
+    nursing_room_num = models.IntegerField()
     nursing_room_area = models.CharField(max_length=11)
     assess_certification_type = models.CharField(max_length=11)
-    characteristic = models.CharField(max_length=11)
-    delegation_enterprise_type = models.CharField(max_length=11)
-    delegation_enterprise_name = models.CharField(max_length=11)
-    fireInsurance = models.CharField(max_length=11)
-    NumofCCTV = models.CharField(max_length=11)
+    NumofCCTV = models.IntegerField()
 
 
 class accident(models.Model):
-    data = models.CharField(max_length=45)
-    accident_death = models.DateField()
-    accident_type = models.CharField(max_length=11)
+    accident_date = models.DateField()
+    accident_where = models.ForeignKey(preSchool)  # fk
+    accident_injuryordeath = models.CharField(max_length=11)
     indoor_outdoor = models.CharField(max_length=11)
     accident_cause = models.CharField(max_length=11)
-    accident_where = models.CharField(max_length=11)
+    accident_type = models.CharField(max_length=11)
 
 
 class teacher(models.Model):
-    sex = models.CharField(max_length=45)
-    kindergarten = models.DateField()
+    kindergarten = models.ForeignKey(preSchool) #fk
+    sex = models.CharField(max_length=11)
     type = models.CharField(max_length=11)
 
 class teacherQualification(models.Model):
-    teacher_id = models.CharField(max_length=45)
-    teacher_qualification = models.DateField()
-    detailed_type = models.CharField(max_length=11)
+    teacher_id = models.ForeignKey(teacher)  #pk
+    teacher_qualification = models.ForeignKey(qualification) #pk #fk
+    detailed_type = models.CharField(max_length=45) #pk #fk
 
 class qualification(models.Model):
-    teacher_qualification = models.DateField()
-    detailed_type = models.CharField(max_length=11)
+    teacher_qualification = models.CharField(max_length=11) #pk
+    detailed_type = models.CharField(max_length=11) #pk
+
+
 
 class preSchoolEvaluation(models.Model):
-    user_id = models.DateField()
-    preSchool_id = models.CharField(max_length=11)
-    grade = models.CharField(max_length=45)
+    user_id = models.ForeignKey(user, on_delete=models.CASCADE)  #pk #fk
+    preSchool_id = models.ForeignKey(preSchool, on_delete=models.CASCADE) #pk #fk
+    grade = models.CharField(max_length=11)
     grade_date = models.DateField()
     comment = models.CharField(max_length=11)
-    comment_date = models.CharField(max_length=11)
-
+    comment_date = models.DateField()
 
 class user(models.Model):
-    user_id = models.DateField()
+    user_id = models.CharField(max_length=11) #pk
     user_pw = models.CharField(max_length=11)
-    nick_name = models.CharField(max_length=45)
-    kindergarten = models.DateField()
+    nick_name = models.CharField(max_length=11)
+    preSchool_id = models.CharField(max_length=11, null=True) #fk
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
 
 class kidsCafeEvaluation(models.Model):
-    user_id = models.DateField()
-    kids_cafe_id = models.CharField(max_length=11)
-    grade = models.CharField(max_length=45)
+    user_id = models.ForeignKey(user, on_delete=models.CASCADE)  #pk #fk
+    kids_cafe_id = models.ForeignKey(kidsCafe, on_delete=models.CASCADE) #pk #fk
+    grade = models.CharField(max_length=11)
     grade_date = models.DateField()
     comment = models.CharField(max_length=11)
-    comment_date = models.CharField(max_length=11)
-
+    comment_date = models.DateField()
+##
 class kidsCafe(models.Model):
-    name = models.CharField(max_length=45)
-    permit_date = models.CharField(max_length=11)
+    name = models.CharField(max_length=11)
+    permit_date = models.DateField()
     postcode = models.CharField(max_length=11)
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
     operation_state = models.CharField(max_length=11)
     mutiple_use = models.CharField(max_length=11)
-    facility_size = models.CharField(max_length=11)
+    facility_size = models.IntegerField()
     hygiene_name = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
+    longitude = models.DecimalField()
+    latitude = models.DecimalField()
 
 
 class kidsCenter(models.Model):
-    name = models.CharField(max_length=45)
+    name = models.CharField(max_length=11)
     tel = models.CharField(max_length=11)
     postcode = models.CharField(max_length=11)
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
-    capacity = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
-
-
-class kidsCenter(models.Model):
-    name = models.CharField(max_length=45)
-    tel = models.CharField(max_length=11)
-    postcode = models.CharField(max_length=11)
-    si_do = models.CharField(max_length=11)
-    si_gun_gu = models.CharField(max_length=11)
-    address = models.CharField(max_length=11)
-    capacity = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
+    capacity = models.IntegerField()
+    longitude = models.DecimalField()
+    latitude = models.DecimalField()
 
 class elemSchool(models.Model):
-    name = models.CharField(max_length=45)
+    name = models.CharField(max_length=11)
     tel = models.CharField(max_length=11)
     postcode = models.CharField(max_length=11)
     si_do = models.CharField(max_length=11)
@@ -122,19 +112,19 @@ class elemSchool(models.Model):
     address = models.CharField(max_length=11)
     homepage = models.CharField(max_length=11)
     public_private = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
+    longitude = models.DecimalField()
+    latitude = models.DecimalField()
 
 
 class childCareCenter(models.Model):
-    name = models.CharField(max_length=45)
+    name = models.CharField(max_length=11)
     tel = models.CharField(max_length=11)
     postcode = models.CharField(max_length=11)
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
+    longitude = models.DecimalField()
+    latitude = models.DecimalField()
 
 
 class safeArea(models.Model):
@@ -144,33 +134,34 @@ class safeArea(models.Model):
     facility_name= models.CharField(max_length=11)
     management_agency = models.CharField(max_length=11)
     police_office = models.CharField(max_length=11)
-    NumofCCTV = models.CharField(max_length=11)
-    road_width = models.CharField(max_length=11)
+    NumofCCTV = models.IntegerField()
+    road_width = models.IntegerField()
     postcode = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
+    longitude = models.DecimalField()
+    latitude = models.DecimalField()
 
 
 class hospital(models.Model):
     name = models.CharField(max_length=11)
+    tel = models.CharField(max_length=11)
     postcode = models.CharField(max_length=11)
     si_do = models.CharField(max_length=11)
     si_gun_gu= models.CharField(max_length=11)
     address = models.CharField(max_length=11)
-    designated_date = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
+    designated_date = models.DateField()
+    longitude = models.DecimalField()
+    latitude = models.DecimalField()
 
 
 class walfareService(models.Model):
     name = models.CharField(max_length=11)
     purpose = models.CharField(max_length=11)
-    center_num = models.CharField(max_length=11)
+    center_num = models.IntegerField()
     center_name = models.CharField(max_length=11)
     operator = models.CharField(max_length=11)
     operation_org = models.CharField(max_length=11)
-    op_start_data = models.CharField(max_length=11)
-    op_end_date = models.CharField(max_length=11)
+    op_start_data = models.DateField()
+    op_end_date = models.DateField()
 
 
 class trafficAccidentArea(models.Model):
@@ -180,12 +171,12 @@ class trafficAccidentArea(models.Model):
     law_code = models.CharField(max_length=11)
     police_office = models.CharField(max_length=11)
     near_school = models.CharField(max_length=11)
-    occur_cnt = models.CharField(max_length=11)
-    death_cnt = models.CharField(max_length=11)
-    serious_cnt = models.CharField(max_length=11)
-    light_cnt = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
+    occur_cnt = models.IntegerField()
+    death_cnt = models.IntegerField()
+    serious_cnt = models.IntegerField()
+    light_cnt = models.IntegerField()
+    longitude = models.DecimalField()
+    latitude = models.DecimalField()
 
 
 class playPacility(models.Model):
@@ -194,10 +185,10 @@ class playPacility(models.Model):
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
     postcode = models.CharField(max_length=11)
-    install_date = models.CharField(max_length=11)
+    install_date = models.DateField()
     install_place = models.CharField(max_length=11)
     public_private = models.CharField(max_length=11)
     indoor_outdoor = models.CharField(max_length=11)
     is_excellent = models.CharField(max_length=11)
-    longitude = models.CharField(max_length=11)
-    latitude = models.CharField(max_length=11)
+    longitude = models.DecimalField()
+    latitude = models.DecimalField()
