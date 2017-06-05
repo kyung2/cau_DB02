@@ -14,6 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.eom.dbapp.vo.KidsCafeData;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -85,9 +87,9 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             startActivity(new Intent(MainActivity.this,FunctionsActivity.class));
         } else if (id == R.id.nav_gallery) {
-
+            startActivity(new Intent(MainActivity.this,PreSchoolListActivity.class));
         } else if (id == R.id.nav_slideshow) {
-
+            startActivity(new Intent(MainActivity.this,KidsCafeListActivity.class));
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

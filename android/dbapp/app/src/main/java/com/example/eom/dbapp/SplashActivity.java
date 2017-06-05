@@ -10,7 +10,7 @@ import android.os.Bundle;
 
 public class SplashActivity extends AppCompatActivity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 1000; // 이 millisecond가 지난 후 다음 페이지가 나온다.
+    private final int SPLASH_DISPLAY_LENGTH = 10; // 이 millisecond가 지난 후 다음 페이지가 나온다.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
