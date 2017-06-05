@@ -6,11 +6,11 @@
 <!--https://developer.android.com/guide/topics/ui/controls/radiobutton.html-->
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="503dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingTop= "20dp">
+        android:paddingTop="15dp">
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_name"
@@ -35,8 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_email"
-                android:inputType="textEmailAddress"
-                 />
+                android:inputType="textEmailAddress" />
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -53,20 +52,6 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_password_check"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/input_password_check"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/prompt_password_init"
-                android:inputType="textPassword" />
-        </android.support.design.widget.TextInputLayout>
-
-
-        <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -77,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:hint="지역"
                 android:singleLine="true" />
+
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
@@ -84,49 +70,84 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/input_child_sex"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="아이성별"
-                android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
-        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/radio_group"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <RadioButton android:id="@+id/radio_boy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="남자"
-                <!--android:onClick="onRadioButtonClicked"-->/>
-            <RadioButton android:id="@+id/radio_girl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="여자"
-                />
-        </RadioGroup>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_child_age"
+        <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/input_layout_child_age"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/input_child_age"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:hint="아이나이"-->
+                <!--android:singleLine="true" />-->
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:text="아이나이"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/input_child_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:singleLine="true"
+            android:text="아이의 생일을 입력해주세요"
+            android:textSize="12sp" />
 
-            <EditText
-                android:id="@+id/input_child_age"
-                android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            android:paddingTop="7dp"
+
+            android:paddingRight="20dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="fill_parent"
+
+                android:layout_height="25dp"
+                android:text="아이 성별"
+                android:textSize="20sp" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radio_group"
+                android:paddingTop="10dp"
+                android:weightSum="5"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="아이나이"
-                android:singleLine="true" />
-        </android.support.design.widget.TextInputLayout>
+                android:orientation="horizontal">
 
+                <RadioButton
+                    android:id="@+id/radio_boy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="남자" />
+
+                <RadioButton
+                    android:id="@+id/radio_girl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:text="여자" />
+            </RadioGroup>
+        </LinearLayout>
 
         <Button
             android:id="@+id/sign_up_button"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:background="@color/colorPrimary"
             android:text="@string/action_sign_up"
             android:textColor="@android:color/white" />
