@@ -91,7 +91,22 @@
                 android:hint="아이성별"
                 android:singleLine="true" />
         </android.support.design.widget.TextInputLayout>
-
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/radio_group"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/radio_boy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="남자"
+                <!--android:onClick="onRadioButtonClicked"-->/>
+            <RadioButton android:id="@+id/radio_girl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="여자"
+                />
+        </RadioGroup>
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_child_age"

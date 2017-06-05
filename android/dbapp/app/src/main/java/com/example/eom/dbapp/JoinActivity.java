@@ -28,6 +28,8 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -62,12 +64,16 @@ public class JoinActivity extends AppCompatActivity {
     private EditText mPassword;
     private View mProgressView;
     private View mLoginFormView;
-
+    private RadioButton radioButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
 
 
+        final RadioGroup rg = (RadioGroup)findViewById(R.id.radio_group);
+
     }
+
+
 }
