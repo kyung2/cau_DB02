@@ -48,6 +48,7 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager"
         tools:context="com.example.eom.dbapp.FunctionsActivity"
         tools:showIn="@layout/activity_functions" />
 </android.support.design.widget.CoordinatorLayout>

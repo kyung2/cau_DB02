@@ -1,14 +1,14 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.Adapter;
 
 
-import android.annotation.TargetApi;
 import android.content.Context;
-import android.os.Build;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.eom.dbapp.R;
 
 import java.util.ArrayList;
 
@@ -33,13 +33,11 @@ public class FunctionListAdapter extends RecyclerView.Adapter<FunctionListAdapte
         return new ViewHolder(v);
     }
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+
     @Override
     public void onBindViewHolder(ViewHolder holder,int position) {
         final String item = items.get(position);
-
         holder.tv_function_name.setText(item);
-
     }
 
     @Override
