@@ -29,6 +29,7 @@ public class KidsCafeData {
     public Date authDate;
     public boolean state, multiuser;
     public double latitude, longitude; //위도경도
+
     public KidsCafeData(int id, String name, String address, String phone_num){
         this.id = id;
         this.name=name;
