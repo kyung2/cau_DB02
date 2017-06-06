@@ -46,7 +46,8 @@
             android:label="@string/title_activity_functions"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DetailPreSchoolActivity" />
-        <activity android:name=".DetailKidsCafeActivity"></activity>
+        <activity android:name=".DetailKidsCafeActivity" />
+        <activity android:name=".KidscenterList"></activity>
     </application>
 
 </manifest>
