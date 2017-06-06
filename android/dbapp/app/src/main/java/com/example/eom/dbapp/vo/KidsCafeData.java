@@ -24,10 +24,9 @@ public class KidsCafeData {
      double : latitude,longitude  위도경도 double
     **/
 
-    public String name, address, phone_num, sido,sigun, business_operator_name;
-    public int id, zipcode, facility_size;
-    public Date authDate;
-    public boolean state, multiuser;
+    public String name, address, phone_num, si_do,si_gun_gu,operation_state, multi_use,hygiene_name;
+    public int id, postcode,facility_size;
+    public Date permit_date;
     public double latitude, longitude; //위도경도
 
     public KidsCafeData(int id, String name, String address, String phone_num){
@@ -37,22 +36,22 @@ public class KidsCafeData {
         this.phone_num=phone_num;
     }
 
-    public KidsCafeData(int id, String name, String address, String phone_num,int zipcode,int facility_size,String business_operator_name,
-                        String sido,String sigun,boolean state, boolean multiuser, double latitude , double longitude, Date authDate) {
+    public KidsCafeData(int id, String name, String address, String phone_num,int postcode,int facility_size,String hygiene_name,
+                        String si_do,String si_gun_gu,String operation_state, String multi_use, double latitude , double longitude, Date permit_date) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.phone_num = phone_num;
-        this.id = id;
-        this.zipcode = zipcode;
-        this.sido = sido;
-        this.sigun =sigun;
-        this.business_operator_name = business_operator_name;
-        this.state = state;
-        this.multiuser = multiuser;
+        this.postcode = postcode;
+        this.si_do = si_do;
+        this.si_gun_gu =si_gun_gu;
+        this.hygiene_name = hygiene_name;
+        this.operation_state = operation_state;
+        this.multi_use = multi_use;
         this.latitude = latitude;
         this.longitude = longitude;
         this.facility_size = facility_size;
-        this.authDate = authDate;
+        this.permit_date = permit_date;
 
     }
 }

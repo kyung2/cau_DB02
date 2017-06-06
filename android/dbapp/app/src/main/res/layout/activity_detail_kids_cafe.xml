@@ -374,12 +374,12 @@
 
 
                 <LinearLayout
-                    android:id="@+id/ll_detail_kidcafe_mutiple_use"
+                    android:id="@+id/ll_detail_kidcafe_multiple_use"
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_mutiple_use"
+                        android:id="@+id/tv_detail_kidcafe_multiple_use"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
