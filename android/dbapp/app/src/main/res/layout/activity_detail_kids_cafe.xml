@@ -312,7 +312,7 @@
                         android:background="@drawable/grayback_square" />
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe__si_do_input"
+                        android:id="@+id/tv_detail_kidcafe_si_do_input"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/gray_square" />
