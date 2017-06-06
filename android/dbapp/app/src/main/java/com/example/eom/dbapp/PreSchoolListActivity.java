@@ -22,6 +22,14 @@ public class PreSchoolListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_preshcool_list);
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_preschools);
         ArrayList<PreSchoolData> arrayList = new ArrayList<>();
+
+        /*
+        * (String name, String address,String si_do,String si_gun_gu,String tel ,String fax, String assess_certification_type,
+                         int id, int postcode ,int playground_num , int nursing_room_area , int nursing_room_num, int capacity ,int NumofCCTV,
+                         Date pause_end_date , Date pause_start_date, Date close_date, Date permit_date,
+                         double latitude, double longitude,
+                         boolean operation_state , boolean school_bus)
+                         */
         for(int i=0 ;i<30;i++){
 
             arrayList.add(new PreSchoolData("유치원"+i,"서울시 양천구 신정"+i+"동","0102252225"));
