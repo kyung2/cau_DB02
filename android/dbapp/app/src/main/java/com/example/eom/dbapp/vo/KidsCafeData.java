@@ -24,12 +24,17 @@ public class KidsCafeData {
      double : latitude,longitude  위도경도 double
     **/
 
-    String name, address, phone_num, sido,sigun, business_operator_name;
-    int id, zipcode, facility_size;
-    Date authDate;
-    boolean state, multiuser;
-    double latitude, longitude; //위도경도
-
+    public String name, address, phone_num, sido,sigun, business_operator_name;
+    public int id, zipcode, facility_size;
+    public Date authDate;
+    public boolean state, multiuser;
+    public double latitude, longitude; //위도경도
+    public KidsCafeData(int id, String name, String address, String phone_num){
+        this.id = id;
+        this.name=name;
+        this.address=address;
+        this.phone_num=phone_num;
+    }
 
     public KidsCafeData(int id, String name, String address, String phone_num,int zipcode,int facility_size,String business_operator_name,
                         String sido,String sigun,boolean state, boolean multiuser, double latitude , double longitude, Date authDate) {
