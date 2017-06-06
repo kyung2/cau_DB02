@@ -10,7 +10,7 @@ class preSchool(models.Model):
     pause_start_date = models.DateField
     pause_end_date = models.DateField()
     close_date = models.DateField()
-    postcode = models.CharField(max_length=11)
+    postcode = models.IntegerField()
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
     address = models.CharField(max_length=11)
@@ -20,11 +20,11 @@ class preSchool(models.Model):
     tel = models.CharField(max_length=11)
     Fax = models.CharField(max_length=11)
     capacity = models.IntegerField()
-    school_bus = models.IntegerField()
+    school_bus = models.CharField(max_length=11)
     playground_num = models.IntegerField()
     nursing_room_num = models.IntegerField()
-    nursing_room_area = models.CharField(max_length=11)
-    assess_certification_type = models.CharField(max_length=11)
+    nursing_room_area = models.IntegerField()
+    assess_certification_type = models.IntegerField()
     NumofCCTV = models.IntegerField()
 
 
