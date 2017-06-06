@@ -41,6 +41,11 @@ public class PreSchoolData {
     public boolean operation_state,school_bus;
     public double latitude,longitude;
 
+    public PreSchoolData(String name, String address, String tel){
+        this.name=name;
+        this.address = address;
+        this.tel=tel;
+    }
 
     public PreSchoolData(String name, String address,String si_do,String si_gun_gu,String tel ,String fax, String assess_certification_type,
                          int id, int postcode ,int playground_num , int nursing_room_area , int nursing_room_num, int capacity ,int NumofCCTV,
