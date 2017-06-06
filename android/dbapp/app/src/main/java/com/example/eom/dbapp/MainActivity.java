@@ -90,6 +90,7 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this,PreSchoolListActivity.class));
         } else if (id == R.id.nav_slideshow) {
             startActivity(new Intent(MainActivity.this,KidsCafeListActivity.class));
+            startActivity(new Intent(MainActivity.this,TeacherListActivity.class));
         } else if (id == R.id.nav_detail_pre) {
             startActivity(new Intent(MainActivity.this,DetailPreSchoolActivity.class));
 
