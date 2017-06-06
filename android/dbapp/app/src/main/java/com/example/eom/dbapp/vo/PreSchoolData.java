@@ -1,7 +1,7 @@
 package com.example.eom.dbapp.vo;
 
 /**
- * Created by dhtpr on 2017-06-05.
+ * Created by hyunkyung on 2017-06-05.
  */
 
 public class PreSchoolData {

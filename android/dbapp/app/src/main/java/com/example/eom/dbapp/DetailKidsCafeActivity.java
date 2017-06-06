@@ -4,6 +4,9 @@ import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * Created by hyunkyung on 2017-06-05.
+ */
 public class DetailKidsCafeActivity extends AppCompatActivity {
 Cursor cursor;
     @Override
