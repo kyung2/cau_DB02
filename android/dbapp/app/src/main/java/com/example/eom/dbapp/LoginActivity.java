@@ -205,6 +205,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 protected void onPostExecute(String s) {
                     super.onPostExecute(s);
                     showProgress(false);
+
                     try {
                         JSONObject object = new JSONObject(s);
                         if(object.getBoolean("result")){
