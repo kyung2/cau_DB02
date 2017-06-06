@@ -24,6 +24,7 @@
             android:layout_weight="7"
             android:orientation="vertical"
             android:weightSum="3">
+            <!--gg-->
 
             <TextView
                 android:id="@+id/tv_pre_list_name"

@@ -56,12 +56,14 @@ z
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_detail_kidcafe_si_do"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="시/도"
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/tv_detail_kidcafe_si_input"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="입력 시"
@@ -89,6 +91,7 @@ z
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_detail_kidcafe_si_gun_gu"
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -96,9 +99,10 @@ z
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/tv_detail_kidcafe_si_gun_gu_input"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="시군구"
+                        android:text="입력시군구"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
                 </LinearLayout>

@@ -31,7 +31,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:gravity="center|start"
-                android:text="유치원이름"
+                android:text="키즈카페리스트"
                 android:textSize="20sp" />
 
             <TextView
@@ -40,7 +40,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:text="유치원주소는서울시양천구신정동"
+                android:text="키즈카페주소는서울시양천구신정동"
                 android:textSize="12sp" />
         </LinearLayout>
 
