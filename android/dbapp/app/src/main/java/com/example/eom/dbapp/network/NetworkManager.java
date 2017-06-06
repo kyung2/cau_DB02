@@ -15,6 +15,7 @@ import java.net.ProtocolException;
 public class NetworkManager {
 //    public static String serverIP = "http://dldnjstp20_gogo.goorm.io";
      static String serverIP = "http://sswjjang.iptime.org:8000";
+    private final static int TIMEOUT = 10000;
 
     static void setupConnection(String postParam,HttpURLConnection urlConnection)throws IOException {
         urlConnection.setDoInput(true);
@@ -29,8 +30,8 @@ public class NetworkManager {
         urlConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
         urlConnection.setRequestProperty("Content-Length", "" + Integer.toString(postParam.getBytes().length));
         urlConnection.setUseCaches(false);
-        urlConnection.setConnectTimeout(10000);
-        urlConnection.setReadTimeout(10000);
+        urlConnection.setConnectTimeout(TIMEOUT);
+        urlConnection.setReadTimeout(TIMEOUT);
         DataOutputStream dataOutputStream = new DataOutputStream(urlConnection.getOutputStream());
         dataOutputStream.writeBytes(postParam);
         dataOutputStream.flush();
