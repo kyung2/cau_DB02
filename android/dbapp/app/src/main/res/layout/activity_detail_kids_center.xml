@@ -290,7 +290,7 @@
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square"
-                        android:text="허용수" />
+                        android:text="정원" />
 
                     <TextView
                         android:id="@+id/tv_detail_kids_center_capacity"

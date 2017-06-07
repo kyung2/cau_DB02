@@ -58,6 +58,24 @@ public abstract class KidsCenterDetailTask extends AsyncTask<String, Void, KidsC
            //item = new PreSchoolData(
             //
             // )
+            item = new KidsCenterData(id,
+
+
+                    jsonObject1.getString("name"),
+                    jsonObject1.getString("tel"),
+
+                    jsonObject1.getString("address"),
+                    jsonObject1.getString("si_do"),
+                    jsonObject1.getString("si_gun_gu"),
+
+                    jsonObject1.getInt("postcode"),
+
+
+
+                    jsonObject1.getInt("capacity"),
+                    jsonObject1.getDouble("longitude"),
+                    jsonObject1.getDouble("latitude"));
+
 
             return item;
         } catch (Exception e) {
