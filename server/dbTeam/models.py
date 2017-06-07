@@ -62,10 +62,10 @@ class user(models.Model):
 class preSchoolEvaluation(models.Model):
     user_id = models.ForeignKey(user, on_delete=models.CASCADE)  #pk #fk
     preSchool_id = models.ForeignKey(preSchool, on_delete=models.CASCADE) #pk #fk
-    grade = models.CharField(max_length=11)
-    grade_date = models.DateField()
-    comment = models.CharField(max_length=11)
-    comment_date = models.DateField()
+    grade = models.CharField(max_length=11,null=True)
+    grade_date = models.DateField(null=True)
+    comment = models.CharField(max_length=11,null=True)
+    comment_date = models.DateField(null=True)
 
 class kidsCafe(models.Model):
     name = models.CharField(max_length=45)
@@ -84,10 +84,10 @@ class kidsCafe(models.Model):
 class kidsCafeEvaluation(models.Model):
     user_id = models.ForeignKey(user, on_delete=models.CASCADE)  #pk #fk
     kids_cafe_id = models.ForeignKey(kidsCafe, on_delete=models.CASCADE) #pk #fk
-    grade = models.CharField(max_length=11)
-    grade_date = models.DateField()
-    comment = models.CharField(max_length=11)
-    comment_date = models.DateField()
+    grade = models.CharField(max_length=11,null=True)
+    grade_date = models.DateField(null=True)
+    comment = models.CharField(max_length=11,null=True)
+    comment_date = models.DateField(null=True)
 ##
 
 class kidsCenter(models.Model):
@@ -128,7 +128,7 @@ class childCareCenter(models.Model):
 class safeArea(models.Model):
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
-    adress = models.CharField(max_length=45)
+    address = models.CharField(max_length=45)
     facility_name= models.CharField(max_length=45)
     management_agency = models.CharField(max_length=11)
     police_office = models.CharField(max_length=11)
