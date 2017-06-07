@@ -16,11 +16,11 @@ public abstract class RegisterTask extends AsyncTask<String, Void, String> {
     //data={"username":"하이예나","email":"aa@aa.aa","password":"password","birth":"1994-09-16"}
     private String mUsername, mPassword, mBirth, mUserID,mSex;
 
-    protected RegisterTask(String username,  String password, String birth, String userID,String childSex) {
-        mUsername = username; //닉네임
+    protected RegisterTask(String nick_name, String pw, String birth, String user_id,String childSex) {
+        mUsername = nick_name; //닉네임
         mBirth = birth; //아이나이
-        mPassword = password; //패스워드
-        mUserID = userID;//유저 가 이메일!
+        mPassword = pw; //패스워드
+        mUserID = user_id;//유저 가 이메일!
         mSex = childSex;
     }
 
@@ -33,12 +33,11 @@ public abstract class RegisterTask extends AsyncTask<String, Void, String> {
             URL url = new URL(NetworkManager.serverIP + "/login/");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("username", URLEncoder.encode(mUsername, "UTF-8"));
+            jsonObject.put("nick_name", URLEncoder.encode(mUsername, "UTF-8"));
             jsonObject.put("user_id", mUserID);
-            jsonObject.put("password", mPassword);
+            jsonObject.put("pw", mPassword);
             jsonObject.put("birth", mBirth);
             jsonObject.put("childSex", mSex);
-
 
             String strJson = "data=" + jsonObject.toString();
             Log.d("getPlace", strJson);
