@@ -56,11 +56,14 @@ public class KidsCafeData {
         this.address = address;
         this.phone_num = phone_num;
         this.postcode = postcode;
-        this.hygiene_name = hygiene_name;
+
+        this.hygiene_name = "양호";
         this.si_do = si_do;
         this.si_gun_gu =si_gun_gu;
+
+
         this.operation_state = operation_state;
-        this.multi_use = multi_use;
+        this.multi_use = "다중이용업소";
         this.latitude = latitude;
         this.longitude = longitude;
         this.facility_size = facility_size;
@@ -89,7 +92,7 @@ public class KidsCafeData {
     }
 
     public static KidsCafeData getSampleKidsCafeData() {
-        return new KidsCafeData("애새기키즈카페","경기도 수원시 영통구 영통동 라라라","010-8978",12343
+        return new KidsCafeData(1,"애새기키즈카페","경기도 수원시 영통구 영통동 라라라","010-8978",12343
                 , "위생위생","수원시","영통구 영통동", "운영중", "다중다중",125.5,14,11,
                 new Date(System.currentTimeMillis()));
     }

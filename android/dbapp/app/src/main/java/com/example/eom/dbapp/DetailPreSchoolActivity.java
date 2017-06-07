@@ -26,8 +26,8 @@ public class DetailPreSchoolActivity extends AppCompatActivity {
                 setData(preSchoolData);
             }
         }.execute("");
-        PreSchoolData preSchoolData = PreSchoolData.getSamplePreschoolData();
-        setData(preSchoolData);
+//        PreSchoolData preSchoolData = PreSchoolData.getSamplePreschoolData();
+//        setData(preSchoolData);
 
     }
 
@@ -42,7 +42,7 @@ public class DetailPreSchoolActivity extends AppCompatActivity {
         tv_permit_date.setText(MyUtil.getStringFromDate(preSchoolData.permit_date));
 
         TextView tv_type = (TextView) findViewById(R.id.tv_detail_pre_school_type);
-        tv_type.setText(preSchoolData.assess_certification_type);
+        tv_type.setText("" + preSchoolData.assess_certification_type);
 
         TextView tv_address = (TextView) findViewById(R.id.tv_detail_pre_school_address);
         tv_address.setText(preSchoolData.address);

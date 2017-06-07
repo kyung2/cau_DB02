@@ -48,16 +48,49 @@ public abstract class PreSchoolsDetailTask extends AsyncTask<String, Void, PreSc
             Log.d("PreschoolDetailTask", strResult);
             JSONObject jsonObject1 = new JSONArray(new JSONObject(strResult).getString("preschool")).getJSONObject(0).getJSONObject("fields");
 
-            //데이터는 {\"name\": \"\\uac00\\ud68c\\uc5b4\\ub9b0\\uc774\\uc9d1\", \"type\": \"\\uad6d\\uacf5\\ub9bd\", \"permit_date\": \"1995-06-23\", \"pause_end_date\": null, \"close_date\": null, \"postcode\": 3056, \"si_do\": \"\\uc11c\\uc6b8\\ud2b9\\ubcc4\\uc2dc\", \"si_gun_gu\": \"\\uc885\\ub85c\\uad6c\", \"address\": \"\\uc11c\\uc6b8\\ud2b9\\ubcc4\\uc2dc \\uc885\\ub85c\\uad6c \\ubd81\", \"latitude\": 37.58180502, \"longitude\": 126.9858807, \"operation_state\": \"\\uc815\\uc0c1\", \"tel\": \"02-3673-208\", \"Fax\": \"02-3673-579\", \"capacity\": 49, \"school_bus\": \"\\ubbf8\\uc6b4\\uc601\", \"playground_num\": 1, \"nursing_room_num\": 4, \"nursing_room_area\": 250, \"assess_certification_type\": 1, \"NumofCCTV\": 2}
-            Log.d("PreschoolDetailTask",jsonObject1.getString("name"));// 데이터 위에에서 뽑으면 이렇게 나옴 (이건 name)임
+            //데이터는 {\"name\": \"\\uac00\\ud68c\\uc5b4\\ub9b0\\uc774\\uc9d1\", \"type\":
+            // \"\\uad6d\\uacf5\\ub9bd\", \"permit_date\": \"1995-06-23\",
+            // \"pause_end_date\":
+            // null, \"close_date\": null, \"postcode\": 3056, \"si_do\": \"\\uc11c\\uc6b8\\ud2b9\\ubcc4\\uc2dc\",
+            // \"si_gun_gu\": \"\\uc885\\ub85c\\uad6c\", \"address\": \"\\uc11c\\uc6b8\\ud2b9\\ubcc4\\uc2dc
+            // \\uc885\\ub85c\\uad6c \\ubd81\", \"latitude\": 37.58180502, \"longitude\": 126.9858807,
+            // \"operation_state\": \"\\uc815\\uc0c1\", \"tel\": \"02-3673-208\", \"Fax\": \"02-3673-579\",
+            // \"capacity\": 49, \"school_bus\": \"\\ubbf8\\uc6b4\\uc601\", \"playground_num\": 1, \"nursing_room_num\": 4, \"nursing_room_area\": 250, \"assess_certification_type\": 1, \"NumofCCTV\": 2}
+
             //TODO 이거 밑에 preSchoolData 파싱해줘 id는 그냥 id 라고 해줘줘
             //그다음에 이거 위에 에서 파싱해서 하나씩 뽑아서 밑에 프리스쿨데이터에 넣어주면됨.
             //Date같은경우는
             Date tempDate = MyUtil.getDateFromString("1994-09-23");
-            //d위에처럼 해서 밑에 데이터에 집어넣으면됨
-           //item = new PreSchoolData(
-            //
-            // )
+
+            item = new PreSchoolData(id,
+                    jsonObject1.getString("name"),
+                    jsonObject1.getString("type"),
+                    jsonObject1.getString("address"),
+                    jsonObject1.getString("si_do"),
+                    jsonObject1.getString("si_gun_gu"),
+                    jsonObject1.getString("tel"),
+                    jsonObject1.getString("Fax"),
+
+                    jsonObject1.getInt("assess_certification_type"),
+                    jsonObject1.getInt("postcode"),
+                    jsonObject1.getInt("capacity"),
+                    jsonObject1.getInt("playground_num"),
+                    jsonObject1.getInt("nursing_room_area"),
+                    jsonObject1.getInt("nursing_room_num"),
+                    jsonObject1.getInt("NumofCCTV"),
+
+//                    MyUtil.getDateFromString(jsonObject1.getString("pause_start_date")),
+                    MyUtil.getDateFromString(jsonObject1.getString("pause_end_date")),
+                    MyUtil.getDateFromString(jsonObject1.getString("pause_end_date")),
+                    MyUtil.getDateFromString(jsonObject1.getString("permit_date")),
+                    MyUtil.getDateFromString(jsonObject1.getString("close_date")),
+
+                    jsonObject1.getDouble("latitude"),
+                    jsonObject1.getDouble("longitude"),
+
+                    jsonObject1.getString("operation_state"),
+                    jsonObject1.getString("school_bus"));
+
 
             return item;
         } catch (Exception e) {

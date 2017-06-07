@@ -55,7 +55,7 @@ public class PreSchoolAdpater extends  RecyclerView.Adapter<PreSchoolAdpater.Vie
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailPreSchoolActivity.class);
-                intent.putExtra("preschool_id",item.id);
+                intent.putExtra("id",item.id);
                 context.startActivity(intent);
             }
         });

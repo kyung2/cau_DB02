@@ -1,6 +1,7 @@
 package com.example.eom.dbapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.eom.dbapp.DetailKidsCafeActivity;
+import com.example.eom.dbapp.DetailKidsCenterActivity;
 import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.vo.KidsCenterData;
 
@@ -51,7 +54,9 @@ public class KidsCenterAdpater extends RecyclerView.Adapter<KidsCenterAdpater.Vi
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, DetailKidsCenterActivity.class);
+                intent.putExtra("id",item.id);
+                context.startActivity(intent);
             }
         });
     }
