@@ -8,7 +8,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
 
         <LinearLayout
@@ -115,34 +117,6 @@
                     android:layout_height="match_parent"
                     android:background="@color/gray" />
 
-                <RelativeLayout
-                    android:id="@+id/wrapper_detailPreSchool_sulLip"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="설립유형"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="입력"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </RelativeLayout>
-
                 <ImageButton
                     android:layout_width="50dp"
                     android:layout_height="match_parent" />
@@ -153,37 +127,10 @@
                 android:layout_height="1dp"
                 android:background="@color/black" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:background="@color/whiteGray"
-                android:text="키즈카페이름 "
-                android:textColor="@color/black" />
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/whiteGray" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="0.5dp"
-                    android:layout_height="match_parent"
-                    android:background="@color/whiteGray" />
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    android:background="@color/whiteGray"
-                    android:text="기본현황" />
-            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -203,11 +150,6 @@
                     android:layout_height="50dp"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@color/black" />
-
                     <TextView
                         android:id="@+id/tv_detail_kidcafe_big_name"
                         android:layout_width="wrap_content"
@@ -226,38 +168,16 @@
                     android:background="@color/orange" />
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="기본 현황"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="(자료 기준일 어쩌고 저쩌고)"
-                        android:textColor="@color/gray"
-                        android:textSize="15dp" />
-                </LinearLayout>
-
-                <LinearLayout
                     android:id="@+id/ll_detail_kidcafe_name"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_marginTop="20dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_name"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/grayback_square" />
+                        android:background="@drawable/grayback_square"
+                        android:text="키즈카페이름" />
 
                     <TextView
                         android:id="@+id/tv_detail_kidcafe_name_input"
@@ -272,10 +192,10 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_permit_date"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/grayback_square" />
+                        android:background="@drawable/grayback_square"
+                        android:text="설립(개원) 일" />
 
                     <TextView
                         android:id="@+id/tv_detail_kidcafe_permit_date_input"
@@ -290,10 +210,10 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_postcode"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/grayback_square" />
+                        android:background="@drawable/grayback_square"
+                        android:text="우편번호" />
 
                     <TextView
                         android:id="@+id/tv_detail_kidcafe_postcode_input"
@@ -308,7 +228,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_si_do"
+                        android:text="시/도"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -326,7 +246,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_si_gun_gu"
+                        android:text="시/군/구"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -344,7 +264,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_address"
+                        android:text="주소"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -362,7 +282,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_operation_state"
+                     android:text="운영상태"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -381,7 +301,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_multiple_use"
+                  android:text="이게 이름몰로해야해"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -399,7 +319,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_facility_size"
+                 android:text="사이즈"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -417,7 +337,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_hygiene_name"
+                       android:text="위생상태"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -435,7 +355,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_longitude"
+                        android:text="경도"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -453,7 +373,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:id="@+id/tv_detail_kidcafe_latitude"
+                        android:text="위도"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
