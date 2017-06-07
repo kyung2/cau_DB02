@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.eom.dbapp.network.KidsCafeDetailTask;
+import com.example.eom.dbapp.network.KidsCenterDetailTask;
+import com.example.eom.dbapp.vo.KidsCafeData;
 import com.example.eom.dbapp.vo.KidsCenterData;
 import com.example.eom.dbapp.vo.PreSchoolData;
 
@@ -13,9 +16,15 @@ public class DetailKidsCenterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_kids_center);
-
-        KidsCenterData kidsCenterData = KidsCenterData.getSampleKidsCenterData();
-        setData(kidsCenterData);
+        new KidsCenterDetailTask(getIntent().getIntExtra("id",1)){
+            @Override
+            protected void onPostExecute(KidsCenterData KidsCe) {
+                super.onPostExecute(KidsCe);
+                setData(KidsCe);
+            }
+        }.execute("");
+//        KidsCenterData kidsCenterData = KidsCenterData.getSampleKidsCenterData();
+//        setData(kidsCenterData);
     }
     private void setData(KidsCenterData kidsCenterData) {
         TextView tv_big_name = (TextView) findViewById(R.id.tv_detail_kids_center_big_name);
