@@ -19,6 +19,9 @@ public class DetailKidsCafeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_kids_cafe);
+
+        KidsCafeData kidsCafeData = KidsCafeData.getSampleKidsCafeData();
+        setData(kidsCafeData);
     }
 
     private void setData(KidsCafeData kidsCafeData) {

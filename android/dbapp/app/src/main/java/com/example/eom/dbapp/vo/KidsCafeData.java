@@ -36,8 +36,11 @@ public class KidsCafeData {
         this.phone_num=phone_num;
     }
 
-    public KidsCafeData(int id, String name, String address, String phone_num,int postcode,int facility_size,String hygiene_name,
-                        String si_do,String si_gun_gu,String operation_state, String multi_use, double latitude , double longitude, Date permit_date) {
+    public KidsCafeData(int id, String name, String address, String phone_num,
+                        int postcode,int facility_size,String hygiene_name,
+                        String si_do,String si_gun_gu,String operation_state,
+                        String multi_use, double latitude , double longitude,
+                        Date permit_date) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -53,5 +56,10 @@ public class KidsCafeData {
         this.facility_size = facility_size;
         this.permit_date = permit_date;
 
+    }
+    public static KidsCafeData getSampleKidsCafeData() {
+        return new KidsCafeData(10,"애새기키즈카페","경기도 수원시 영통구 영통동 라라라","010-8978",12343,
+                144, "영통구 영통동", "위생위생", "운영중", "다중다중", "다아중",125.5,14,
+                new Date(System.currentTimeMillis()));
     }
 }
