@@ -35,7 +35,6 @@ public class PreSchoolListActivity extends AppCompatActivity {
                 arrayList.clear();
                 arrayList.addAll(preSchoolDatas);
                 adapter.notifyDataSetChanged();
-
             }
         }.execute("");
         /*
