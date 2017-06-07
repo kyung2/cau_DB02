@@ -60,22 +60,25 @@ public abstract class KidsCafeDetailTask extends AsyncTask<String, Void, KidsCaf
 
                     jsonObject1.getString("name"),
                     jsonObject1.getString("address"),
-                    jsonObject1.getString("phone_num"),
+//                    jsonObject1.getString("phone_num"),
+                    "010-1253-1556",
                     jsonObject1.getInt("postcode"),
-                    jsonObject1.getString("hygiene_name"),
+//                    jsonObject1.getString("hygiene_name"),
+
+                    "true",
                     jsonObject1.getString("si_do"),
                     jsonObject1.getString("si_gun_gu"),
 
                     jsonObject1.getString("operation_state"),
-                    jsonObject1.getString("multi_use"),
-
+//                    jsonObject1.getString("multi_use"),
+                    "true",
 
                     jsonObject1.getDouble("latitude"),
                     jsonObject1.getDouble("longitude"),
 
 
 
-                    jsonObject1.getInt("facility_size"),
+                    (int)jsonObject1.getDouble("facility_size"),
 
 
                     MyUtil.getDateFromString(jsonObject1.getString("permit_date")));
