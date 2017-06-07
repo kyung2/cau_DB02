@@ -294,12 +294,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
                     <TextView
+                        android:text="휴지 시작날짜"
                         android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent" />
 
                     <TextView
-                         android:text="휴지 시작날짜"
                         android:id="@+id/tv_detail_pre_school_pause_start_date"
                         android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
@@ -324,10 +324,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
                     <TextView
-                         android:text="폐업날짜"
+                        android:text="폐업날짜"
                         android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent" />
+
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_close_date"
@@ -355,12 +356,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
                     <TextView
+
+                        android:text="시/도"
                         android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent" />
 
                     <TextView
-                         android:text="시/도"
                         android:id="@+id/tv_detail_pre_school_si_do"
                         android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
@@ -370,13 +372,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
                     <TextView
+
+                        android:text="시/군/구"
                         android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent" />
 
                     <TextView
-
-                        android:text="시/군/구"
                         android:id="@+id/tv_detail_pre_school_si_gun_gu"
                         android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
@@ -433,12 +435,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
                     <TextView
+                        android:text="운영 상태"
                         android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent" />
 
                     <TextView
-                        android:text="운영 상태"
                         android:id="@+id/tv_detail_pre_school_operation_state"
                         android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
@@ -546,12 +548,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
                     <TextView
+
+                        android:text="보육실 면적"
                         android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent" />
 
                     <TextView
-                        android:text="보육실 면적"
                         android:id="@+id/tv_detail_pre_school_nursing_room_area"
                         android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
@@ -562,19 +565,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
                     <TextView
+                        android:text="화재보험가입여부"
                         android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent" />
-
+                    <!--1이면 가입 0이면 ㄴㄴ -->
                     <TextView
-                        android:text="허가타입..?이건보지 "
                         android:id="@+id/tv_detail_pre_school_assess_certification_type"
                         android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
                 </LinearLayout>
 
-                <LinearLayoutㄴ
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
                     <TextView
@@ -588,7 +591,7 @@
                         android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
-                </LinearLayoutㄴ>
+                </LinearLayout>
 
 
 
