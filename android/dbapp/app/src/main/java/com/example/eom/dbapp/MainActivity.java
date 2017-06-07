@@ -123,7 +123,8 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_functions) {
 
             startActivity(new Intent(MainActivity.this,TeacherListActivity.class));
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_user_info) {
+            startActivity(new Intent(MainActivity.this,UserInfo.class));
         } else if (id == R.id.nav_slideshow) {
         } else if (id == R.id.nav_detail_pre) {
             startActivity(new Intent(MainActivity.this,DetailPreSchoolActivity.class));
