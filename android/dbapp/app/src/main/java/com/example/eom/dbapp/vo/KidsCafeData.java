@@ -57,13 +57,13 @@ public class KidsCafeData {
         this.phone_num = phone_num;
         this.postcode = postcode;
 
-        this.hygiene_name = hygiene_name;
+        this.hygiene_name = "양호";
         this.si_do = si_do;
         this.si_gun_gu =si_gun_gu;
 
 
         this.operation_state = operation_state;
-        this.multi_use = multi_use;
+        this.multi_use = "다중이용업소";
         this.latitude = latitude;
         this.longitude = longitude;
         this.facility_size = facility_size;
