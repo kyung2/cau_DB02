@@ -87,34 +87,6 @@
                     android:layout_height="match_parent"
                     android:background="@color/gray" />
 
-                <RelativeLayout
-                    android:id="@+id/wrapper_detailPreSchool_sulLip"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:layout_marginLeft="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="설립유형"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="입력"
-                            android:textColor="@color/black"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-                </RelativeLayout>
-
                 <ImageButton
                     android:layout_width="50dp"
                     android:layout_height="match_parent" />
@@ -124,15 +96,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/black" />
-
-            <Button
-                android:id="@+id/tv_detail_kids_center_name_label"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:background="@color/whiteGray"
-                android:hint="키즈센터이름"
-                android:textColor="@color/black" />
 
             <View
                 android:layout_width="match_parent"
