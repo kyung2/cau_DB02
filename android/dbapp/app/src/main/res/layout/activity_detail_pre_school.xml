@@ -588,7 +588,7 @@
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square"
-                        android:text="보육실 면적" />
+                        android:text="보육실 면적"/>
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_nursing_room_area"

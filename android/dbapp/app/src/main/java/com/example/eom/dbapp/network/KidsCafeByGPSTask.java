@@ -1,9 +1,9 @@
 package com.example.eom.dbapp.network;
 
-import android.location.Location;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.example.eom.dbapp.vo.KidsCafeData;
 import com.example.eom.dbapp.vo.PreSchoolData;
 
 import org.json.JSONArray;
@@ -16,23 +16,23 @@ import java.util.ArrayList;
 
 import static com.example.eom.dbapp.network.NetworkManager.setupConnection;
 
-public abstract class PreSchoolsByGPSTask extends AsyncTask<String, Void, ArrayList<PreSchoolData>> {
+public abstract class KidsCafeByGPSTask extends AsyncTask<String, Void, ArrayList<KidsCafeData>> {
     //data={"user_id":19,"longitude":126.95,"latitude":37.50,"range":1}37.50,126.95
     private double latitude,longitude;
 
-    protected PreSchoolsByGPSTask(double latitude, double longitude) {
+    protected KidsCafeByGPSTask(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
     }
 
     @Override
-    protected ArrayList<PreSchoolData> doInBackground(String... params) {
+    protected ArrayList<KidsCafeData> doInBackground(String... params) {
         InputStream inputStream;
         String strResult = "";
         String result = null;
-        ArrayList<PreSchoolData> items = new ArrayList<>();
+        ArrayList<KidsCafeData> items = new ArrayList<>();
         try {
-            URL url = new URL(NetworkManager.serverIP + "/preschool/gps/");
+            URL url = new URL(NetworkManager.serverIP + "/kidsCafe/gps/");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("latitude", latitude);
@@ -51,8 +51,8 @@ public abstract class PreSchoolsByGPSTask extends AsyncTask<String, Void, ArrayL
 
             for(int i=0;i<jsonArray.length();i++) {
                 JSONObject row = jsonArray.getJSONObject(i);
-//values('id','name','si_do','si_gun_gu','tel','latitude','longitude')
-                items.add(new PreSchoolData(row.getInt("id"),
+//.values('id', 'name', 'si_do',                'si_gun_gu', 'tel',                        'latitude', 'longitude')
+                items.add(new KidsCafeData(row.getInt("id"),
                                 row.getString("name"),
                                 row.getString("si_do"),
                                 row.getString("si_gun_gu"),

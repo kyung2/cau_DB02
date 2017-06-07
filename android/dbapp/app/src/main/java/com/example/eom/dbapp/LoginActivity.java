@@ -208,7 +208,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
                     try {
                         JSONObject object = new JSONObject(s);
-                        if(object.getBoolean("result")){
+                        if(object.getString("result").equals("success")){
                             Toast.makeText(LoginActivity.this,"로그인 성공",Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(LoginActivity.this,"로그인 실패",Toast.LENGTH_SHORT).show();

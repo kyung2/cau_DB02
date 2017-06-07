@@ -1,12 +1,10 @@
 package com.example.eom.dbapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.eom.dbapp.Adapter.KidsCafeAdpater;
 import com.example.eom.dbapp.Adapter.KidsCenterAdpater;
-import com.example.eom.dbapp.vo.KidsCafeData;
 import com.example.eom.dbapp.vo.KidsCenterData;
 
 import java.util.ArrayList;

@@ -15,7 +15,7 @@ import static com.example.eom.dbapp.network.NetworkManager.setupConnection;
 public abstract class LoginTask extends AsyncTask<String, Void, String> {
     //data={"username":"하이예나","email":"aa@aa.aa","password":"password","birth":"1994-09-16"}
     private String mPassword, mUserID;
-
+    private String TAG = "LoginTask";
     protected LoginTask( String userID,String password) {
         mPassword = password;
         mUserID = userID;
@@ -27,13 +27,13 @@ public abstract class LoginTask extends AsyncTask<String, Void, String> {
         String strResult = "";
         String result = null;
         try {
-            URL url = new URL(NetworkManager.serverIP + "/register/");
+            URL url = new URL(NetworkManager.serverIP + "/login/");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("user_id", mUserID);
-            jsonObject.put("password", mPassword);
+            jsonObject.put("pw", mPassword);
             String strJson = "data=" + jsonObject.toString();
-            Log.d("getPlace", strJson);
+            Log.d(TAG, strJson);
             setupConnection(strJson, urlConnection);
             inputStream = urlConnection.getInputStream();
 
@@ -41,7 +41,7 @@ public abstract class LoginTask extends AsyncTask<String, Void, String> {
                 strResult = NetworkManager.convertInputStreamToString(inputStream);
             else
                 strResult = "Did not work!";
-            Log.d("RegisterTask", strResult);
+            Log.d(TAG, strResult);
 
         } catch (Exception e) {
             e.printStackTrace();

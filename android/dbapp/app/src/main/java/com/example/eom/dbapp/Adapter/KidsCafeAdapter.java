@@ -1,31 +1,33 @@
 package com.example.eom.dbapp.Adapter;
 
-        import android.content.Context;
-        import android.support.v7.widget.RecyclerView;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.ImageButton;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.content.Context;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
-        import com.example.eom.dbapp.R;
-        import com.example.eom.dbapp.vo.KidsCafeData;
-        import com.example.eom.dbapp.vo.PreSchoolData;
+import com.example.eom.dbapp.R;
+import com.example.eom.dbapp.vo.KidsCafeData;
+import com.example.eom.dbapp.vo.PreSchoolData;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
 /**
  * Created by dhtpr on 2017-06-05.
+ *
  */
 
-public class KidsCafeAdpater extends RecyclerView.Adapter<KidsCafeAdpater.ViewHolder> {
+public class KidsCafeAdapter extends  RecyclerView.Adapter<KidsCafeAdapter.ViewHolder> {
 
     Context context;
     ArrayList<KidsCafeData> items;
     int item_layout;
 
-    public KidsCafeAdpater(Context context, ArrayList<KidsCafeData> items) {
+    public KidsCafeAdapter(Context context, ArrayList<KidsCafeData> items) {
         this.context = context;
         this.items = items;
     }
@@ -48,6 +50,12 @@ public class KidsCafeAdpater extends RecyclerView.Adapter<KidsCafeAdpater.ViewHo
                 Toast.makeText(context, "전화버튼이 눌렸음", Toast.LENGTH_SHORT).show();
             }
         });
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override
@@ -60,12 +68,15 @@ public class KidsCafeAdpater extends RecyclerView.Adapter<KidsCafeAdpater.ViewHo
         TextView tv_name;
         TextView tv_address;
         ImageButton bt_call;
+        CardView view;
 
         ViewHolder(View itemView) {
             super(itemView);
             tv_name = (TextView) itemView.findViewById(R.id.tv_kidscafe_list_name);
             tv_address = (TextView) itemView.findViewById(R.id.tv_kidscafe_list_address);
             bt_call = (ImageButton) itemView.findViewById(R.id.bt_kidscafe_list_call);
+            view = (CardView) itemView.findViewById(R.id.cv_kidscafe_list_item);
         }
     }
+
 }

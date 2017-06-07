@@ -35,7 +35,16 @@ public class KidsCafeData {
         this.address=address;
         this.phone_num=phone_num;
     }
-
+    public KidsCafeData(int id, String name,String si_do, String si_gun_gu, String tel,double latitude,double longitude){
+        this.id= id;
+        this.name=name;
+        this.si_do= si_do;
+        this.si_gun_gu=si_gun_gu;
+        this.address=si_do+" "+si_gun_gu;
+        this.phone_num=tel;
+        this.latitude=latitude;
+        this.longitude = longitude;
+    }
     public KidsCafeData(int id, String name, String address, String phone_num,
                         int postcode,String hygiene_name,String si_do,
                         String si_gun_gu,String operation_state,

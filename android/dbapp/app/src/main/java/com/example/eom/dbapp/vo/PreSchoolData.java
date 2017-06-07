@@ -45,6 +45,16 @@ public class PreSchoolData {
         this.name=name;
         this.address = address;
         this.tel=tel;
+    }//values('id','name','si_do','si_gun_gu','tel','latitude','longitude')
+    public PreSchoolData(int id, String name,String si_do, String si_gun_gu, String tel,double latitude,double longitude){
+        this.id= id;
+        this.name=name;
+        this.si_do= si_do;
+        this.si_gun_gu=si_gun_gu;
+        this.address=si_do+" "+si_gun_gu;
+        this.tel=tel;
+        this.latitude=latitude;
+        this.longitude = longitude;
     }
     public PreSchoolData(String name, String address,String si_do,String si_gun_gu,String tel ,String fax, String assess_certification_type,
                          int id, int postcode ,int playground_num , int nursing_room_area , int nursing_room_num, int capacity ,int NumofCCTV,
