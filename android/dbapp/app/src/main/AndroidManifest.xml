@@ -52,7 +52,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DetailPreSchoolActivity" />
         <activity android:name=".DetailKidsCafeActivity" />
-        <activity android:name=".KidscenterList" />
+        <activity android:name=".KidsCenterList" />
         <activity android:name=".UserInfo"></activity>
     </application>
 
