@@ -203,9 +203,9 @@
                         android:background="@color/black"
                         />
                     <TextView
+                        android:id="@+id/tv_detail_pre_school_big_name"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
-                        android:text="XX유치원"
                         android:textColor="@color/black"
                         android:textSize="20dp"
                         android:layout_width="wrap_content"

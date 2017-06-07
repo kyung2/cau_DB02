@@ -23,6 +23,9 @@ public class DetailPreSchoolActivity extends AppCompatActivity {
     }
 
     private void setData(PreSchoolData preSchoolData) {
+        TextView tv_big_name = (TextView) findViewById(R.id.tv_detail_pre_school_big_name);
+        tv_big_name.setText(preSchoolData.name);
+
         TextView tv_name = (TextView) findViewById(R.id.tv_detail_pre_school_name);
         tv_name.setText(preSchoolData.name);
 
