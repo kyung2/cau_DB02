@@ -145,114 +145,286 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/black" />
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:background="@color/whiteGray"
                 android:text="유치원 명"
-                android:textColor="@color/black"
-                />
+                android:textColor="@color/black" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/whiteGray" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:orientation="horizontal">
+
                 <Button
-                    android:layout_margin="10dp"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
                     android:background="@color/whiteGray"
                     android:text="00년"
-                    android:textColor="@color/black"
-                    android:layout_weight="1"/>
+                    android:textColor="@color/black" />
+
                 <View
                     android:layout_width="0.5dp"
                     android:layout_height="match_parent"
-                    android:background="@color/whiteGray"
-                    />
+                    android:background="@color/whiteGray" />
+
                 <Button
-                    android:layout_margin="10dp"
-                    android:text="기본현황"
                     android:layout_width="0dp"
-                    android:background="@color/whiteGray"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/whiteGray"
+                    android:text="기본현황" />
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
                 android:background="@color/whiteGray" />
+
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_margin="5dp"
-                android:padding="15dp"
-                android:background="@drawable/orange_square"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/orange_square"
+                android:orientation="vertical"
+                android:padding="15dp">
+
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp">
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:background="@color/black"
-                        />
+                        android:background="@color/black" />
+
                     <TextView
+                        android:id="@+id/tv_detail_pre_school_big_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
-                        android:text="XX유치원"
                         android:textColor="@color/black"
-                        android:textSize="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:textSize="20dp" />
                 </LinearLayout>
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
-                    android:background="@color/orange"
-                    />
+                    android:background="@color/orange" />
+
                 <LinearLayout
-                    android:layout_marginTop="20dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="기본 현황"
                         android:textColor="@color/black"
-                        android:textStyle="bold"
                         android:textSize="17dp"
-                        />
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/gray"
-                        android:textSize="15dp"
+                        android:layout_marginLeft="10dp"
                         android:text="(자료 기준일 어쩌고 저쩌고)"
-                        />
+                        android:textColor="@color/gray"
+                        android:textSize="15dp" />
                 </LinearLayout>
+
+
+                <!--Table info start!!! -->
                 <LinearLayout
-                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp">
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="유치원이름" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_name"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="설립유형" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_type"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="설립(개원) 일" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_permit_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="휴지 시작날짜" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_pause_start_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="휴지 종료날짜" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_pause_end_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="폐업날짜" />
+
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_close_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="우편번호" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_postcode"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="시/도" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_si_do"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="시/군/구" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_si_gun_gu"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="주소" />
+
+                    <TextView
+                        android:id="@+id/tv_detail_pre_school_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
@@ -263,306 +435,201 @@
                         android:background="@drawable/grayback_square" />
 
                     <TextView
-                        android:id="@+id/tv_detail_pre_school_type"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/tv_detail_pre_school_permit_date"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/tv_detail_pre_school_pause_start_date"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/tv_detail_pre_school_pause_end_date"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/tv_detail_pre_school_close_date"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/tv_detail_pre_school_postcode"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/tv_detail_pre_school_si_do"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/tv_detail_pre_school_si_gun_gu"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:id="@+id/tv_detail_pre_school_address"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
-
-                    <TextView
                         android:id="@+id/tv_detail_pre_school_latitude"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square"
+                        android:text="위도" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="경도" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_longitude"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="운영 상태" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_operation_state"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="전화번호" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_tel"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="팩스 번호" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_fax"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="용량" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_capacity"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="버스 운영여부" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_shcool_bus"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="놀이터 수" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_playground_num"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="보육실 수" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_nursing_room_num"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
+
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="보육실 면적" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_nursing_room_area"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent" />
 
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="화재보험가입여부" />
+                    <!--1이면 가입 0이면 ㄴㄴ -->
                     <TextView
                         android:id="@+id/tv_detail_pre_school_assess_certification_type"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="CCTV 수 " />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_NumofCCTV"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
-
-
 
 
             </LinearLayout>

@@ -25,29 +25,28 @@
             android:layout_weight="7"
             android:orientation="vertical"
             android:weightSum="3">
-            <!--gg-->
 
             <TextView
-                android:id="@+id/tv_pre_list_name"
+                android:id="@+id/tv_kidscenter_list_name"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="2"
                 android:gravity="center|start"
-                android:text="유치원이름"
+                android:text="키즈센터리스트"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/tv_pre_list_address"
+                android:id="@+id/tv_kidscenter_list_address"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:gravity="center|start"
-                android:text="유치원주소는서울시양천구신정동"
+                android:text="키즈카페주소는서울시양천구신정동"
                 android:textSize="12sp" />
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/bt_pre_list_call"
+            android:id="@+id/bt_kidscenter_list_call"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"

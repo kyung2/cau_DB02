@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.eom.dbapp.vo.KidsCafeData;
+import com.example.eom.dbapp.vo.KidsCenterData;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        initActivity();
+
+
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -43,6 +48,40 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+    void initActivity(){
+
+        findViewById(R.id.cv_main_my_preschool).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        findViewById(R.id.cv_main_near_preschool).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,PreSchoolListActivity.class));
+            }
+        });
+        findViewById(R.id.cv_main_near_kidscafe).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,KidsCafeListActivity.class));
+            }
+        });
+        findViewById(R.id.cv_main_near_centers).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(MainActivity.this,KidsCenterList.class));
+            }
+        });
+        findViewById(R.id.cv_main_more_functions).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,FunctionsActivity.class));
+            }
+        });
     }
 
     @Override
@@ -84,17 +123,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_functions) {
-            // Handle the camera action
-            startActivity(new Intent(MainActivity.this,FunctionsActivity.class));
-        } else if (id == R.id.nav_gallery) {
-            startActivity(new Intent(MainActivity.this,PreSchoolListActivity.class));
-        } else if (id == R.id.nav_slideshow) {
-            startActivity(new Intent(MainActivity.this,KidsCafeListActivity.class));
+
             startActivity(new Intent(MainActivity.this,TeacherListActivity.class));
+        } else if (id == R.id.nav_user_info) {
+            startActivity(new Intent(MainActivity.this,UserInfo.class));
+        } else if (id == R.id.nav_detail_kidcenter) {
+            startActivity(new Intent(MainActivity.this,DetailKidsCenterActivity.class));
+
         } else if (id == R.id.nav_detail_pre) {
             startActivity(new Intent(MainActivity.this,DetailPreSchoolActivity.class));
 
-        } else if (id == R.id.nav_detail_kid) {
+        } else if (id == R.id.nav_detail_kidcafe) {
             startActivity(new Intent(MainActivity.this,DetailKidsCafeActivity.class));
         } else if (id == R.id.nav_send) {
 
