@@ -14,14 +14,14 @@ import static com.example.eom.dbapp.network.NetworkManager.setupConnection;
 
 public abstract class RegisterTask extends AsyncTask<String, Void, String> {
     //data={"username":"하이예나","email":"aa@aa.aa","password":"password","birth":"1994-09-16"}
-    private String mUsername, mEmail, mPassword, mBirth, mUserID;
+    private String mUsername, mPassword, mBirth, mUserID,mSex;
 
-    protected RegisterTask(String username, String email, String password, String birth, String userID) {
-        mUsername = username;
-        mEmail = email;
-        mBirth = birth;
-        mPassword = password;
-        mUserID = userID;
+    protected RegisterTask(String username,  String password, String birth, String userID,String childSex) {
+        mUsername = username; //닉네임
+        mBirth = birth; //아이나이
+        mPassword = password; //패스워드
+        mUserID = userID;//유저 가 이메일!
+        mSex = childSex;
     }
 
     @Override
@@ -35,9 +35,11 @@ public abstract class RegisterTask extends AsyncTask<String, Void, String> {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("username", URLEncoder.encode(mUsername, "UTF-8"));
             jsonObject.put("user_id", mUserID);
-            jsonObject.put("email", mEmail);
             jsonObject.put("password", mPassword);
             jsonObject.put("birth", mBirth);
+            jsonObject.put("childSex", mSex);
+
+
             String strJson = "data=" + jsonObject.toString();
             Log.d("getPlace", strJson);
             setupConnection(strJson, urlConnection);

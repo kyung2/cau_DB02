@@ -64,6 +64,7 @@ public class JoinActivity extends AppCompatActivity {
     private EditText mPasswordInitView;
     private EditText mPasswordCheckView;
     private EditText mPassword;
+    private EditText mNickname;
     private View mProgressView;
     private View mLoginFormView;
     private RadioButton radioButton;
