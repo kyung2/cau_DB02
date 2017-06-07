@@ -52,7 +52,7 @@ def insert_user_info(request):
 def mypage(request):
     tempdata = request.POST.get('data')
     data = json.loads(tempdata)
-    my = user.objects.get(id = data['user_id'])
+    my = user.objects.select_related('preSchool_id').get(id=data['id'])
     my_info = {}
     my_info['user_id'] = my.user_id
     my_info['nick_name'] = my.nick_name
@@ -60,9 +60,11 @@ def mypage(request):
     my_info['child_age'] = my.child_age
     my_info['si_do'] = my.si_do
     my_info['si_gun_gu'] = my.si_gun_gu
-    my_info['preschool_name'] = my.si_gun_gu
+    if my.preSchool_id is None:
+        my_info['preschool_name'] = ""
+    else:
+        my_info['preschool_name'] = my.preSchool_id.name
     return HttpResponse(json.dumps(my_info))
-
 
 @csrf_exempt
 def preschool_simple_info(request):
@@ -135,10 +137,11 @@ def preschool_detail(request):
     tempdata = request.POST.get('data')
     data = json.loads(tempdata)
     try:
-        preschool = preSchool.objects.filter(id=data['id'])
+        preschool = preSchool.objects.select_related('teacher').get(id=data['id'])
     except preSchool.DoesNotExist:
         preschool_info = {}
         return HttpResponse(json.dumps({'preschool': preschool_info}), content_type='application/json')
+    count = preschool.teacher_set.count()
     pre_list = serializers.serialize('json', preschool)
     return HttpResponse(json.dumps({'preschool': pre_list}), content_type='application/json')
 
@@ -181,9 +184,9 @@ def kidscafe_gps(request):
     minLat = lat - 0.011
     maxLong = long + 0.0088
     minLong = long - 0.0088
-    kidscafe_list = preSchool.objects.filter(latitude__range=(minLat, maxLat),
+    kidscafe_list = kidsCafe.objects.filter(latitude__range=(minLat, maxLat),
                                               longitude__range=(minLong, maxLong)).values('id', 'name', 'si_do',
-                                                                                          'si_gun_gu', 'tel',
+                                                                                          'si_gun_gu', 'facility_size',
                                                                                           'latitude', 'longitude')[:20]
     # preschool_list = serializers.serialize('json', list(preschool))
     kidscafes = []
