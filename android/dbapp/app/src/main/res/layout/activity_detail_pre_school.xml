@@ -271,10 +271,12 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
+                        android:id="@+id/textView3"
                         android:layout_width="100dp"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_permit_date"

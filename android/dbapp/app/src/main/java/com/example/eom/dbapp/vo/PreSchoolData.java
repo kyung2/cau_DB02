@@ -46,7 +46,6 @@ public class PreSchoolData {
         this.address = address;
         this.tel=tel;
     }
-
     public PreSchoolData(String name, String address,String si_do,String si_gun_gu,String tel ,String fax, String assess_certification_type,
                          int id, int postcode ,int playground_num , int nursing_room_area , int nursing_room_num, int capacity ,int NumofCCTV,
                          Date pause_end_date , Date pause_start_date, Date close_date, Date permit_date,
@@ -75,5 +74,10 @@ public class PreSchoolData {
         this.operation_state = operation_state;
         this.school_bus = school_bus;
 
+    }
+    public static PreSchoolData getSamplePreschoolData(){
+        return new PreSchoolData("어린이가 잘 자라는 유치원","서울시 어디구 무슨동","서울시","어디구","010-1234-5678","02-1234-5678","abc",1,312,3,1,1,20,2,
+                new Date(System.currentTimeMillis()),new Date(System.currentTimeMillis()),new Date(System.currentTimeMillis()),new Date(System.currentTimeMillis()),
+                36.5,120.5,true,true);
     }
 }
