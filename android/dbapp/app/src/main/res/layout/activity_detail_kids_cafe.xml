@@ -96,12 +96,13 @@
                     android:background="@color/gray" />
 
                 <ImageButton
+
                     android:background="#FFFFFF"
-                    app:srcCompat="@drawable/icon_search"
-                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_search"
+                    android:scaleType="centerInside"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.22" />
+                    android:layout_weight="0.24" />
             </LinearLayout>
 
             <View
