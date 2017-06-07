@@ -26,8 +26,8 @@ public class DetailPreSchoolActivity extends AppCompatActivity {
                 setData(preSchoolData);
             }
         }.execute("");
-        PreSchoolData preSchoolData = PreSchoolData.getSamplePreschoolData();
-        setData(preSchoolData);
+//        PreSchoolData preSchoolData = PreSchoolData.getSamplePreschoolData();
+//        setData(preSchoolData);
 
     }
 

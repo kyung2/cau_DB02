@@ -13,6 +13,7 @@ public class DetailKidsCenterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_kids_center);
+
         KidsCenterData kidsCenterData = KidsCenterData.getSampleKidsCenterData();
         setData(kidsCenterData);
     }

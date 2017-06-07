@@ -5,7 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.eom.dbapp.network.KidsCafeDetailTask;
+import com.example.eom.dbapp.network.PreSchoolsDetailTask;
 import com.example.eom.dbapp.vo.KidsCafeData;
+import com.example.eom.dbapp.vo.PreSchoolData;
 
 import java.util.Date;
 
@@ -19,9 +22,15 @@ public class DetailKidsCafeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_kids_cafe);
-
-        KidsCafeData kidsCafeData = KidsCafeData.getSampleKidsCafeData();
-        setData(kidsCafeData);
+        new KidsCafeDetailTask(getIntent().getIntExtra("id",1)){
+            @Override
+            protected void onPostExecute(KidsCafeData kidsCafeData) {
+                super.onPostExecute(kidsCafeData);
+                setData(kidsCafeData);
+            }
+        }.execute("");
+//        KidsCafeData kidsCafeData = KidsCafeData.getSampleKidsCafeData();
+//        setData(kidsCafeData);
     }
 
     private void setData(KidsCafeData kidsCafeData) {
