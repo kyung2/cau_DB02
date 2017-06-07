@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.eom.dbapp.Adapter.KidsCafeAdpater;
+import com.example.eom.dbapp.Adapter.KidsCenterAdpater;
 import com.example.eom.dbapp.vo.KidsCafeData;
 import com.example.eom.dbapp.vo.KidsCenterData;
 
@@ -20,9 +21,9 @@ public class KidsCenterList extends AppCompatActivity {
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_kidscenter);
         ArrayList<KidsCenterData> arrayList = new ArrayList<>();
         for(int i=0 ;i<30;i++){
-            arrayList.add(new KidsCenterData(1,"키즈까페"+i,"서울시 양천구 신정"+i+"동","0102252225"));
+            arrayList.add(new KidsCenterData("temp","0108978512","경기도용인시시흥구기흥구","경기도","영이;ㄴ시",1234,122,45456.5,4565));
         }
-        KidsCenterAdpater adapter = new KidsCafeAdpater(this,arrayList);
+        KidsCenterAdpater adapter = new KidsCenterAdpater(this,arrayList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -30,4 +31,3 @@ public class KidsCenterList extends AppCompatActivity {
     }
 }
 
-}
