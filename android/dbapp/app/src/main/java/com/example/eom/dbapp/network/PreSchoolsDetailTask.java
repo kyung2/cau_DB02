@@ -62,7 +62,7 @@ public abstract class PreSchoolsDetailTask extends AsyncTask<String, Void, PreSc
             //Date같은경우는
             Date tempDate = MyUtil.getDateFromString("1994-09-23");
 
-            item = new PreSchoolData(jsonObject1.getInt("id"),
+            item = new PreSchoolData(id,
                     jsonObject1.getString("name"),
                     jsonObject1.getString("type"),
                     jsonObject1.getString("address"),
@@ -79,7 +79,8 @@ public abstract class PreSchoolsDetailTask extends AsyncTask<String, Void, PreSc
                     jsonObject1.getInt("nursing_room_num"),
                     jsonObject1.getInt("NumofCCTV"),
 
-                    MyUtil.getDateFromString(jsonObject1.getString("pause_start_date")),
+//                    MyUtil.getDateFromString(jsonObject1.getString("pause_start_date")),
+                    MyUtil.getDateFromString(jsonObject1.getString("pause_end_date")),
                     MyUtil.getDateFromString(jsonObject1.getString("pause_end_date")),
                     MyUtil.getDateFromString(jsonObject1.getString("permit_date")),
                     MyUtil.getDateFromString(jsonObject1.getString("close_date")),
@@ -87,7 +88,7 @@ public abstract class PreSchoolsDetailTask extends AsyncTask<String, Void, PreSc
                     jsonObject1.getDouble("latitude"),
                     jsonObject1.getDouble("longitude"),
 
-                    jsonObject1.getString("operation_state "),
+                    jsonObject1.getString("operation_state"),
                     jsonObject1.getString("school_bus"));
 
 
