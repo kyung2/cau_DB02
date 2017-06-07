@@ -37,18 +37,19 @@ public class KidsCafeData {
     }
 
     public KidsCafeData(int id, String name, String address, String phone_num,
-                        int postcode,int facility_size,String hygiene_name,
-                        String si_do,String si_gun_gu,String operation_state,
+                        int postcode,String hygiene_name,String si_do,
+                        String si_gun_gu,String operation_state,
                         String multi_use, double latitude , double longitude,
-                        Date permit_date) {
+                        int facility_size,Date permit_date)
+    {
         this.id = id;
         this.name = name;
         this.address = address;
         this.phone_num = phone_num;
         this.postcode = postcode;
+        this.hygiene_name = hygiene_name;
         this.si_do = si_do;
         this.si_gun_gu =si_gun_gu;
-        this.hygiene_name = hygiene_name;
         this.operation_state = operation_state;
         this.multi_use = multi_use;
         this.latitude = latitude;
@@ -59,18 +60,17 @@ public class KidsCafeData {
 
 
     public KidsCafeData( String name, String address, String phone_num,
-                        int postcode,int facility_size,String hygiene_name,
-                        String si_do,String si_gun_gu,String operation_state,
-                        String multi_use, double latitude , double longitude,
-                        Date permit_date) {
-
+                         int postcode,String hygiene_name,String si_do,
+                         String si_gun_gu,String operation_state,
+                         String multi_use, double latitude , double longitude,
+                         int facility_size,Date permit_date) {
         this.name = name;
         this.address = address;
         this.phone_num = phone_num;
         this.postcode = postcode;
-        this.si_do = si_do;
-        this.si_gun_gu = si_gun_gu;
         this.hygiene_name = hygiene_name;
+        this.si_do = si_do;
+        this.si_gun_gu =si_gun_gu;
         this.operation_state = operation_state;
         this.multi_use = multi_use;
         this.latitude = latitude;
@@ -80,8 +80,8 @@ public class KidsCafeData {
     }
 
     public static KidsCafeData getSampleKidsCafeData() {
-        return new KidsCafeData("애새기키즈카페","경기도 수원시 영통구 영통동 라라라","010-8978",12343,
-                144, "영통구 영통동", "위생위생", "운영중", "다중다중", "다아중",125.5,14,
+        return new KidsCafeData("애새기키즈카페","경기도 수원시 영통구 영통동 라라라","010-8978",12343
+                , "위생위생","수원시","영통구 영통동", "운영중", "다중다중",125.5,14,11,
                 new Date(System.currentTimeMillis()));
     }
 }

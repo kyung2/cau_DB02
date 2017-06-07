@@ -29,16 +29,16 @@ public class DetailKidsCafeActivity extends AppCompatActivity {
         tv_name.setText(kidsCafeData.name);
 
         TextView tv_permit_date = (TextView) findViewById(R.id.tv_detail_kidcafe_permit_date_input);
-        tv_permit_date.setText((CharSequence) kidsCafeData.permit_date);
+        tv_permit_date.setText(MyUtil.getStringFromDate(kidsCafeData.permit_date));
 
         TextView tv_address = (TextView) findViewById(R.id.tv_detail_kidcafe_address_input);
         tv_address.setText(kidsCafeData.address);
 
         TextView tv_postcode = (TextView) findViewById(R.id.tv_detail_kidcafe_postcode_input);
-        tv_postcode.setText(kidsCafeData.postcode);
+        tv_postcode.setText(""+kidsCafeData.postcode);
 
         TextView tv_facility_size = (TextView) findViewById(R.id.tv_detail_kidcafe_postcode_input);
-        tv_facility_size.setText(kidsCafeData.facility_size);
+        tv_facility_size.setText(""+kidsCafeData.facility_size);
 
         TextView tv_hygiene_name = (TextView) findViewById(R.id.tv_detail_kidcafe_hygiene_name_input);
         tv_hygiene_name.setText(kidsCafeData.hygiene_name);
