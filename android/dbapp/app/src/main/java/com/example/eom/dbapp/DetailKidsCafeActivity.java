@@ -25,6 +25,9 @@ public class DetailKidsCafeActivity extends AppCompatActivity {
     }
 
     private void setData(KidsCafeData kidsCafeData) {
+        TextView tv_bigName = (TextView) findViewById(R.id.tv_detail_kidcafe_big_name);
+        tv_bigName.setText(kidsCafeData.name);
+
         TextView tv_name = (TextView) findViewById(R.id.tv_detail_kidcafe_name_input);
         tv_name.setText(kidsCafeData.name);
 
@@ -36,9 +39,6 @@ public class DetailKidsCafeActivity extends AppCompatActivity {
 
         TextView tv_postcode = (TextView) findViewById(R.id.tv_detail_kidcafe_postcode_input);
         tv_postcode.setText(""+kidsCafeData.postcode);
-
-        TextView tv_facility_size = (TextView) findViewById(R.id.tv_detail_kidcafe_postcode_input);
-        tv_facility_size.setText(""+kidsCafeData.facility_size);
 
         TextView tv_hygiene_name = (TextView) findViewById(R.id.tv_detail_kidcafe_hygiene_name_input);
         tv_hygiene_name.setText(kidsCafeData.hygiene_name);
