@@ -30,7 +30,7 @@ public abstract class RegisterTask extends AsyncTask<String, Void, String> {
         String strResult = "";
         String result = null;
         try {
-            URL url = new URL(NetworkManager.serverIP + "/register/");
+            URL url = new URL(NetworkManager.serverIP + "/login/");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("username", URLEncoder.encode(mUsername, "UTF-8"));

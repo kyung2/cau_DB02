@@ -1,6 +1,7 @@
 package com.example.eom.dbapp.Adapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,43 +21,51 @@ import java.util.ArrayList;
  *
  */
 
-public class TeacherAdpater extends  RecyclerView.Adapter<TeacherAdpater.ViewHolder>{
+public class TeacherAdpater extends  RecyclerView.Adapter<TeacherAdpater.ViewHolder> {
 
-        Context context;
-        ArrayList<TeacherData> items;
-        int item_layout;
+    Context context;
+    ArrayList<TeacherData> items;
+    int item_layout;
 
-public TeacherAdpater(Context context, ArrayList<TeacherData> items) {
+    public TeacherAdpater(Context context, ArrayList<TeacherData> items) {
         this.context = context;
         this.items = items;
-        }
-
-@Override
-public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_teacher_list_item,parent,false);
-        return new ViewHolder(v);
-        }
-
-
-@Override
-public void onBindViewHolder(ViewHolder holder,int position) {
-final TeacherData item = items.get(position);
-            holder.tv_name.setText(item.name);
-        }
-
-@Override
-public int getItemCount() {
-        return this.items.size();
-        }
-
- class ViewHolder extends RecyclerView.ViewHolder {
-
-    TextView tv_name;
-
-     ViewHolder(View itemView) {
-        super(itemView);
-        tv_name = (TextView) itemView.findViewById(R.id.tv_teacher_list_name);
     }
-}
+
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_teacher_list_item, parent, false);
+        return new ViewHolder(v);
+    }
+
+
+    @Override
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        final TeacherData item = items.get(position);
+        holder.tv_name.setText(item.name);
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return this.items.size();
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
+
+        TextView tv_name;
+        CardView view;
+
+        ViewHolder(View itemView) {
+            super(itemView);
+            tv_name = (TextView) itemView.findViewById(R.id.tv_teacher_list_name);
+            view = (CardView) itemView.findViewById(R.id.cv_teacher_list_item);
+        }
+    }
 
 }
