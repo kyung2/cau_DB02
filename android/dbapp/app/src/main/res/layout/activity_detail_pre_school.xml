@@ -54,11 +54,6 @@
                     android:layout_height="50dp"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="@color/black" />
-
                     <TextView
                         android:id="@+id/tv_detail_pre_school_big_name"
                         android:layout_width="wrap_content"
@@ -74,28 +69,6 @@
                     android:layout_height="1dp"
                     android:layout_marginTop="10dp"
                     android:background="@color/orange" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="기본 현황"
-                        android:textColor="@color/black"
-                        android:textSize="17dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="(자료 기준일 어쩌고 저쩌고)"
-                        android:textColor="@color/gray"
-                        android:textSize="15dp" />
-                </LinearLayout>
 
 
                 <!--Table info start!!! -->
