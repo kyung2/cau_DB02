@@ -12,4 +12,14 @@ public class MyUtil {
         SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
         return sdFormat.format(date);
     }
+    public static Date getDateFromString(String dateString){
+        SimpleDateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+
+            return sdFormat.parse(dateString);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Date(System.currentTimeMillis());
+        }
+    }
 }
