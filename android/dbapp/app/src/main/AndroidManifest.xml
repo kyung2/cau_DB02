@@ -53,7 +53,8 @@
         <activity android:name=".DetailPreSchoolActivity" />
         <activity android:name=".DetailKidsCafeActivity" />
         <activity android:name=".KidsCenterList" />
-        <activity android:name=".UserInfo"></activity>
+        <activity android:name=".UserInfo" />
+        <activity android:name=".DetailKidsCenterActivity"></activity>
     </application>
 
 </manifest>
