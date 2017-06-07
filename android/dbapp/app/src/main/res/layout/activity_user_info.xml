@@ -12,74 +12,45 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
 
-            <RelativeLayout
-                android:id="@+id/wrapper_detailPreSchool_topBar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@color/chiYakSaek">
-
-                <ImageButton
-                    android:id="@+id/btn_detailPreSchool_home"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="유치원 알리미"
-                    android:textColor="@color/white"
-                    android:textSize="17dp"
-                    android:textStyle="bold" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/black" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/whiteGray" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/whiteGray" />
             <LinearLayout
-                android:orientation="vertical"
-                android:layout_margin="5dp"
-                android:padding="15dp"
-                android:background="@drawable/orange_square"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"></LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/orange_square"
+                android:orientation="vertical"
+                android:padding="15dp">
 
                 <LinearLayout
-                    android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    android:orientation="horizontal">
                     <TextView
-                        android:background="@drawable/grayback_square"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="내 정보"
+                        android:textSize="50sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="20dp">
+
+                    <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:text="사용자 아이디"/>
+                        android:background="@drawable/grayback_square"
+                        android:text="사용자 아이디" />
 
                     <TextView
                         android:id="@+id/tv_user_info_id"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
@@ -88,78 +59,99 @@
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square"
-                        android:text="비밀번호"/>
-
-                    <TextView
-                        android:id="@+id/tv_user_info_pw"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:text="닉네임"/>
+                        android:text="닉네임" />
 
                     <TextView
                         android:id="@+id/tv_user_info_nick_name"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp">
-                    <TextView
-                        android:background="@drawable/grayback_square"
-                        android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:text="유치원 아이디"/>
-
-                    <TextView
-                        android:id="@+id/tv_user_info_preSchool_id"
-                        android:background="@drawable/gray_square"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:text="시 도"/>
+                        android:background="@drawable/grayback_square"
+                        android:text="유치원 이름" />
+
+                    <TextView
+                        android:id="@+id/tv_user_info_preSchool_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text=" 아이성별 " />
+
+                    <TextView
+                        android:id="@+id/tv_detail_user_chide_sex"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text=" 아이나이  " />
+                    <TextView
+                        android:id="@+id/tv_detail_user_chide_age"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
+                </LinearLayout>a
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/grayback_square"
+                        android:text="시 도" />
 
                     <TextView
                         android:id="@+id/tv_user_info_si_do"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
+
                     <TextView
-                        android:background="@drawable/grayback_square"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:text=" 시 군 구 "/>
+                        android:background="@drawable/grayback_square"
+                        android:text=" 시 군 구 " />
 
                     <TextView
                         android:id="@+id/tv_user_info_si_gun_gu"
-                        android:background="@drawable/gray_square"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
+
             </LinearLayout>
-        </LinearLayout>
     </ScrollView>
 </RelativeLayout>
