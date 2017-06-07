@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.eom.dbapp.network.PreSchoolsDetailTask;
 import com.example.eom.dbapp.vo.KidsCafeData;
 import com.example.eom.dbapp.vo.PreSchoolData;
 
@@ -18,8 +19,16 @@ public class DetailPreSchoolActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_pre_school);
+        new PreSchoolsDetailTask(getIntent().getIntExtra("id",1)){
+            @Override
+            protected void onPostExecute(PreSchoolData preSchoolData) {
+                super.onPostExecute(preSchoolData);
+                setData(preSchoolData);
+            }
+        }.execute("");
         PreSchoolData preSchoolData = PreSchoolData.getSamplePreschoolData();
         setData(preSchoolData);
+
     }
 
     private void setData(PreSchoolData preSchoolData) {

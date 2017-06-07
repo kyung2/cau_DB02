@@ -44,10 +44,10 @@ public class PreSchoolListActivity extends AppCompatActivity {
                          double latitude, double longitude,
                          boolean operation_state , boolean school_bus)
                          */
-        for(int i=0 ;i<30;i++){
-
-            arrayList.add(new PreSchoolData("유치원"+i,"서울시 양천구 신정"+i+"동","0102252225"));
-        }
+//        for(int i=0 ;i<30;i++){
+//
+//            arrayList.add(new PreSchoolData("유치원"+i,"서울시 양천구 신정"+i+"동","0102252225"));
+//        }
          adapter = new PreSchoolAdpater(this,arrayList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();

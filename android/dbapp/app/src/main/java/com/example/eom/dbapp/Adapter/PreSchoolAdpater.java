@@ -1,6 +1,7 @@
 package com.example.eom.dbapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.eom.dbapp.DetailPreSchoolActivity;
 import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.vo.PreSchoolData;
 
@@ -52,7 +54,9 @@ public class PreSchoolAdpater extends  RecyclerView.Adapter<PreSchoolAdpater.Vie
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context, DetailPreSchoolActivity.class);
+                intent.putExtra("preschool_id",item.id);
+                context.startActivity(intent);
             }
         });
     }
