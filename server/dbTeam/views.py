@@ -223,6 +223,29 @@ def kidscafe_evaluation(request):
         evaluation.append(ev)
     return HttpResponse(json.dumps({'evaluation': evaluation, 'grade': grade}), content_type='application/json')
 
+@csrf_exempt
+def kidscafe_user_evaluation(request):
+    tempdata = request.POST.get('data')
+    data = json.loads(tempdata)
+    tempJson = {}
+    kidsCafeEvaluation.objects.create(user_id_id=data['user_id'], kids_cafe_id_id=data['kidscafe_id'], grade=data['grade'],
+                                       grade_date=data['grade_date'], comment=data['comment'],
+                                       comment_date=data['comment_date'])
+    tempJson['result'] = 'success'
+    return HttpResponse(json.dumps(tempJson))
+
+
+@csrf_exempt
+def preschool_user_evaluation(request):
+    tempdata = request.POST.get('data')
+    data = json.loads(tempdata)
+    tempJson = {}
+    preSchoolEvaluation.objects.create(user_id_id=data['user_id'], preSchool_id_id=data['kidscafe_id'], grade=data['grade'],
+                                       grade_date=data['grade_date'], comment=data['comment'],
+                                       comment_date=data['comment_date'])
+    tempJson['result'] = 'success'
+    return HttpResponse(json.dumps(tempJson))
+
 
 @csrf_exempt
 def kidscenter_gps(request):

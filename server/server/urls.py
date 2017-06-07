@@ -27,13 +27,14 @@ urlpatterns = [
     url(r'^preschool/detail/', views.preschool_detail, name='preschool_detail'),      # 유치원 세부 사항, 선생님, 사고사망
     url(r'^preschool/evaluation/', views.preschool_evaluation, name='preschool_evaluation'),    # 유치원 평가 및 별점 정보
     url(r'^preschool/enroll/', views.preschool_enroll, name='preschool_enroll'),    # 내아이 유치원 등록
+    url(r'^preschool/user/evaluation/', views.preschool_user_evaluation, name='preschool_user_evaluation'),  # 키즈카페 평가 및 별점 정보
 
     url(r'^kidsCafe/gps/', views.kidscafe_gps, name='kidscafe_gps'),         # GPS 기준 list
     url(r'^kidsCafe/sigungu/', views.kidscafe_sigungu, name='kidscafe_sigungu'),     # sigungu 기준 list
     url(r'^kidsCafe/sido/', views.kidscafe_sido, name='kidscafe_sido'),        # sido 기준 list
     url(r'^kidsCafe/detail/', views.kidscafe_detail, name='kidscafe_detail'),  # 키즈카페 세부 사항
     url(r'^kidsCafe/evaluation/', views.kidscafe_evaluation, name='kidscafe_evaluation'),  # 키즈카페 평가 및 별점 정보
-
+    url(r'^kidsCafe/user/evaluation/', views.kidscafe_user_evaluation, name='kidscafe_user_evaluation'),  # 키즈카페 평가 및 별점 정보
 
     url(r'^kidsCenter/gps/', views.kidscenter_gps, name='kidscenter_gps'),         # GPS 기준 list
     url(r'^kidsCenter/detail/', views.kidscenter_detail, name='kidscenter_detail'),  # 센터 세부 사항
