@@ -1,6 +1,7 @@
 package com.example.eom.dbapp.Adapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +45,13 @@ public class KidsCenterAdpater extends RecyclerView.Adapter<KidsCenterAdpater.Vi
         holder.bt_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context,"전화버튼이 눌렸음",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "전화버튼이 눌렸음", Toast.LENGTH_SHORT).show();
+            }
+        });
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
         });
     }
@@ -59,12 +66,14 @@ public class KidsCenterAdpater extends RecyclerView.Adapter<KidsCenterAdpater.Vi
         TextView tv_name;
         TextView tv_address;
         ImageButton bt_call;
-
+        CardView view;
         ViewHolder(View itemView) {
             super(itemView);
             tv_name = (TextView) itemView.findViewById(R.id.tv_kidscenter_list_name);
             tv_address = (TextView) itemView.findViewById(R.id.tv_kidscenter_list_address);
             bt_call = (ImageButton) itemView.findViewById(R.id.bt_kidscenter_list_call);
+
+            view= (CardView)itemView.findViewById(R.id.cv_kidscenter_list_item);
         }
     }
 

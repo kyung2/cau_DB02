@@ -10,4 +10,6 @@ public class MySharedPreferences {
     public static final String USER_NAME = "USER_NAME";
     public static final String USER_ID = "USER_ID";
     public static final String USER_EMAIL = "USER_EMAIL";
+    public static final String USER_LATITUDE = "USER_LATITUDE";
+    public static final String USER_LONGITUDE = "USER_LONGITUDE";
 }

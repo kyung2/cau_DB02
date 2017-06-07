@@ -14,7 +14,7 @@ import java.net.ProtocolException;
  */
 public class NetworkManager {
 //    public static String serverIP = "http://dldnjstp20_gogo.goorm.io";
-     static String serverIP = "http://sswjjang.iptime.org:8000";
+     static String serverIP = "http://sangwon0001.hopto.org:23272";
     private final static int TIMEOUT = 10000;
 
     static void setupConnection(String postParam,HttpURLConnection urlConnection)throws IOException {

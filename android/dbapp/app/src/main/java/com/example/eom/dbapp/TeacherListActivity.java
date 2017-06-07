@@ -4,9 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.eom.dbapp.Adapter.KidsCafeAdpater;
 import com.example.eom.dbapp.Adapter.TeacherAdpater;
-import com.example.eom.dbapp.vo.KidsCafeData;
 import com.example.eom.dbapp.vo.TeacherData;
 
 import java.util.ArrayList;
