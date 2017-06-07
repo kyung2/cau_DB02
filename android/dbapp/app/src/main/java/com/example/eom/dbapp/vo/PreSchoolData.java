@@ -35,10 +35,10 @@ import java.util.Date;
 
 
 public class PreSchoolData {
-    public String name, address, si_do, si_gun_gu, tel,fax,assess_certification_type;
-    public int id,postcode,playground_num,nursing_room_num,nursing_room_area,capacity,NumofCCTV;
+    public String name, address, si_do, si_gun_gu, tel,fax;
+    public int id,postcode,assess_certification_type,playground_num,nursing_room_num,nursing_room_area,capacity,NumofCCTV;
     public Date pause_start_date,pause_end_date,close_date,permit_date;
-    public boolean operation_state,school_bus;
+    public String operation_state,school_bus,type;
     public double latitude,longitude;
 
     public PreSchoolData(String name, String address, String tel){
@@ -56,38 +56,50 @@ public class PreSchoolData {
         this.latitude=latitude;
         this.longitude = longitude;
     }
-    public PreSchoolData(String name, String address,String si_do,String si_gun_gu,String tel ,String fax, String assess_certification_type,
-                         int id, int postcode ,int playground_num , int nursing_room_area , int nursing_room_num, int capacity ,int NumofCCTV,
-                         Date pause_end_date , Date pause_start_date, Date close_date, Date permit_date,
+    public PreSchoolData(int id, String name, String type, String address,String si_do,String si_gun_gu,String tel ,
+                         String fax, int assess_certification_type
+                         , int postcode ,int capacity ,int playground_num , int nursing_room_num,
+                         int nursing_room_area, int NumofCCTV,
+                         Date pause_start_date  , Date pause_end_date,
+                         Date permit_date , Date close_date,
                          double latitude, double longitude,
-                         boolean operation_state , boolean school_bus) {
+                         String operation_state , String school_bus) {
+        this.id = id;
         this.name = name;
+        this.type = type;
         this.address = address;
         this.si_do = si_do;
         this.si_gun_gu = si_gun_gu;
         this.tel=tel;
         this.fax = fax;
+
+        //int
         this.assess_certification_type = assess_certification_type;
-        this.id = id;
         this.postcode = postcode;
+        this.capacity = capacity;
         this.playground_num = playground_num;
         this.nursing_room_area = nursing_room_area;
         this.nursing_room_num = nursing_room_num;
-        this.capacity = capacity;
         this.NumofCCTV = NumofCCTV;
-        this.pause_end_date = pause_end_date;
+
+//date
         this.pause_start_date = pause_start_date;
-        this.close_date = close_date;
+        this.pause_end_date = pause_end_date;
         this.permit_date = permit_date;
+        this.close_date = close_date;
+//dpuble
         this.latitude =  latitude;
         this.longitude = longitude;
+
         this.operation_state = operation_state;
         this.school_bus = school_bus;
 
     }
     public static PreSchoolData getSamplePreschoolData(){
-        return new PreSchoolData("어린이가 잘 자라는 유치원","서울시 어디구 무슨동","서울시","어디구","010-1234-5678","02-1234-5678","abc",1,312,3,1,1,20,2,
+        return new PreSchoolData(11,"어린이가 잘 자라는 유치원","허가","서울시 어디구 무슨동",
+                "서울시","어디구","010-1234-5678","02-1234-5678",1,1,312,3,1,1,1,
+
                 new Date(System.currentTimeMillis()),new Date(System.currentTimeMillis()),new Date(System.currentTimeMillis()),new Date(System.currentTimeMillis()),
-                36.5,120.5,true,true);
+                36.5,120.5,"영업","운영");
     }
 }
