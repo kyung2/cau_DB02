@@ -18,15 +18,11 @@ import static com.example.eom.dbapp.network.NetworkManager.setupConnection;
 
 public abstract class PreSchoolsByGPSTask extends AsyncTask<String, Void, ArrayList<PreSchoolData>> {
     //data={"user_id":19,"longitude":126.95,"latitude":37.50,"range":1}37.50,126.95
-    private int mUserID;
     private double latitude,longitude;
-    private int range;
 
-    protected PreSchoolsByGPSTask(double latitude, double longitude, int userID,int range) {
-        mUserID = userID;
+    protected PreSchoolsByGPSTask(double latitude, double longitude) {
         this.latitude = latitude;
         this.longitude = longitude;
-        this.range = range;
     }
 
     @Override
@@ -35,17 +31,12 @@ public abstract class PreSchoolsByGPSTask extends AsyncTask<String, Void, ArrayL
         String strResult = "";
         String result = null;
         ArrayList<PreSchoolData> items = new ArrayList<>();
-        Location myLocation = new Location("mine");
-        myLocation.setLatitude(latitude);
-        myLocation.setLongitude(longitude);
         try {
-            URL url = new URL(NetworkManager.serverIP + "/getMyNearPlace/");
+            URL url = new URL(NetworkManager.serverIP + "/preschool/gps/");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("user_id", mUserID);
             jsonObject.put("latitude", latitude);
             jsonObject.put("longitude", longitude);
-            jsonObject.put("range", range);
             String strJson = "data=" + jsonObject.toString();
             Log.d("PlaceListByGPSTask", strJson);
             setupConnection(strJson, urlConnection);
@@ -60,9 +51,19 @@ public abstract class PreSchoolsByGPSTask extends AsyncTask<String, Void, ArrayL
 
             for(int i=0;i<jsonArray.length();i++) {
                 JSONObject row = jsonArray.getJSONObject(i);
-                Location location = new Location("Ss");
-                location.setLatitude(row.getDouble("latitude"));
-                location.setLongitude(row.getDouble("longitude"));
+//values('id','name','si_do','si_gun_gu','tel','latitude','longitude')
+                items.add(new PreSchoolData(row.getInt("id"),
+                                row.getString("name"),
+                                row.getString("si_do"),
+                                row.getString("si_gun_gu"),
+                                row.getString("tel"),
+                                row.getDouble("latitude"),
+                                row.getDouble("longitude"))
+                                );
+//                Location location = new Location("Ss");
+//                location.setLatitude(row.getDouble("latitude"));
+//                location.setLongitude(row.getDouble("longitude"));
+//
                 // 밑에부분이 서버에서 불러온 값으로 리스트 만드는 코드
 //                if(myLocation.distanceTo(location)<500*range)
 //                    items.add(new PreSchoolData(
