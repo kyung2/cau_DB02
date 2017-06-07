@@ -36,7 +36,7 @@
         </activity>
         <activity
             android:name=".FunctionsActivity"
-            android:label="@string/title_activity_functions"
+            android:label="여러 기능들"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".PreSchoolListActivity"
