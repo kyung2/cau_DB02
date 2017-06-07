@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.eom.dbapp.vo.KidsCafeData;
+import com.example.eom.dbapp.vo.KidsCenterData;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -72,6 +73,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
+                startActivity(new Intent(MainActivity.this,KidsCenterList.class));
             }
         });
         findViewById(R.id.cv_main_more_functions).setOnClickListener(new View.OnClickListener() {

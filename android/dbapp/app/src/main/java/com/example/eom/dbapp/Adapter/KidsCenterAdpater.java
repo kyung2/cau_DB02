@@ -62,9 +62,9 @@ public class KidsCenterAdpater extends RecyclerView.Adapter<KidsCenterAdpater.Vi
 
         ViewHolder(View itemView) {
             super(itemView);
-            tv_name = (TextView) itemView.findViewById(R.id.tv_kidscafe_list_name);
-            tv_address = (TextView) itemView.findViewById(R.id.tv_kidscafe_list_address);
-            bt_call = (ImageButton) itemView.findViewById(R.id.bt_kidscafe_list_call);
+            tv_name = (TextView) itemView.findViewById(R.id.tv_kidscenter_list_name);
+            tv_address = (TextView) itemView.findViewById(R.id.tv_kidscenter_list_address);
+            bt_call = (ImageButton) itemView.findViewById(R.id.bt_kidscenter_list_call);
         }
     }
 
