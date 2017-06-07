@@ -284,7 +284,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                  android:text="이게 이름몰로해야해"
+                        android:text="다중이용업소여부"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />
@@ -302,7 +302,7 @@
                     android:layout_height="30dp">
 
                     <TextView
-                 android:text="사이즈"
+                 android:text="총시설규모"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
                         android:background="@drawable/grayback_square" />

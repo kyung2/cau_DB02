@@ -54,10 +54,33 @@ public abstract class KidsCafeDetailTask extends AsyncTask<String, Void, KidsCaf
             //그다음에 이거 위에 에서 파싱해서 하나씩 뽑아서 밑에 프리스쿨데이터에 넣어주면됨.
             //Date같은경우는
             Date tempDate = MyUtil.getDateFromString("1994-09-23");
-            //d위에처럼 해서 밑에 데이터에 집어넣으면됨
-           //item = new PreSchoolData(
-            //
-            // )
+            //d위에처럼 해서 밑에 데이터에 집어넣으면됨item = new PreSchoolData(id,
+            item = new KidsCafeData(id,
+
+
+                    jsonObject1.getString("name"),
+                    jsonObject1.getString("address"),
+                    jsonObject1.getString("phone_num"),
+                    jsonObject1.getInt("postcode"),
+                    jsonObject1.getString("hygiene_name"),
+                    jsonObject1.getString("si_do"),
+                    jsonObject1.getString("si_gun_gu"),
+
+                    jsonObject1.getString("operation_state"),
+                    jsonObject1.getString("multi_use"),
+
+
+                    jsonObject1.getDouble("latitude"),
+                    jsonObject1.getDouble("longitude"),
+
+
+
+                    jsonObject1.getInt("facility_size"),
+
+
+                    MyUtil.getDateFromString(jsonObject1.getString("permit_date")));
+
+
 
             return item;
         } catch (Exception e) {
