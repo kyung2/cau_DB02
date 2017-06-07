@@ -1,23 +1,10 @@
-"""server URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.8/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
 from django.conf.urls import url
 from dbTeam import views
 
 urlpatterns = [
     url(r'^login/', views.id_check, name='id_check'),         # login id check
     url(r'^signup/',views.insert_user_info, name='insert_user_info'), # sign up
+    url(r'^mypage/',views.mypage, name='mypage'), # sign up
 
     url(r'^preschool/simple/info', views.preschool_simple_info, name='preschool_simple_info'), # 유치원 간단한 정보_등록한 정보가 있는 경우
     url(r'^preschool/gps/', views.preschool_gps, name='preschool_gps'),         # GPS 기준 list

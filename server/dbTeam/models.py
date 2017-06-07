@@ -55,6 +55,8 @@ class user(models.Model):
     user_id = models.CharField(max_length=11) #pk
     user_pw = models.CharField(max_length=11)
     nick_name = models.CharField(max_length=11)
+    child_sex = models.CharField(max_length=1,null=True)
+    child_age = models.IntegerField(null=True)
     preSchool_id = models.ForeignKey(preSchool, null=True) #fk
     si_do = models.CharField(max_length=11)
     si_gun_gu = models.CharField(max_length=11)
