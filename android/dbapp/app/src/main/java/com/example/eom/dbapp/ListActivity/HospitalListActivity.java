@@ -3,6 +3,8 @@ package com.example.eom.dbapp.ListActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
@@ -27,6 +29,10 @@ public class HospitalListActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_kidscenter);
         final ArrayList<IdAndString> arrayList = new ArrayList<>();
+        RecyclerView.ItemDecoration itemDecoration =
+                new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
+        recyclerView.addItemDecoration(itemDecoration);
+
         adapter = new IdAndStringListAdapter(this,arrayList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
