@@ -59,7 +59,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
-                        android:autoSizeTextType="uniform"
+                      
                         android:textColor="@color/black"
                         android:textSize="20dp" />
                 </LinearLayout>
@@ -80,7 +80,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="유치원이름" />
 
@@ -88,7 +88,7 @@
                         android:id="@+id/tv_detail_pre_school_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -99,7 +99,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="설립유형" />
 
@@ -107,7 +107,7 @@
                         android:id="@+id/tv_detail_pre_school_type"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -119,7 +119,7 @@
                         android:id="@+id/textView3"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="설립(개원) 일" />
 
@@ -127,7 +127,7 @@
                         android:id="@+id/tv_detail_pre_school_permit_date"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -138,7 +138,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="휴지 시작날짜" />
 
@@ -146,7 +146,7 @@
                         android:id="@+id/tv_detail_pre_school_pause_start_date"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -157,7 +157,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="휴지 종료날짜" />
 
@@ -165,7 +165,7 @@
                         android:id="@+id/tv_detail_pre_school_pause_end_date"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -176,7 +176,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="폐업날짜" />
 
@@ -185,7 +185,7 @@
                         android:id="@+id/tv_detail_pre_school_close_date"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -196,7 +196,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="우편번호" />
 
@@ -204,7 +204,7 @@
                         android:id="@+id/tv_detail_pre_school_postcode"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -216,7 +216,7 @@
                         android:layout_width="100dp"
 
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="시/도" />
 
@@ -224,7 +224,7 @@
                         android:id="@+id/tv_detail_pre_school_si_do"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -236,7 +236,7 @@
                         android:layout_width="100dp"
 
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="시/군/구" />
 
@@ -244,7 +244,7 @@
                         android:id="@+id/tv_detail_pre_school_si_gun_gu"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -255,7 +255,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="주소" />
 
@@ -263,7 +263,7 @@
                         android:id="@+id/tv_detail_pre_school_address"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -274,14 +274,14 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_latitude"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square"
                         android:text="위도" />
                 </LinearLayout>
@@ -293,7 +293,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="경도" />
 
@@ -301,7 +301,7 @@
                         android:id="@+id/tv_detail_pre_school_longitude"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -312,7 +312,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="운영 상태" />
 
@@ -320,7 +320,7 @@
                         android:id="@+id/tv_detail_pre_school_operation_state"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -331,7 +331,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="전화번호" />
 
@@ -339,7 +339,7 @@
                         android:id="@+id/tv_detail_pre_school_tel"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -350,7 +350,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="팩스 번호" />
 
@@ -358,7 +358,7 @@
                         android:id="@+id/tv_detail_pre_school_fax"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -370,7 +370,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="용량" />
 
@@ -378,7 +378,7 @@
                         android:id="@+id/tv_detail_pre_school_capacity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -389,7 +389,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="버스 운영여부" />
 
@@ -397,7 +397,7 @@
                         android:id="@+id/tv_detail_pre_school_shcool_bus"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -408,7 +408,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="놀이터 수" />
 
@@ -416,7 +416,7 @@
                         android:id="@+id/tv_detail_pre_school_playground_num"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -427,7 +427,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="보육실 수" />
 
@@ -435,7 +435,7 @@
                         android:id="@+id/tv_detail_pre_school_nursing_room_num"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -447,7 +447,7 @@
                         android:layout_width="100dp"
 
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="보육실 면적" />
 
@@ -455,7 +455,7 @@
                         android:id="@+id/tv_detail_pre_school_nursing_room_area"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -466,7 +466,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="화재보험가입여부" />
                     <!--1이면 가입 0이면 ㄴㄴ -->
@@ -474,7 +474,7 @@
                         android:id="@+id/tv_detail_pre_school_assess_certification_type"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -485,7 +485,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/grayback_square"
                         android:text="CCTV 수 " />
 
@@ -493,7 +493,7 @@
                         android:id="@+id/tv_detail_pre_school_NumofCCTV"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:autoSizeTextType="uniform"
+                      
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
             </LinearLayout>

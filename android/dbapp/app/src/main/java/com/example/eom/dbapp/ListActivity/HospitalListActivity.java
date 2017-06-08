@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
 import com.example.eom.dbapp.Adapter.KidsCenterAdpater;
-import com.example.eom.dbapp.DetailActivity.R;
+import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.network.KidsCenterByGPSTask;
 import com.example.eom.dbapp.network.ListByGPSTask;
 import com.example.eom.dbapp.vo.IdAndString;
