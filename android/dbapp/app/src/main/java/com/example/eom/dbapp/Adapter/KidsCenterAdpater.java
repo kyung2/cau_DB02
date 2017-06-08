@@ -11,8 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.eom.dbapp.DetailKidsCafeActivity;
-import com.example.eom.dbapp.DetailKidsCenterActivity;
+import com.example.eom.dbapp.DetailActivity.DetailKidsCenterActivity;
 import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.vo.KidsCenterData;
 

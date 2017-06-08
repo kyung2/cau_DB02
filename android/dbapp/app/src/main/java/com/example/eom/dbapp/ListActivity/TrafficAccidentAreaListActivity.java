@@ -1,19 +1,23 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.ListActivity;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
-import com.example.eom.dbapp.Adapter.KidsCenterAdpater;
-import com.example.eom.dbapp.network.KidsCenterByGPSTask;
+import com.example.eom.dbapp.R;
+import com.example.eom.dbapp.network.ListByGPSTask;
 import com.example.eom.dbapp.vo.IdAndString;
-import com.example.eom.dbapp.vo.KidsCenterData;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 
-public class HospitalListActivity extends AppCompatActivity {
+/**
+ * Created by hyunkyung on 2017-06-08.
+ */
+
+public class TrafficAccidentAreaListActivity extends AppCompatActivity {
     IdAndStringListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,13 @@ public class HospitalListActivity extends AppCompatActivity {
         adapter = new IdAndStringListAdapter(this,arrayList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+        new ListByGPSTask(this,"/trafficAccidentArea/gps/","trafficaccidentarea"){
+            @Override
+            protected void onPostExecute(JSONArray jsonArray) {
+                super.onPostExecute(jsonArray);
+
+            }
+        }.execute("");
     }
 }
 

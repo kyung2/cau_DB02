@@ -1,19 +1,19 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.ListActivity;
 
-        import android.os.Bundle;
-        import android.support.v7.app.AppCompatActivity;
-        import android.support.v7.widget.RecyclerView;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 
-        import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
-        import com.example.eom.dbapp.vo.IdAndString;
+import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
+import com.example.eom.dbapp.vo.IdAndString;
 
-        import java.util.ArrayList;
+import java.util.ArrayList;
 
 /**
  * Created by hyunkyung on 2017-06-08.
  */
 
-public class AccidentListActivity extends AppCompatActivity {
+public class WalfareServiceListActivity extends AppCompatActivity {
     IdAndStringListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -11,11 +11,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.eom.dbapp.DetailKidsCafeActivity;
-import com.example.eom.dbapp.DetailPreSchoolActivity;
+import com.example.eom.dbapp.DetailActivity.DetailKidsCafeActivity;
 import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.vo.KidsCafeData;
-import com.example.eom.dbapp.vo.PreSchoolData;
 
 import java.util.ArrayList;
 

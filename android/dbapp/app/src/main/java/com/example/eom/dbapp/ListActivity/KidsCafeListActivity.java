@@ -1,4 +1,4 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.ListActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,15 +9,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.eom.dbapp.Adapter.KidsCafeAdapter;
+import com.example.eom.dbapp.MySharedPreferences;
+import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.network.KidsCafeByGPSTask;
 import com.example.eom.dbapp.network.KidsCafeBysidoTask;
 import com.example.eom.dbapp.network.KidsCafeBysignguTask;
-import com.example.eom.dbapp.network.KidsCenterByGPSTask;
-import com.example.eom.dbapp.network.PreSchoolsBysidoTask;
-import com.example.eom.dbapp.network.PreSchoolsBysignguTask;
 import com.example.eom.dbapp.vo.KidsCafeData;
-import com.example.eom.dbapp.vo.KidsCenterData;
-import com.example.eom.dbapp.vo.PreSchoolData;
 
 import java.util.ArrayList;
 

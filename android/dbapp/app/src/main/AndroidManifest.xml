@@ -41,23 +41,24 @@
             android:label="여러 기능들"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PreSchoolListActivity"
+            android:name=".ListActivity.PreSchoolListActivity"
             android:label="@string/title_activity_functions"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".KidsCafeListActivity"
+            android:name=".ListActivity.KidsCafeListActivity"
             android:label="@string/title_activity_functions"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TeacherListActivity"
+            android:name=".ListActivity.TeacherListActivity"
             android:label="@string/title_activity_functions"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailPreSchoolActivity" />
-        <activity android:name=".DetailKidsCafeActivity" />
-        <activity android:name=".KidsCenterList" />
+        <activity android:name=".DetailActivity.DetailPreSchoolActivity" />
+        <activity android:name=".DetailActivity.DetailKidsCafeActivity" />
+        <activity android:name=".ListActivity.KidsCenterList" />
         <activity android:name=".UserInfo" />
-        <activity android:name=".DetailKidsCenterActivity" />
-        <activity android:name=".DetailElmSchoolActivity"></activity>
+        <activity android:name=".DetailActivity.DetailKidsCenterActivity" />
+        <activity android:name=".DetailActivity.DetailElmSchoolActivity" />
+        <activity android:name=".OthersActivity"></activity>
     </application>
 
 </manifest>

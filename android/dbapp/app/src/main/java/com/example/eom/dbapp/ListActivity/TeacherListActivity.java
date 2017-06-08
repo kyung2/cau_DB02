@@ -1,10 +1,11 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.ListActivity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.eom.dbapp.Adapter.TeacherAdpater;
+import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.vo.TeacherData;
 
 import java.util.ArrayList;

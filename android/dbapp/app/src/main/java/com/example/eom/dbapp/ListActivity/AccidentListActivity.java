@@ -1,19 +1,23 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.ListActivity;
 
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+        import android.os.Bundle;
+        import android.support.v7.app.AppCompatActivity;
+        import android.support.v7.widget.RecyclerView;
 
-import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
-import com.example.eom.dbapp.vo.IdAndString;
+        import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
+        import com.example.eom.dbapp.R;
+        import com.example.eom.dbapp.network.ListByGPSTask;
+        import com.example.eom.dbapp.vo.IdAndString;
 
-import java.util.ArrayList;
+        import org.json.JSONArray;
+
+        import java.util.ArrayList;
 
 /**
  * Created by hyunkyung on 2017-06-08.
  */
 
-public class SafeAreaListActivity extends AppCompatActivity {
+public class AccidentListActivity extends AppCompatActivity {
     IdAndStringListAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,5 +29,8 @@ public class SafeAreaListActivity extends AppCompatActivity {
         adapter = new IdAndStringListAdapter(this,arrayList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
+
     }
 }
+

@@ -1,9 +1,10 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.DetailActivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.network.KidsCafeDetailTask;
 import com.example.eom.dbapp.network.KidsCenterDetailTask;
 import com.example.eom.dbapp.vo.KidsCafeData;

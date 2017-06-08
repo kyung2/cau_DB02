@@ -1,4 +1,4 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.ListActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.eom.dbapp.Adapter.KidsCenterAdpater;
+import com.example.eom.dbapp.MySharedPreferences;
+import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.network.KidsCenterByGPSTask;
 import com.example.eom.dbapp.network.KidsCenterDetailTask;
 import com.example.eom.dbapp.network.PreSchoolsByGPSTask;

@@ -1,19 +1,16 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.ListActivity;
 
-import android.app.Presentation;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.eom.dbapp.Adapter.FunctionListAdapter;
 import com.example.eom.dbapp.Adapter.PreSchoolAdpater;
+import com.example.eom.dbapp.MySharedPreferences;
+import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.network.PreSchoolsByGPSTask;
 import com.example.eom.dbapp.network.PreSchoolsBysidoTask;
 import com.example.eom.dbapp.network.PreSchoolsBysignguTask;
