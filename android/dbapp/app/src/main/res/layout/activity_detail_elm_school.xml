@@ -27,7 +27,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:background="@color/whiteGray"
-                android:text="유치원 명"
+                android:text="초등학교 이름"
                 android:textColor="@color/black" />
 
             <View
