@@ -32,7 +32,7 @@ public abstract class KidsCenterByGPSTask extends AsyncTask<String, Void, ArrayL
         String result = null;
         ArrayList<KidsCenterData> items = new ArrayList<>();
         try {
-            URL url = new URL(NetworkManager.serverIP + "/kidsCafe/gps/");
+            URL url = new URL(NetworkManager.serverIP + "/kidsCenter/gps/");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("latitude", latitude);

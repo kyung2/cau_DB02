@@ -78,13 +78,13 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this,KidsCenterList.class));
+                startActivity(new Intent(MainActivity.this,OthersActivity.class));
             }
         });
         findViewById(R.id.cv_main_more_functions).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,OthersActivity.class));
+                startActivity(new Intent(MainActivity.this,FunctionsActivity.class));
             }
         });
     }
