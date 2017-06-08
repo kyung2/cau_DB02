@@ -2,22 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_detail_kidcenter"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="키즈센터" />
-        <item
-            android:id="@+id/nav_user_info"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="사용자 정보" />
-        <item
-            android:id="@+id/nav_detail_kidcafe"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="키즈카페 " />
+
+
         <item
             android:id="@+id/nav_detail_pre"
-            android:icon="@drawable/wel"
+            android:icon="@drawable/preschool"
             android:title="유치원 " />
+        <item
+            android:id="@+id/nav_detail_kidcafe"
+            android:icon="@drawable/kids_cafe"
+            android:title="키즈카페 " />
+        <item
+            android:id="@+id/nav_detail_kidcenter"
+            android:icon="@drawable/kids_center"
+            android:title="키즈센터" />
+        <item
+            android:id="@+id/nav_elem"
+            android:icon="@drawable/school_temp"
+            android:title="초등학교" />
+        <item
+            android:id="@+id/nav_detail_play_facility"
+            android:icon="@drawable/play_gr"
+            android:title="놀이터 " />
         <item
             android:id="@+id/nav_login"
             android:icon="@drawable/ic_menu_gallery"
@@ -26,10 +32,12 @@
             android:id="@+id/nav_join"
             android:icon="@drawable/shcool28"
             android:title="Sign up" />
+
         <item
-            android:id="@+id/nav_elem"
-            android:icon="@drawable/school_temp"
-            android:title="초등학교" />
+            android:id="@+id/nav_user_info"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="사용자 정보" />
+
 
     </group>
 
