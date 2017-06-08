@@ -24,12 +24,11 @@ public class DetailChildCareCenterActivity extends AppCompatActivity {
                 super.onPostExecute(jsonObject);try{
                     name.setText(jsonObject.getString("name"));
                     contents.setText(
-                                    jsonObject.getString("name")+"</br>"+
-                                    jsonObject.getString("si_do")+
-                                    jsonObject.getString("si_gun_gu")+
-                                    jsonObject.getString("tel")+
-                                    ""+jsonObject.getDouble("latitude")+
-                                            ""+jsonObject.getDouble("longtitude")
+                                    jsonObject.getString("name")+"\n"+"\n"+
+                                    jsonObject.getString("address")+"\n"+"\n"+
+                                    "tel : "+jsonObject.getString("tel")+"\n"+"\n"+
+                                    ""+jsonObject.getDouble("latitude")+"\n"+
+                                            ""+jsonObject.getDouble("longitude")
                     );
                 }catch (Exception e){
                     e.printStackTrace();

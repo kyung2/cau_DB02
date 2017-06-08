@@ -20,6 +20,7 @@ import com.example.eom.dbapp.DetailActivity.DetailElmSchoolActivity;
 import com.example.eom.dbapp.DetailActivity.DetailKidsCafeActivity;
 import com.example.eom.dbapp.DetailActivity.DetailKidsCenterActivity;
 import com.example.eom.dbapp.DetailActivity.DetailPreSchoolActivity;
+import com.example.eom.dbapp.DetailActivity.JustStringActivity;
 import com.example.eom.dbapp.ListActivity.KidsCafeListActivity;
 import com.example.eom.dbapp.ListActivity.KidsCenterList;
 import com.example.eom.dbapp.ListActivity.PreSchoolListActivity;
@@ -62,7 +63,9 @@ public class MainActivity extends AppCompatActivity
         findViewById(R.id.cv_main_my_preschool).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(MainActivity.this, JustStringActivity.class);
+                intent.putExtra("url","/walfareService/gps/");
+                startActivity(intent);
             }
         });
         findViewById(R.id.cv_main_near_preschool).setOnClickListener(new View.OnClickListener() {
