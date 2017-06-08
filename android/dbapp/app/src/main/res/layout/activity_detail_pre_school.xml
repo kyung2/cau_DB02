@@ -266,16 +266,16 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                      
+                        android:text="위도"
                         android:background="@drawable/grayback_square" />
 
                     <TextView
                         android:id="@+id/tv_detail_pre_school_latitude"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                      
+
                         android:background="@drawable/gray_square"
-                        android:text="위도" />
+                       />
                 </LinearLayout>
 
                 <LinearLayout
