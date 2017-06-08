@@ -6,36 +6,36 @@
 
         <item
             android:id="@+id/nav_detail_pre"
-            android:icon="@drawable/ic_search"
-            android:title="유치원 " />
+            android:icon="@drawable/ic_child_care_black_24dp"
+            android:title="유치원" />
         <item
             android:id="@+id/nav_detail_kidcafe"
-            android:icon="@drawable/ic_search"
+            android:icon="@drawable/ic_face_black_24dp"
             android:title="키즈카페 " />
         <item
             android:id="@+id/nav_detail_kidcenter"
-            android:icon="@drawable/ic_search"
+            android:icon="@drawable/ic_center"
             android:title="키즈센터" />
         <item
             android:id="@+id/nav_elem"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_school_black_24dp"
             android:title="초등학교" />
         <item
             android:id="@+id/nav_detail_play_facility"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_play"
             android:title="놀이터 " />
         <item
             android:id="@+id/nav_login"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_done_black_24dp"
             android:title="Sign in" />
         <item
             android:id="@+id/nav_join"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_person_add_black_24dp"
             android:title="Sign up" />
 
         <item
             android:id="@+id/nav_user_info"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_account_box_black_24dp"
             android:title="사용자 정보" />
 
 

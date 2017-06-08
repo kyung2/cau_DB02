@@ -26,7 +26,7 @@ public class TeacherListActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(itemDecoration);
 
         for(int i=0 ;i<30;i++){
-            arrayList.add(new TeacherData("티이쳐어"+i));
+            arrayList.add(new TeacherData("Teacher"+i));
         }
         TeacherAdpater adapter = new TeacherAdpater(this,arrayList);
         recyclerView.setAdapter(adapter);
