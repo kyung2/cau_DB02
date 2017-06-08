@@ -31,9 +31,14 @@ public class KidsCenterData {
         this.latitude=latitude;
         this.longitude = longitude;
     }
-    public KidsCenterData(String name, String tel, String address, String si_do, String si_gun_gu,
-                          int postcode, int capacity, double longitude, double latitude) {
+    public KidsCenterData(int id, String name, String tel,
+                          String address, String si_do,
+                          String si_gun_gu,
+                          int postcode, int capacity, double longitude,
+                          double latitude) {
+        this.id = id;
         this.name = name;
+
         this.tel = tel;
         this.address = address;
         this.si_do = si_do;
@@ -46,7 +51,7 @@ public class KidsCenterData {
 
 
     public static KidsCenterData getSampleKidsCenterData() {
-        return new KidsCenterData("이름이름", "01089785892", "수원시영통구졸려도졸령동 ", "수원시", "영통구", 12346, 10, 12.5, 68.5);
+        return new KidsCenterData(1,"이름이름", "01089785892", "수원시영통구졸려도졸령동 ", "수원시", "영통구", 12346, 10, 12.5, 68.5);
     }
 
 }

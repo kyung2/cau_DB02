@@ -14,8 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.eom.dbapp.vo.KidsCafeData;
-import com.example.eom.dbapp.vo.KidsCenterData;
+import com.example.eom.dbapp.DetailActivity.DetailKidsCafeActivity;
+import com.example.eom.dbapp.DetailActivity.DetailKidsCenterActivity;
+import com.example.eom.dbapp.DetailActivity.DetailPreSchoolActivity;
+import com.example.eom.dbapp.ListActivity.KidsCafeListActivity;
+import com.example.eom.dbapp.ListActivity.KidsCenterList;
+import com.example.eom.dbapp.ListActivity.PreSchoolListActivity;
+import com.example.eom.dbapp.ListActivity.TeacherListActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -73,7 +78,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this,KidsCenterList.class));
+                startActivity(new Intent(MainActivity.this,OthersActivity.class));
             }
         });
         findViewById(R.id.cv_main_more_functions).setOnClickListener(new View.OnClickListener() {

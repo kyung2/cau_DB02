@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.eom.dbapp.DetailPreSchoolActivity;
+import com.example.eom.dbapp.DetailActivity.DetailPreSchoolActivity;
 import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.vo.PreSchoolData;
 

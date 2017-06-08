@@ -47,7 +47,7 @@ public abstract class KidsCafeByGPSTask extends AsyncTask<String, Void, ArrayLis
             else
                 strResult = "Did not work!";
             Log.d("PreSchoolsByGPSTask", strResult);
-            JSONArray jsonArray = new JSONArray(strResult);
+            JSONArray jsonArray = new JSONObject(strResult).getJSONArray("kidscafe");
 
             for(int i=0;i<jsonArray.length();i++) {
                 JSONObject row = jsonArray.getJSONObject(i);

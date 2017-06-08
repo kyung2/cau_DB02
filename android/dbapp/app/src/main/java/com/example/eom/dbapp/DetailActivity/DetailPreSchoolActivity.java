@@ -1,9 +1,11 @@
-package com.example.eom.dbapp;
+package com.example.eom.dbapp.DetailActivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.eom.dbapp.MyUtil;
+import com.example.eom.dbapp.R;
 import com.example.eom.dbapp.network.PreSchoolsDetailTask;
 import com.example.eom.dbapp.vo.KidsCafeData;
 import com.example.eom.dbapp.vo.PreSchoolData;
@@ -26,8 +28,6 @@ public class DetailPreSchoolActivity extends AppCompatActivity {
                 setData(preSchoolData);
             }
         }.execute("");
-//        PreSchoolData preSchoolData = PreSchoolData.getSamplePreschoolData();
-//        setData(preSchoolData);
 
     }
 
