@@ -10,7 +10,7 @@
             android:title="유치원 " />
         <item
             android:id="@+id/nav_detail_kidcafe"
-            android:icon="@drawable/kids_cafe"
+            android:icon="@drawable/kids_center"
             android:title="키즈카페 " />
         <item
             android:id="@+id/nav_detail_kidcenter"
@@ -18,7 +18,7 @@
             android:title="키즈센터" />
         <item
             android:id="@+id/nav_elem"
-            android:icon="@drawable/school_temp"
+            android:icon="@drawable/shcool28"
             android:title="초등학교" />
         <item
             android:id="@+id/nav_detail_play_facility"
