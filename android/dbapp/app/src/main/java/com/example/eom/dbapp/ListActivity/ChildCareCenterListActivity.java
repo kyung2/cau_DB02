@@ -56,6 +56,7 @@ public class ChildCareCenterListActivity extends AppCompatActivity {
 
                     }
                 }
+                adapter.notifyDataSetChanged();
             }
         }.execute("");
     }

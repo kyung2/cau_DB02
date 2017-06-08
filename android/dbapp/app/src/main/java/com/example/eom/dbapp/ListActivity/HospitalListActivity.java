@@ -14,6 +14,7 @@ import com.example.eom.dbapp.vo.IdAndString;
 import com.example.eom.dbapp.vo.KidsCenterData;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -35,6 +36,25 @@ public class HospitalListActivity extends AppCompatActivity {
             protected void onPostExecute(JSONArray jsonArray) {
                 super.onPostExecute(jsonArray);
 
+                //values('id', 'name', 'si_do', 'si_gun_gu', 'tel', 'latitude', 'longitude')
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    try {
+                        JSONObject row = jsonArray.getJSONObject(i);
+//values('id','name','si_do','si_gun_gu','tel','latitude','longitude')
+                        arrayList.add(new IdAndString(row.getInt("id"),
+
+                                row.getString("name")
+                                        + row.getString("si_do")
+                                        + row.getString("si_gun_gu")
+                                        + row.getString("tel")
+                                        + "" + row.getDouble("latitude")
+                                        + "" + row.getDouble("longitude"), IdAndString.HospitalListActivity)
+                        );
+                    } catch (Exception e) {
+
+                    }
+                }
+                adapter.notifyDataSetChanged();
             }
         }.execute("");
     }

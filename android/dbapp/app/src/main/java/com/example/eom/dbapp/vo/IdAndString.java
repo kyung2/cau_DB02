@@ -10,6 +10,10 @@ public class IdAndString {
     public int type;
 
     public static final int ChildCareCenterListActivity =0;
+    public static final int HospitalListActivity =1;
+    public static final int PlayFacilityListActivity =2;
+    public static final int SafeAreaListActivity =3;
+
 
     public IdAndString(int id, String text, int type) {
         this.id = id;
