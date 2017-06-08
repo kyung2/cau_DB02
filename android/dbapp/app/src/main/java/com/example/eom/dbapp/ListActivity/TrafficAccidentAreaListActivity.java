@@ -10,6 +10,7 @@ import com.example.eom.dbapp.network.ListByGPSTask;
 import com.example.eom.dbapp.vo.IdAndString;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -33,7 +34,25 @@ public class TrafficAccidentAreaListActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(JSONArray jsonArray) {
                 super.onPostExecute(jsonArray);
+                //     values('id', 'si_do', 'si_gun_gu', 'law_code',"near_school", 'latitude', 'longitude')[:20]
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    try {
+                        JSONObject row = jsonArray.getJSONObject(i);
+                        arrayList.add(new IdAndString(row.getInt("id"),
 
+                                row.getString("name")
+                                        + row.getString("si_do")
+                                        + row.getString("si_gun_gu")
+                                        + ""+ row.getInt("law_code")
+                                        + row.getString("near_school")
+                                        + "" + row.getDouble("latitude")
+                                        + "" + row.getDouble("longitude"), IdAndString.TrafficAccidentAreaListActivity)
+                        );
+                    } catch (Exception e) {
+
+                    }
+                }
+                adapter.notifyDataSetChanged();
             }
         }.execute("");
     }

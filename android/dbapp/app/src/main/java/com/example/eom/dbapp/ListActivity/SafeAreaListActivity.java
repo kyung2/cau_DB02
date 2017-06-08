@@ -46,7 +46,7 @@ public class SafeAreaListActivity extends AppCompatActivity {
                                         + row.getString("si_gun_gu")
                                         + row.getString("tel")
                                         + "" + row.getDouble("latitude")
-                                        + "" + row.getDouble("longitude"), IdAndString.ChildCareCenterListActivity)
+                                        + "" + row.getDouble("longitude"), IdAndString.SafeAreaListActivity)
                         );
                     } catch (Exception e) {
 
