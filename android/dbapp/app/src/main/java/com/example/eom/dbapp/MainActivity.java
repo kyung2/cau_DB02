@@ -64,99 +64,36 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, JustStringActivity.class);
-                intent.putExtra("url","/kidsCafe/gps/");
-                intent.putExtra("url","/kidsCenter/gps/");
-                intent.putExtra("url","/childCareCenter/gps/");
-                intent.putExtra("url","/hospital/gps/");
-                intent.putExtra("url","/playFacility/gps/");
+
                 intent.putExtra("url","/walfareService/gps/");
-                intent.putExtra("url","/trafficAccidentArea/gps/");
 
-                intent.putExtra("url","/elemSchool/gps/");
-
-                intent.putExtra("url","/preschool/gps/");
-                intent.putExtra("url","/safeArea/gps/");
                 startActivity(intent);
             }
         });
         findViewById(R.id.cv_main_near_preschool).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,PreSchoolListActivity.class);
-                intent.putExtra("url","/kidsCafe/gps/");
-                intent.putExtra("url","/kidsCenter/gps/");
-                intent.putExtra("url","/childCareCenter/gps/");
-                intent.putExtra("url","/hospital/gps/");
-                intent.putExtra("url","/playFacility/gps/");
-                intent.putExtra("url","/walfareService/gps/");
-                intent.putExtra("url","/trafficAccidentArea/gps/");
-
-                intent.putExtra("url","/elemSchool/gps/");
-
-                intent.putExtra("url","/preschool/gps/");
-                intent.putExtra("url","/safeArea/gps/");
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this,PreSchoolListActivity.class));
 
             }
         });
         findViewById(R.id.cv_main_near_kidscafe).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,KidsCafeListActivity.class);
-                intent.putExtra("url","/kidsCafe/gps/");
-                intent.putExtra("url","/kidsCenter/gps/");
-                intent.putExtra("url","/childCareCenter/gps/");
-                intent.putExtra("url","/hospital/gps/");
-                intent.putExtra("url","/playFacility/gps/");
-                intent.putExtra("url","/walfareService/gps/");
-                intent.putExtra("url","/trafficAccidentArea/gps/");
-
-                intent.putExtra("url","/elemSchool/gps/");
-
-                intent.putExtra("url","/preschool/gps/");
-                intent.putExtra("url","/safeArea/gps/");
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this,KidsCafeListActivity.class));
             }
         });
         findViewById(R.id.cv_main_near_centers).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,OthersActivity.class);
-                intent.putExtra("url","/kidsCafe/gps/");
-                intent.putExtra("url","/kidsCenter/gps/");
-                intent.putExtra("url","/childCareCenter/gps/");
-                intent.putExtra("url","/hospital/gps/");
-                intent.putExtra("url","/playFacility/gps/");
-                intent.putExtra("url","/walfareService/gps/");
-                intent.putExtra("url","/trafficAccidentArea/gps/");
-
-                intent.putExtra("url","/elemSchool/gps/");
-
-                intent.putExtra("url","/preschool/gps/");
-                intent.putExtra("url","/safeArea/gps/");
-                startActivity(intent);
-
+                startActivity(new Intent(MainActivity.this,OthersActivity.class));
             }
         });
         findViewById(R.id.cv_main_more_functions).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this,FunctionsActivity.class);
-                intent.putExtra("url","/kidsCafe/gps/");
-                intent.putExtra("url","/kidsCenter/gps/");
-                intent.putExtra("url","/childCareCenter/gps/");
-                intent.putExtra("url","/hospital/gps/");
-                intent.putExtra("url","/playFacility/gps/");
-                intent.putExtra("url","/walfareService/gps/");
-                intent.putExtra("url","/trafficAccidentArea/gps/");
-
-                intent.putExtra("url","/elemSchool/gps/");
-
-                intent.putExtra("url","/preschool/gps/");
-                intent.putExtra("url","/safeArea/gps/");
-                startActivity(intent);
+                startActivity(new Intent(MainActivity.this,FunctionsActivity.class));
             }
         });
     }
