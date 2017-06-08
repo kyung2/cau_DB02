@@ -69,6 +69,8 @@
         <activity android:name=".OthersActivity" />
         <activity android:name=".DetailActivity.DetailChildCareCenterActivity" />
         <activity android:name=".DetailActivity.DetailHospitalActivity" />
+        <activity android:name=".DetailActivity.JustStringActivity" />
+
         <activity android:name=".DetailActivity.DetailPlayFacilityActivity"></activity>
     </application>
 
