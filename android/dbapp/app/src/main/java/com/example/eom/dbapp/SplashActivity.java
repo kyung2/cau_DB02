@@ -93,7 +93,9 @@ public class SplashActivity extends AppCompatActivity {
             }
             SharedPreferences.Editor editor = SplashActivity.this.getSharedPreferences(MySharedPreferences.NAME,0).edit();
             editor.putString(MySharedPreferences.USER_LATITUDE,""+location.getLatitude());
+            editor.putString(MySharedPreferences.USER_LATITUDE,"37.391182");
             editor.putString(MySharedPreferences.USER_LONGITUDE,""+location.getLongitude());
+            editor.putString(MySharedPreferences.USER_LONGITUDE,"126.933499");
             editor.apply();
             Log.d("SplashActivity","location : "+ location.getLatitude()+"  "+ location.getLongitude());
             mLM.removeUpdates(mLocationListener);
