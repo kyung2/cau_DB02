@@ -55,6 +55,14 @@
         <activity android:name=".DetailActivity.DetailPreSchoolActivity" />
         <activity android:name=".DetailActivity.DetailKidsCafeActivity" />
         <activity android:name=".ListActivity.KidsCenterList" />
+        <activity android:name=".ListActivity.ElmSchoolListActivity" />
+        <activity android:name=".ListActivity.ChildCareCenterListActivity" />
+        <activity android:name=".ListActivity.AccidentListActivity" />
+        <activity android:name=".ListActivity.TrafficAccidentAreaListActivity" />
+        <activity android:name=".ListActivity.WalfareServiceListActivity" />
+        <activity android:name=".ListActivity.HospitalListActivity" />
+        <activity android:name=".ListActivity.PlayFacilityListActivity" />
+        <activity android:name=".ListActivity.SafeAreaListActivity" />
         <activity android:name=".UserInfo" />
         <activity android:name=".DetailActivity.DetailKidsCenterActivity" />
         <activity android:name=".DetailActivity.DetailElmSchoolActivity" />
