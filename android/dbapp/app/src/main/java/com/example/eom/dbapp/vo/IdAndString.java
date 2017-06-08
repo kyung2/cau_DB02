@@ -8,6 +8,9 @@ public class IdAndString {
     public int id;
     public String text;
     public int type;
+
+    public static final int ChildCareCenterListActivity =0;
+
     public IdAndString(int id, String text, int type) {
         this.id = id;
         this.text = text;

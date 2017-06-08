@@ -15,7 +15,6 @@ public class DetailElmSchoolActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_elm_school);
 
-
     }
 
     private void setData(ElmSchoolData elmSchoolData) {
