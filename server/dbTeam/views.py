@@ -180,10 +180,10 @@ def kidscafe_gps(request):
     tempdata = json.loads(request.POST.get('data'))
     lat = tempdata['latitude']
     long = tempdata['longitude']
-    maxLat = lat + 0.011
-    minLat = lat - 0.011
-    maxLong = long + 0.0088
-    minLong = long - 0.0088
+    maxLat = lat + 0.11
+    minLat = lat - 0.11
+    maxLong = long + 0.088
+    minLong = long - 0.088
     kidscafe_list = kidsCafe.objects.filter(latitude__range=(minLat, maxLat),
                                               longitude__range=(minLong, maxLong)).values('id', 'name', 'si_do',
                                                                                           'si_gun_gu', 'facility_size',
@@ -272,10 +272,10 @@ def kidscenter_gps(request):
     tempdata = json.loads(request.POST.get('data'))
     lat = tempdata['latitude']
     long = tempdata['longitude']
-    maxLat = lat + 0.011
-    minLat = lat - 0.011
-    maxLong = long + 0.0088
-    minLong = long - 0.0088
+    maxLat = lat + 0.11
+    minLat = lat - 0.11
+    maxLong = long + 0.088
+    minLong = long - 0.088
     kidscenter_list = kidsCenter.objects.filter(latitude__range=(minLat, maxLat), longitude__range=(minLong, maxLong)). \
         values('id', 'name', 'si_do', 'si_gun_gu', 'tel', 'latitude', 'longitude')[:20]
     kidscenters = []
@@ -301,10 +301,10 @@ def elemschool_gps(request):
     tempdata = json.loads(request.POST.get('data'))
     lat = tempdata['latitude']
     long = tempdata['longitude']
-    maxLat = lat + 0.011
-    minLat = lat - 0.011
-    maxLong = long + 0.0088
-    minLong = long - 0.0088
+    maxLat = lat + 0.11
+    minLat = lat - 0.11
+    maxLong = long + 0.088
+    minLong = long - 0.088
     elemschool_list = elemSchool.objects.filter(latitude__range=(minLat, maxLat), longitude__range=(minLong, maxLong)). \
         values('id', 'name', 'si_do', 'si_gun_gu', 'tel', 'latitude', 'longitude')[:20]
     elemschools = []
@@ -330,10 +330,10 @@ def childcarecenter_gps(request):
     tempdata = json.loads(request.POST.get('data'))
     lat = tempdata['latitude']
     long = tempdata['longitude']
-    maxLat = lat + 0.011
-    minLat = lat - 0.011
-    maxLong = long + 0.0088
-    minLong = long - 0.0088
+    maxLat = lat + 0.11
+    minLat = lat - 0.11
+    maxLong = long + 0.088
+    minLong = long - 0.088
     childcarecenter_list = childCareCenter.objects.filter(latitude__range=(minLat, maxLat), longitude__range=(minLong, maxLong)). \
         values('id', 'name', 'si_do', 'si_gun_gu', 'tel', 'latitude', 'longitude')[:20]
     childcarecenters = []
@@ -360,10 +360,10 @@ def safearea_gps(request):
     tempdata = json.loads(request.POST.get('data'))
     lat = tempdata['latitude']
     long = tempdata['longitude']
-    maxLat = lat + 0.011
-    minLat = lat - 0.011
-    maxLong = long + 0.0088
-    minLong = long - 0.0088
+    maxLat = lat + 0.11
+    minLat = lat - 0.11
+    maxLong = long + 0.088
+    minLong = long - 0.088
     safearea_list = childCareCenter.objects.filter(latitude__range=(minLat, maxLat), longitude__range=(minLong, maxLong)). \
         values('id', 'name', 'si_do', 'si_gun_gu', 'tel', 'latitude', 'longitude')[:20]
     safeareas = []
@@ -389,10 +389,10 @@ def hospital_gps(request):
     tempdata = json.loads(request.POST.get('data'))
     lat = tempdata['latitude']
     long = tempdata['longitude']
-    maxLat = lat + 0.011
-    minLat = lat - 0.011
-    maxLong = long + 0.0088
-    minLong = long - 0.0088
+    maxLat = lat + 0.11
+    minLat = lat - 0.11
+    maxLong = long + 0.088
+    minLong = long - 0.088
     hospital_list = hospital.objects.filter(latitude__range=(minLat, maxLat), longitude__range=(minLong, maxLong)). \
         values('id', 'name', 'si_do', 'si_gun_gu', 'tel', 'latitude', 'longitude')[:20]
     hospitals = []
@@ -441,10 +441,10 @@ def trafficaccidentarea_gps(request):
     tempdata = json.loads(request.POST.get('data'))
     lat = tempdata['latitude']
     long = tempdata['longitude']
-    maxLat = lat + 0.011
-    minLat = lat - 0.011
-    maxLong = long + 0.0088
-    minLong = long - 0.0088
+    maxLat = lat + 0.11
+    minLat = lat - 0.11
+    maxLong = long + 0.088
+    minLong = long - 0.088
     trafficaccidentarea_list = trafficAccidentArea.objects.filter(latitude__range=(minLat, maxLat), longitude__range=(minLong, maxLong)). \
         values('id', 'si_do', 'si_gun_gu', 'law_code',"near_school", 'latitude', 'longitude')[:20]
     trafficaccidentareas = []
@@ -470,10 +470,10 @@ def playfacility_gps(request):
     tempdata = json.loads(request.POST.get('data'))
     lat = tempdata['latitude']
     long = tempdata['longitude']
-    maxLat = lat + 0.011
-    minLat = lat - 0.011
-    maxLong = long + 0.0088
-    minLong = long - 0.0088
+    maxLat = lat + 0.11
+    minLat = lat - 0.11
+    maxLong = long + 0.088
+    minLong = long - 0.088
     playfacility_list = playFacility.objects.filter(latitude__range=(minLat, maxLat), longitude__range=(minLong, maxLong)). \
         values('id', 'name', 'si_do', 'si_gun_gu', 'install_place', 'latitude', 'longitude')[:20]
     playfacilitys = []
@@ -492,4 +492,3 @@ def playfacility_detail(request):
         return HttpResponse(json.dumps({'playfacility': playfacility_info}), content_type='application/json')
     playfacility_info = serializers.serialize('json', playfacility)
     return HttpResponse(json.dumps({'playfacility': playfacility_info}), content_type='application/json')
-
