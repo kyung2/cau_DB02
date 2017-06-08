@@ -53,8 +53,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
-         
-                        android:text="XX유치원"
                         android:textColor="@color/black"
                         android:textSize="20dp" />
                 </LinearLayout>
