@@ -66,7 +66,8 @@
         <activity android:name=".UserInfo" />
         <activity android:name=".DetailActivity.DetailKidsCenterActivity" />
         <activity android:name=".DetailActivity.DetailElmSchoolActivity" />
-        <activity android:name=".OthersActivity"></activity>
+        <activity android:name=".OthersActivity" />
+        <activity android:name=".DetailActivity.DetailChildCareCenterActivity"></activity>
     </application>
 
 </manifest>
