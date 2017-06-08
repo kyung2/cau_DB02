@@ -9,8 +9,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,6 +51,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginLeft="10dp"
+                        android:autoSizeTextType="uniform"
                         android:textColor="@color/black"
                         android:textSize="20dp" />
                 </LinearLayout>
@@ -71,6 +72,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/grayback_square"
                         android:text="키즈센터이름" />
 
@@ -78,6 +80,7 @@
                         android:id="@+id/tv_detail_kids_center_name"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -88,6 +91,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/grayback_square"
                         android:text="전화번호" />
 
@@ -95,9 +99,9 @@
                         android:id="@+id/tv_detail_kids_center_tel"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -107,6 +111,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/grayback_square"
                         android:text="주소" />
 
@@ -114,16 +119,19 @@
                         android:id="@+id/tv_detail_kids_center_address"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="30dp">
 
                     <TextView
-
                         android:layout_width="100dp"
+
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/grayback_square"
                         android:text="시/도" />
 
@@ -131,6 +139,7 @@
                         android:id="@+id/tv_detail_kids_center_si_do"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -139,9 +148,10 @@
                     android:layout_height="30dp">
 
                     <TextView
-
                         android:layout_width="100dp"
+
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/grayback_square"
                         android:text="시/군/구" />
 
@@ -149,6 +159,7 @@
                         android:id="@+id/tv_detail_kids_center_si_gun_gu"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -159,6 +170,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/grayback_square"
                         android:text="우편번호" />
 
@@ -166,6 +178,7 @@
                         android:id="@+id/tv_detail_kids_center_postcode"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
@@ -175,17 +188,18 @@
                     android:layout_height="30dp">
 
                     <TextView
-                        android:text="위도"
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
-                        android:background="@drawable/grayback_square" />
+                        android:autoSizeTextType="uniform"
+                        android:background="@drawable/grayback_square"
+                        android:text="위도" />
 
                     <TextView
                         android:id="@+id/tv_detail_kids_center_latitude"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/gray_square"
-                        />
+                        android:autoSizeTextType="uniform"
+                        android:background="@drawable/gray_square" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -195,6 +209,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/grayback_square"
                         android:text="경도" />
 
@@ -202,9 +217,9 @@
                         android:id="@+id/tv_detail_kids_center_longitude"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -214,6 +229,7 @@
                     <TextView
                         android:layout_width="100dp"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/grayback_square"
                         android:text="정원" />
 
@@ -221,6 +237,7 @@
                         android:id="@+id/tv_detail_kids_center_capacity"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:autoSizeTextType="uniform"
                         android:background="@drawable/gray_square" />
                 </LinearLayout>
 
