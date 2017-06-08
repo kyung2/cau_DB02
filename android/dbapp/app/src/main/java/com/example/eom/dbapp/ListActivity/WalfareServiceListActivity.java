@@ -5,7 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
+import com.example.eom.dbapp.R;
+import com.example.eom.dbapp.network.ListByGPSTask;
 import com.example.eom.dbapp.vo.IdAndString;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 
@@ -25,6 +29,14 @@ public class WalfareServiceListActivity extends AppCompatActivity {
         adapter = new IdAndStringListAdapter(this,arrayList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+        new ListByGPSTask(this,"/walfareService/gps/","walfareservice"){
+            @Override
+            protected void onPostExecute(JSONArray jsonArray) {
+                super.onPostExecute(jsonArray);
+
+            }
+        }.execute("");
+
     }
 }
 

@@ -14,13 +14,7 @@ public class DetailElmSchoolActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_elm_school);
-        new PreSchoolsDetailTask(getIntent().getIntExtra("id",1)){
-            @Override
-            protected void onPostExecute(ElmSchoolData elmSchoolData) {
-              //  super.onPostExecute(elmSchoolData);
-                setData(elmSchoolData);
-            }
-        }.execute("");
+
 
     }
 

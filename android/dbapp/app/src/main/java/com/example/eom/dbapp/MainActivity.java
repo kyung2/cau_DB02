@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
         findViewById(R.id.cv_main_more_functions).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,FunctionsActivity.class));
+                startActivity(new Intent(MainActivity.this,OthersActivity.class));
             }
         });
     }
