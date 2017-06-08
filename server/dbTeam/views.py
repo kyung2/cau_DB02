@@ -310,7 +310,7 @@ def elemschool_gps(request):
     elemschools = []
     for elemschool in elemschool_list:
         elemschools.append(elemschool)
-    return HttpResponse(json.dumps({'elemschool': elemschool}), content_type='application/json')
+    return HttpResponse(json.dumps({'elemschool': elemschools}), content_type='application/json')
 
 @csrf_exempt
 def elemschool_detail(request):
@@ -417,7 +417,7 @@ def hospital_detail(request):
 @csrf_exempt
 def walfareservice_gps(request):
     walfareservice_list = walfareService.objects.all().\
-        values('name','center_name','operator','operation_org')[:20]
+        values('id','name','center_name','operator','operation_org')[:20]
     walfareservices = []
     for walfareservice in walfareservice_list:
         walfareservices.append(walfareservice)
