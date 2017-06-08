@@ -17,7 +17,7 @@ public class DetailElmSchoolActivity extends AppCompatActivity {
         new PreSchoolsDetailTask(getIntent().getIntExtra("id",1)){
             @Override
             protected void onPostExecute(ElmSchoolData elmSchoolData) {
-                super.onPostExecute(elmSchoolData);
+              //  super.onPostExecute(elmSchoolData);
                 setData(elmSchoolData);
             }
         }.execute("");
