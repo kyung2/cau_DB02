@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.eom.dbapp.DetailActivity.DetailElmSchoolActivity;
 import com.example.eom.dbapp.DetailActivity.DetailKidsCafeActivity;
 import com.example.eom.dbapp.DetailActivity.DetailKidsCenterActivity;
 import com.example.eom.dbapp.DetailActivity.DetailPreSchoolActivity;
@@ -25,7 +28,7 @@ import com.example.eom.dbapp.ListActivity.TeacherListActivity;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    @Override
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -141,7 +144,11 @@ public class MainActivity extends AppCompatActivity
             startActivity(new Intent(MainActivity.this,LoginActivity.class));
         } else if (id == R.id.nav_join) {
             startActivity(new Intent(MainActivity.this,JoinActivity.class));
-        } else {}
+        } else if (id == R.id.nav_elem) {
+            startActivity(new Intent(MainActivity.this,DetailElmSchoolActivity.class));
+        }
+
+        else {}
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

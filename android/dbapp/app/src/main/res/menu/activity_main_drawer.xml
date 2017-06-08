@@ -16,7 +16,7 @@
             android:title="키즈카페 " />
         <item
             android:id="@+id/nav_detail_pre"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/wel"
             android:title="유치원 " />
         <item
             android:id="@+id/nav_login"
@@ -24,8 +24,13 @@
             android:title="Sign in" />
         <item
             android:id="@+id/nav_join"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/shcool28"
             android:title="Sign up" />
+        <item
+            android:id="@+id/nav_elem"
+            android:icon="@drawable/school_temp"
+            android:title="초등학교" />
+
     </group>
 
 </menu>

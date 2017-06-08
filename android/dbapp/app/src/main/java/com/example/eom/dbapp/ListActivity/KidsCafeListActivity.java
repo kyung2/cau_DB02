@@ -3,6 +3,8 @@ package com.example.eom.dbapp.ListActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
@@ -26,7 +28,11 @@ public class KidsCafeListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kidscafe_list);
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_kidscafe);
         final ArrayList<KidsCafeData> arrayList = new ArrayList<>();
-         adapter = new KidsCafeAdapter(this,arrayList);
+        RecyclerView.ItemDecoration itemDecoration =
+                new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
+        recyclerView.addItemDecoration(itemDecoration);
+
+        adapter = new KidsCafeAdapter(this,arrayList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         SharedPreferences sp = getSharedPreferences(MySharedPreferences.NAME,0);
