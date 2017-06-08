@@ -10,6 +10,7 @@ import com.example.eom.dbapp.network.ListByGPSTask;
 import com.example.eom.dbapp.vo.IdAndString;
 
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -33,10 +34,24 @@ public class WalfareServiceListActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(JSONArray jsonArray) {
                 super.onPostExecute(jsonArray);
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    try {
+                        JSONObject row = jsonArray.getJSONObject(i);
+                        //values('name','center_name','operator','operation_org')[:2
+                        arrayList.add(new IdAndString(row.getInt("id"),
 
+                                row.getString("name")
+                                        + row.getString("center_name")
+                                        + row.getString("operator")
+                                        + row.getString("operation_org"), IdAndString.WalfareServiceListActivity)
+                        );
+                    } catch (Exception e) {
+
+                    }
+                }
+                adapter.notifyDataSetChanged();
             }
         }.execute("");
-
     }
 }
 
