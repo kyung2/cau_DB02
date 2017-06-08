@@ -29,8 +29,8 @@ public abstract class ListByGPSTask extends AsyncTask<String, Void,JSONArray> {
 
     protected ListByGPSTask(Context context, String url,String parsestring) {
         SharedPreferences sp = context.getSharedPreferences(MySharedPreferences.NAME,0);
-        latitude = Double.parseDouble(sp.getString(MySharedPreferences.USER_LATITUDE,"35"));
-        longitude = Double.parseDouble(sp.getString(MySharedPreferences.USER_LONGITUDE,"123"));
+        latitude = Double.parseDouble(sp.getString(MySharedPreferences.USER_LATITUDE,"37.391182"));
+        longitude = Double.parseDouble(sp.getString(MySharedPreferences.USER_LONGITUDE,"126.933499"));
         this.murl=url;
         this.parsestring=parsestring;
     }

@@ -18,18 +18,17 @@ public class DetailHospitalActivity extends AppCompatActivity {
 
         name=(TextView)findViewById(R.id.tv_detail_name);
         contents=(TextView)findViewById(R.id.tv_detail_contents);
-        new DetailByIDTask(getIntent().getIntExtra("id",1),"/childCareCenter/detail/","childcarecenter"){
+        new DetailByIDTask(getIntent().getIntExtra("id",1),"/hospital/detail/","hospital"){
             @Override
             protected void onPostExecute(JSONObject jsonObject) {
                 super.onPostExecute(jsonObject);try{
                     name.setText(jsonObject.getString("name"));
                     contents.setText(
                             jsonObject.getString("name")+"</br>"+
-                                    jsonObject.getString("name")+
-                                    jsonObject.getString("name")+
-                                    jsonObject.getString("name")+
-                                    jsonObject.getString("name")
-                    );
+                                    jsonObject.getString("si_do")+
+                                    jsonObject.getString("si_gun_gu")+
+                                    jsonObject.getString("tel")
+                                     );
                 }catch (Exception e){
                     e.printStackTrace();
                 }

@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.eom.dbapp.R;
+import com.example.eom.dbapp.network.DetailByIDTask;
 import com.example.eom.dbapp.network.PreSchoolsDetailTask;
 import com.example.eom.dbapp.vo.ElmSchoolData;
+import com.example.eom.dbapp.vo.KidsCenterData;
+
+import org.json.JSONObject;
 
 public class DetailElmSchoolActivity extends AppCompatActivity {
 
@@ -14,7 +18,38 @@ public class DetailElmSchoolActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_elm_school);
+        new DetailByIDTask(getIntent().getIntExtra("id",1),"/elemSchool/detail/","elemschool"){
+            @Override
+            protected void onPostExecute(JSONObject jsonObject) {
+                super.onPostExecute(jsonObject);try{
+                    ElmSchoolData item = new ElmSchoolData(
+                            getIntent().getIntExtra("id",1),
 
+
+                            jsonObject.getString("name"),
+                            jsonObject.getString("tel"),
+                            jsonObject.getInt("postcode"),
+
+
+                            jsonObject.getString("si_do"),
+                            jsonObject.getString("si_gun_gu"),
+
+                            jsonObject.getString("address"),
+                            jsonObject.getString("homepage"),
+
+
+                            jsonObject.getString("public_private"),
+                            jsonObject.getDouble("longitude"),
+                            jsonObject.getDouble("latitude"));
+
+
+                    setData(item);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+        }.execute("");
     }
 
     private void setData(ElmSchoolData elmSchoolData) {

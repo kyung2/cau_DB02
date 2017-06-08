@@ -68,7 +68,8 @@
         <activity android:name=".DetailActivity.DetailElmSchoolActivity" />
         <activity android:name=".OthersActivity" />
         <activity android:name=".DetailActivity.DetailChildCareCenterActivity" />
-        <activity android:name=".DetailActivity.DetailHospitalActivity"></activity>
+        <activity android:name=".DetailActivity.DetailHospitalActivity" />
+        <activity android:name=".DetailActivity.DetailPlayFacilityActivity"></activity>
     </application>
 
 </manifest>

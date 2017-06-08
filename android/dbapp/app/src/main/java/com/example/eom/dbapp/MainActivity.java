@@ -127,10 +127,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_functions) {
-
-            startActivity(new Intent(MainActivity.this,TeacherListActivity.class));
-        } else if (id == R.id.nav_user_info) {
+        if (id == R.id.nav_user_info) {
             startActivity(new Intent(MainActivity.this,UserInfo.class));
         } else if (id == R.id.nav_detail_kidcenter) {
             startActivity(new Intent(MainActivity.this,DetailKidsCenterActivity.class));
@@ -140,8 +137,6 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_detail_kidcafe) {
             startActivity(new Intent(MainActivity.this,DetailKidsCafeActivity.class));
-        } else if (id == R.id.nav_send) {
-
         } else if (id == R.id.nav_login) {
             startActivity(new Intent(MainActivity.this,LoginActivity.class));
         } else if (id == R.id.nav_join) {
