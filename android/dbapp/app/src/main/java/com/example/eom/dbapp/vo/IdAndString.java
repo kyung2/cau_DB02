@@ -15,6 +15,8 @@ public class IdAndString {
     public static final int SafeAreaListActivity =3;
     public static final int TrafficAccidentAreaListActivity =4;
     public static final int WalfareServiceListActivity =5;
+    public static final int ElmSchoolListActivity =6;
+
 
 
 
