@@ -27,11 +27,11 @@ public class DetailWalfareServiceActivity  extends AppCompatActivity {
                     contents.setText(
                             "이름 "+"\n"+ jsonObject.getString("name")+"\n"+"\n"+
                                     "목적  " + "\n" + jsonObject.getString("purpose")+"\n"+"\n"+
-                                    "센터 수 " + "\n" + jsonObject.getInt("center_int")+"\n"+"\n"+
+                                    "센터 수 " + "\n" + jsonObject.getInt("center_num")+"\n"+"\n"+
                                     "센터이름 "   +"\n"+jsonObject.getString("center_name") + "\n"+ "\n" +
                                     "운영 " + "\n" + jsonObject.getString("operator") +"\n"+"\n"+
                                     "운영_org " + "\n" + jsonObject.getString("operation_org") +"\n"+"\n"+
-                                    "운영 기간 " + "\n" + jsonObject.getString("operator") +"\n"+"\n"+
+                                    "운영 기관 " + "\n" + jsonObject.getString("operator") +"\n"+"\n"+
                                     "운영 시작일 " +jsonObject.getString("op_start_date") + "\n"+
                                     "운영 종료일 " +jsonObject.getString("op_end_data")
 
