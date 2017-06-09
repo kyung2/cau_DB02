@@ -21,10 +21,10 @@ public class DetailPlayFacilityActivity extends AppCompatActivity {
                 super.onPostExecute(jsonObject);try{
                     name.setText(jsonObject.getString("name"));
                     contents.setText(
-                            jsonObject.getString("name")+"</br>"+
-                                    jsonObject.getString("si_do")+
-                                    jsonObject.getString("si_gun_gu")+
-                                    jsonObject.getString("install_place")
+                            jsonObject.getString("name")+"</br>"+"\n"+"\n"+
+                                    jsonObject.getString("si_do")+"\n" +
+                                    jsonObject.getString("si_gun_gu")+ "\n"+"\n"+
+                                    jsonObject.getString("install_place")+"\n"
                     );
                 }catch (Exception e){
                     e.printStackTrace();

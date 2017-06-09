@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.eom.dbapp.R;
+//import com.example.eom.dbapp.DetailActivity.R;
 import com.example.eom.dbapp.network.DetailByIDTask;
 import com.example.eom.dbapp.network.JustStringTask;
 

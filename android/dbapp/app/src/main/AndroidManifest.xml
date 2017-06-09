@@ -70,8 +70,8 @@
         <activity android:name=".DetailActivity.DetailChildCareCenterActivity" />
         <activity android:name=".DetailActivity.DetailHospitalActivity" />
         <activity android:name=".DetailActivity.JustStringActivity" />
-
-        <activity android:name=".DetailActivity.DetailPlayFacilityActivity"></activity>
+        <activity android:name=".DetailActivity.DetailPlayFacilityActivity" />
+        <activity android:name=".EvaluationPage"></activity>
     </application>
 
 </manifest>
