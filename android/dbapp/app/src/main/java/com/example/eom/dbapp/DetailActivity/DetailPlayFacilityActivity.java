@@ -24,7 +24,14 @@ public class DetailPlayFacilityActivity extends AppCompatActivity {
                             "이름 \n"  +jsonObject.getString("name")+"</br>"+"\n"+"\n"+
                                 "주소 " +"\n"+     jsonObject.getString("si_do ")+
                                     jsonObject.getString("si_gun_gu")+ "\n"+"\n"+
-                                    jsonObject.getString("install_place")+"\n"
+                                    "세부주소 : " +"\n" + jsonObject.getString("address")+"\n"+"\n"+
+                                   "설치 \n" + jsonObject.getString("install_place")+"\n"+"\n"+
+                            "우수 놀이공원 " + jsonObject.getString("is_excellent")+"\n"+"\n" +
+                                    "실내/외 놀이터 \n" +jsonObject.getString("indoor_outdoor")+"\n"+"\n" +
+                                    "사유 놀이터 여부\n " + jsonObject.getString("public_private") +
+                            "위도  " +jsonObject.getDouble("latitude")+"\n"+
+                                    "경도  "+jsonObject.getDouble("longitude")
+
                     );
                 }catch (Exception e){
                     e.printStackTrace();
