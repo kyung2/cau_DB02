@@ -26,9 +26,17 @@ public class DetailTrafficaccidentareaActivity extends AppCompatActivity {
                     contents.setText(
 
                             "주소 "+"\n"+ jsonObject.getString("si_do ")+ jsonObject.getString("si_gun_gu")+"\n"+"\n"+
+                                    "담당 경찰서 "   +"\n"+jsonObject.getString("police_office") +"\n"+"\n"+
+
                                     "근처 학교 "   +"\n"+jsonObject.getString("near_school") +"\n"+"\n"+
+                                    "사건 발생 횟수 " + jsonObject.getInt("occur_cnt") + "\n" +
+                                    "사망자 수" + jsonObject.getInt("death_cnt") + "\n" +
+                                    "serious 사고 " + jsonObject.getInt("serious_cnt") + "\n" +
+                                    "약한 사고 " + jsonObject.getInt("light_cnt") + "\n" +
                                     "위도  " +jsonObject.getDouble("latitude")+"\n"+
                                     "경도  "+jsonObject.getDouble("longitude")
+
+
                     );
                 }catch (Exception e){
                     e.printStackTrace();

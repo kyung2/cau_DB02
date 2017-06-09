@@ -32,6 +32,9 @@ public class DetailSafeAreaActivity extends AppCompatActivity {
                             "이름 "+"\n"+ jsonObject.getString("facility_name")+"\n"+"\n"+
                                     "주소 "   +"\n"+jsonObject.getString("si_do")+jsonObject.getString("si_gun_gu")+"\n"+"\n"+
 //                                    "전화번호  "+jsonObject.getString("tel")+"\n"+"\n"+
+                                    "경찰서  "+jsonObject.getString("police_office")+"\n"+"\n"+
+                                    "CCTV 수   "+jsonObject.getInt("NumofCCTV")+"\n"+"\n"+
+
                                     "위도  " +jsonObject.getDouble("latitude")+"\n"+
                                     "경도  "+jsonObject.getDouble("longitude")
                     );
