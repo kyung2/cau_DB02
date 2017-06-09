@@ -73,6 +73,7 @@
         <activity android:name=".DetailActivity.DetailPlayFacilityActivity" />
         <activity android:name=".EvaluationPage" />
         <activity android:name=".DetailActivity.DetailWalfareServiceActivity" />
+        <activity android:name=".DetailActivity.DetailSafeAreaActivity" />
         <activity android:name=".DetailActivity.DetailTrafficaccidentareaActivity"></activity>
     </application>
 

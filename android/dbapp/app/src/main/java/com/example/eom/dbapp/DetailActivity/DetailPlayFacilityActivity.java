@@ -15,6 +15,8 @@ public class DetailPlayFacilityActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_play_facility);
+        name=(TextView)findViewById(R.id.tv_detail_name);
+        contents=(TextView)findViewById(R.id.tv_detail_contents);
         new DetailByIDTask(getIntent().getIntExtra("id",1),"/playFacility/detail/","playfacility"){
             @Override
             protected void onPostExecute(JSONObject jsonObject) {
