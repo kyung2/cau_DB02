@@ -7,7 +7,20 @@ from dbTeam.models import *
 import json
 from django.core import serializers
 from django.db.models import Avg
+from django.db import connection
+global str
+
+from django.db.models import Prefetch
 # Create your views here.
+
+
+@csrf_exempt
+def dictFetchall(cursor):
+    columns = [col[0] for col in cursor.description]
+    return [
+        dict(zip(columns, row))
+        for row in cursor.fetchall()
+    ]
 
 @csrf_exempt
 def id_check(request):
@@ -137,13 +150,13 @@ def preschool_detail(request):
     tempdata = request.POST.get('data')
     data = json.loads(tempdata)
     try:
-        preschool = preSchool.objects.select_related('teacher').get(id=data['id'])
+#        my_prefetch = Prefetch('teacher', to_attr="teachers").prefetch_related(my_prefetch)
+        preschool = preSchool.objects.filter(id=data['id'])
     except preSchool.DoesNotExist:
         preschool_info = {}
         return HttpResponse(json.dumps({'preschool': preschool_info}), content_type='application/json')
-    count = preschool.teacher_set.count()
-    pre_list = serializers.serialize('json', preschool)
-    return HttpResponse(json.dumps({'preschool': pre_list}), content_type='application/json')
+
+    return HttpResponse(json.dumps({'preschool': preschool}), content_type='application/json')
 
 @csrf_exempt
 def preschool_evaluation(request):
@@ -492,3 +505,322 @@ def playfacility_detail(request):
         return HttpResponse(json.dumps({'playfacility': playfacility_info}), content_type='application/json')
     playfacility_info = serializers.serialize('json', playfacility)
     return HttpResponse(json.dumps({'playfacility': playfacility_info}), content_type='application/json')
+
+@csrf_exempt
+def func1(request):
+    cursor = connection.cursor()
+    cursor.execute('select name, address, type ,tel from `dbTeam_preschool` where school_bus="운영"') # 통학버스 운영하는 유치원
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "주  소 : " + f_list.get('address') + "\n"
+        text += "전화번호 : " + f_list.get('tel') + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+
+@csrf_exempt
+def func2(request):
+    cursor = connection.cursor()
+    cursor.execute('select name, type, NumofCCTV from `dbTeam_preschool` where si_gun_gu = "안양시"') # 안양시 유치원의 cctv개수
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "CCTV수 : " + str(f_list.get('NumofCCTV')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+
+@csrf_exempt
+def func3(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_outdoor, accident_cause, accident_type FROM `dbTeam_accident` as ac inner join `dbTeam_preschool` as pr on ac.accident_where_id = pr.id where ac.accident_date > date(subdate(now(),Interval 365 DAY)) order by pr.id asc')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+
+@csrf_exempt
+def func4(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT p.name, p.type, p.tel, p.address,count(p.id) as coun FROM `dbTeam_teacher` as t inner join `dbTeam_preschool` as p on t.kindergarten_id = p.id group by p.id order by coun desc')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += " 주  소 : " + f_list.get('address') + "\n"
+        text += "전화 번호 : " + f_list.get('tel') + "\n"
+        text += "선생님 수 : " + str(f_list.get('coun')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func5(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, address,tel, count(p.id) as coun from  `dbTeam_accident` as a inner join `dbTeam_preschool` as p on a.accident_where_id = p.id group by p.id order by coun asc')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += " 주  소 : " + f_list.get('address') + "\n"
+        text += "전화 번호 : " + f_list.get('tel') + "\n"
+        text += "사고/사망 수 : " + str(f_list.get('coun')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+
+
+@csrf_exempt
+def func6(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT count(comment) as coun, ps.id, ps.name, ps.type, ps.address, ps.tel FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_preschool`as ps on pe.preSchool_id_id = ps.id group by ps.id order by ps.id DESC')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += " 주  소 : " + f_list.get('address') + "\n"
+        text += "전화 번호 : " + f_list.get('tel') + "\n"
+        text += "댓글 수 : " + str(f_list.get('coun')) + "\n"
+        cursor.execute(
+            'SELECT comment, nick_name FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_user`as u on pe.user_id_id = u.id where pe.preSchool_id_id = ' + str(f_list.get('id')))
+        comment_list = dictFetchall(cursor)
+        for comment in comment_list:
+            text += "\t" + comment.get('nick_name') + " : " + comment.get('comment')
+        text += "\n\n"
+    return HttpResponse(text)
+
+
+@csrf_exempt
+def func7(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT avg(grade) as coun, ps.id, ps.name, ps.type, ps.address, ps.tel FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_preschool`as ps on pe.preSchool_id_id = ps.id group by ps.id order by ps.id desc')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += " 주  소 : " + f_list.get('address') + "\n"
+        text += "전화번호 : " + f_list.get('tel') + "\n"
+        text += " 평  점 : " + str(f_list.get('coun')) + "\n"
+        cursor.execute(
+            'SELECT grade, nick_name FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_user`as u on pe.user_id_id = u.id where pe.preSchool_id_id = ' + str(f_list.get('id')))
+        g_list = dictFetchall(cursor)
+        for grade in g_list:
+            text += "\t" + grade.get('nick_name') + " : " + grade.get('grade') + " 점"
+        text += "\n\n"
+
+    return HttpResponse(text)
+
+@csrf_exempt
+def func8(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT count(comment) as coun, ps.id, ps.name, facility_size, ps.operation_state FROM `dbTeam_kidscafeevaluation` as ke inner join `dbTeam_kidscafe`as ps on ke.kids_cafe_id_id = ps.id group by ps.id order by ps.id DESC')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') +"\n"
+        text += " 주  소 : " + f_list.get('operation_state') + "\n"
+        text += " 크  기 : " + str(f_list.get('facility_size')) + "\n"
+        text += "댓글 수 : " + str(f_list.get('coun')) + "\n"
+        cursor.execute(
+            'SELECT comment, nick_name FROM `dbTeam_kidscafeevaluation` as pe inner join `dbTeam_user`as u on pe.user_id_id = u.id where pe.kids_cafe_id_id = ' + str(
+                f_list.get('id')))
+        comment_list = dictFetchall(cursor)
+        for comment in comment_list:
+            text += "\t" + comment.get('nick_name') + " : " + comment.get('comment')
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func9(request):
+    cursor = connection.cursor()
+    cursor.execute(
+        'SELECT avg(grade) as coun, ps.id, ps.name, facility_size, ps.operation_state FROM `dbTeam_kidscafeevaluation` as pe inner join `dbTeam_user`as u on pe.user_id_id = u.id group by pe.id order by ps.id desc')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += " 주  소 : " + f_list.get('address') + "\n"
+        text += "전화번호 : " + f_list.get('tel') + "\n"
+        text += " 평  점 : " + str(f_list.get('coun')) + "\n"
+        cursor.execute(
+            'SELECT grade, nick_name FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_user`as u on pe.user_id_id = u.id where pe.preSchool_id_id = ' + str(
+                f_list.get('id')))
+        g_list = dictFetchall(cursor)
+        for grade in g_list:
+            text += "\t" + grade.get('nick_name') + " : " + grade.get('grade') + " 점"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func10(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func11(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func12(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func13(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func14(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func15(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func16(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func17(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func18(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func19(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)
+
+@csrf_exempt
+def func20(request):
+    cursor = connection.cursor()
+    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    list = dictFetchall(cursor)
+    text = ""
+    for f_list in list:
+        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
+        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
+        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
+        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
+        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\n\n"
+    return HttpResponse(text)

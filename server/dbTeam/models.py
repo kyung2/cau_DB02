@@ -38,7 +38,7 @@ class accident(models.Model):
 
 
 class teacher(models.Model):
-    kindergarten = models.ForeignKey(preSchool, null=True) #fk
+    kindergarten = models.ForeignKey(preSchool, null=True, related_name= 'teacher') #fk
     sex = models.CharField(max_length=11)
     type = models.CharField(max_length=11)
 

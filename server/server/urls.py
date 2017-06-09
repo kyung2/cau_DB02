@@ -46,4 +46,32 @@ urlpatterns = [
 
     url(r'^playFacility/gps/', views.playfacility_gps, name='playfacility_gps'),  # GPS 기준 list
     url(r'^playFacility/detail/', views.playfacility_detail, name='playfacility_detail'),  # 놀이시설 세부 사항
+
+    url(r'^func1/', views.func1, name='func1'),  #  통학버스 운영하는 유치원
+    url(r'^func2/', views.func2, name='func2'),  # 안양시 유치원의 cctv개수
+    url(r'^func3/', views.func3, name='func3'),  # 1년 안의 유치원 사고사망
+    url(r'^func4/', views.func4, name='func4'),  # 유치원 선생님 수 내림차순
+    url(r'^func5/', views.func5, name='func5'),  # 유치원별 사고사망 수 오름차순
+
+    url(r'^func6/', views.func6, name='func6'),  # 댓글 수가 많은 유차원 내림차순
+    url(r'^func7/', views.func7, name='func7'),  # 평가가 높은 유치원 내림차순
+
+    url(r'^func8/', views.func8, name='func8'),  # 댓글 수가 많은 키즈카페 내림차순
+    url(r'^func9/', views.func9, name='func9'),  # 평가가 높은 키즈카페 내림차순
+    url(r'^func10/', views.func10, name='func10'),  # 평가가 낮은 키즈카페 오름차순
+    url(r'^func11/', views.func11, name='func11'),  # 평가가 낮은 유치원 오름차순
+
+    url(r'^func12/', views.func12, name='func12'),  # 안양시 각 시설 2개씩 추천
+
+    url(r'^func13/', views.func13, name='func13'),  # 국공립 유치원 갯수
+    url(r'^func14/', views.func14, name='func14'),  # 교통사고가 가장 많이 난 곳
+
+    url(r'^func15/', views.func15, name='func15'),  # 평가가 낮은 키즈카페 오름차순
+    url(r'^func16/', views.func16, name='func16'),  # 평가가 낮은 유치원 오름차순
+    url(r'^func17', views.func17, name='func17'),  # 안양시 각 시설 2개씩 추천
+
+    url(r'^func18/', views.func18, name='func18'),  # 자격증이 2개 이상인 선생 list
+    url(r'^func19/', views.func19, name='func19'),  # '장애', ' 특수교사' 를 가지고있는 선생이 있는 유치원
+    url(r'^func20/', views.func20, name='func20'),  # 정원이 50명 이상인 유치원의 선생 수
+
 ]
