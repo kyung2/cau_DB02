@@ -2,13 +2,17 @@ package com.example.eom.dbapp.Adapter;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.eom.dbapp.DetailActivity.JustStringActivity;
+import com.example.eom.dbapp.MainActivity;
 import com.example.eom.dbapp.R;
+import com.example.eom.dbapp.vo.UrlAndName;
 
 import java.util.ArrayList;
 
@@ -18,10 +22,10 @@ import java.util.ArrayList;
 public class FunctionListAdapter extends RecyclerView.Adapter<FunctionListAdapter.ViewHolder>{
 
     Context context;
-    ArrayList<String> items;
+    ArrayList<UrlAndName> items;
     int item_layout;
 
-    public FunctionListAdapter(Context context, ArrayList<String> items) {
+    public FunctionListAdapter(Context context, ArrayList<UrlAndName> items) {
         this.context = context;
         this.items = items;
     }
@@ -36,8 +40,16 @@ public class FunctionListAdapter extends RecyclerView.Adapter<FunctionListAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder,int position) {
-        final String item = items.get(position);
-        holder.tv_function_name.setText(item);
+        final UrlAndName item = items.get(position);
+        holder.tv_function_name.setText(item.name);
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, JustStringActivity.class);
+                intent.putExtra("url",item.url);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -48,10 +60,12 @@ public class FunctionListAdapter extends RecyclerView.Adapter<FunctionListAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView tv_function_name;
+        View view;
 
         public ViewHolder(View itemView) {
             super(itemView);
             tv_function_name = (TextView) itemView.findViewById(R.id.tv1_layout_functions);
+            view = itemView;
         }
     }
 

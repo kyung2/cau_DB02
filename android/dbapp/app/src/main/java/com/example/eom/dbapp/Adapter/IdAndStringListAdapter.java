@@ -10,6 +10,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.eom.dbapp.DetailActivity.DetailChildCareCenterActivity;
+import com.example.eom.dbapp.DetailActivity.DetailElmSchoolActivity;
+import com.example.eom.dbapp.DetailActivity.DetailHospitalActivity;
+import com.example.eom.dbapp.DetailActivity.DetailPlayFacilityActivity;
+import com.example.eom.dbapp.DetailActivity.DetailSafeArea;
 import com.example.eom.dbapp.ListActivity.ChildCareCenterListActivity;
 import com.example.eom.dbapp.ListActivity.ElmSchoolListActivity;
 import com.example.eom.dbapp.ListActivity.HospitalListActivity;
@@ -52,23 +56,23 @@ public class IdAndStringListAdapter extends RecyclerView.Adapter<IdAndStringList
             @Override
             public void onClick(View v) {
                 if(item.type==IdAndString.ChildCareCenterListActivity){
-                    context.startActivity(new Intent(context,DetailChildCareCenterActivity.class));
+                    context.startActivity(new Intent(context,DetailChildCareCenterActivity.class).putExtra("id",item.id));
                 }else if(item.type==IdAndString.ElmSchoolListActivity){
-                    context.startActivity(new Intent(context,ElmSchoolListActivity.class));
+                    context.startActivity(new Intent(context,DetailElmSchoolActivity.class).putExtra("id",item.id));
                 }else if(item.type==IdAndString.HospitalListActivity){
-                    context.startActivity(new Intent(context,HospitalListActivity.class));
+                    context.startActivity(new Intent(context,DetailHospitalActivity.class).putExtra("id",item.id));
 
                 }else if(item.type==IdAndString.PlayFacilityListActivity){
-                    context.startActivity(new Intent(context,PlayFacilityListActivity.class));
+                    context.startActivity(new Intent(context,DetailPlayFacilityActivity.class).putExtra("id",item.id));
 
                 }else if(item.type==IdAndString.SafeAreaListActivity){
-                    context.startActivity(new Intent(context,SafeAreaListActivity.class));
+                    context.startActivity(new Intent(context,DetailSafeArea.class).putExtra("id",item.id));
 
                 }else if(item.type==IdAndString.TrafficAccidentAreaListActivity){
-                    context.startActivity(new Intent(context,TrafficAccidentAreaListActivity.class));
+                    context.startActivity(new Intent(context,TrafficAccidentAreaListActivity.class).putExtra("id",item.id));
 
                 }else if(item.type==IdAndString.WalfareServiceListActivity){
-                    context.startActivity(new Intent(context,WalfareServiceListActivity.class));
+                    context.startActivity(new Intent(context,WalfareServiceListActivity.class).putExtra("id",item.id));
 
                 }
             }

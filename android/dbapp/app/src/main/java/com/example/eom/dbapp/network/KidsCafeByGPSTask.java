@@ -56,7 +56,7 @@ public abstract class KidsCafeByGPSTask extends AsyncTask<String, Void, ArrayLis
                                 row.getString("name"),
                                 row.getString("si_do"),
                                 row.getString("si_gun_gu"),
-                                row.getString("tel"),
+                                "01023440298",
                                 row.getDouble("latitude"),
                                 row.getDouble("longitude"))
                                 );
