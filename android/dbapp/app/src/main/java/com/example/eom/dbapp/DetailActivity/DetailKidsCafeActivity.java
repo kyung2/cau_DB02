@@ -31,7 +31,8 @@ public class DetailKidsCafeActivity extends AppCompatActivity {
                 setData(kidsCafeData);
             }
         }.execute("");
-//        KidsCafeData kidsCafeData = Kid.execute("");sCafeData.getSampleKidsCafeData();
+//        KidsCafeData kidsCafeData = Kid.execute("");
+// CafeData.getSampleKidsCafeData();
 //        setData(kidsCafeData);
     }
 
