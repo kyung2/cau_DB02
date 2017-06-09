@@ -63,11 +63,7 @@ public class MainActivity extends AppCompatActivity
         findViewById(R.id.cv_main_my_preschool).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, JustStringActivity.class);
 
-                intent.putExtra("url","/walfareService/gps/");
-
-                startActivity(intent);
             }
         });
         findViewById(R.id.cv_main_near_preschool).setOnClickListener(new View.OnClickListener() {

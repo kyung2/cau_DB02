@@ -1,5 +1,6 @@
 package com.example.eom.dbapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.eom.dbapp.Adapter.FunctionListAdapter;
+import com.example.eom.dbapp.DetailActivity.JustStringActivity;
+import com.example.eom.dbapp.vo.UrlAndName;
 
 import java.util.ArrayList;
 
@@ -30,12 +33,21 @@ public class FunctionsActivity extends AppCompatActivity {
             }
         });
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_functions);
-        ArrayList<String> arrayList = new ArrayList<>();
+        ArrayList<UrlAndName> arrayList = new ArrayList<>();
+        arrayList.add(new UrlAndName("/walfareService/gps/","주변 복지시설 보기"));
+        arrayList.add(new UrlAndName("/kindergarten/near/","나랑 가까운 유치원 하나 보기"));
         for(int i=0 ;i<30;i++){
-
-            arrayList.add("기능"+Integer.toString(i));
+            arrayList.add(new UrlAndName("/walfareService/gps/","기능"+Integer.toString(i)));
         }
-        FunctionListAdapter adapter = new FunctionListAdapter(this,arrayList);
+
+        //TODO 여기가 이제 현경이 너가 은정이한테 받은 url을 하나씩 놓는 부분임
+
+//        arrayList.add(new UrlAndName("/walfareService/gps/","주변 복지시설 보기");
+//        arrayList.add(new UrlAndName("/kindergarten/near/","나랑 가까운 유치원 하나 보기");
+//        arrayList.add(new UrlAndName("/walfareService/gps/","기능"+Integer.toString(i)));
+//        arrayList.add(new UrlAndName("/walfareService/gps/","기능"+Integer.toString(i)));
+//        arrayList.add(new UrlAndName("/walfareService/gps/","기능"+Integer.toString(i)));
+       FunctionListAdapter adapter = new FunctionListAdapter(this,arrayList);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 

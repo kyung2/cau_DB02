@@ -19,10 +19,9 @@ public class JustStringActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_hospital);
+        setContentView(R.layout.activity_just_string);
 
-        name=(TextView)findViewById(R.id.tv_detail_name);
-        contents=(TextView)findViewById(R.id.tv_detail_contents);
+        contents=(TextView)findViewById(R.id.tv_just_string_content);
         new JustStringTask(getIntent().getStringExtra("url")){//"/hospital/gps/"
             @Override
             protected void onPostExecute(String  string) {
