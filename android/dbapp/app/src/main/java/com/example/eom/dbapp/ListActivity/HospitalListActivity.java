@@ -3,6 +3,8 @@ package com.example.eom.dbapp.ListActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.eom.dbapp.Adapter.IdAndStringListAdapter;
@@ -23,12 +25,13 @@ public class HospitalListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kidscenter_list);
-
-        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_kidscenter);
         final ArrayList<IdAndString> arrayList = new ArrayList<>();
+        RecyclerView.ItemDecoration itemDecoration =
+                new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
+
+
         adapter = new IdAndStringListAdapter(this,arrayList);
-        recyclerView.setAdapter(adapter);
+        //  recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
         new ListByGPSTask(this,"/hospital/gps/","hospital"){

@@ -3,6 +3,8 @@ package com.example.eom.dbapp.ListActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.EditText;
@@ -26,6 +28,10 @@ public class PreSchoolListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_preshcool_list);
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.rv_preschools);
         final ArrayList<PreSchoolData> arrayList = new ArrayList<>();
+        RecyclerView.ItemDecoration itemDecoration =
+                new DividerItemDecoration(this, LinearLayoutManager.VERTICAL);
+        recyclerView.addItemDecoration(itemDecoration);
+
         SharedPreferences sp = getSharedPreferences(MySharedPreferences.NAME,0);
         Double latitude = Double.parseDouble(sp.getString(MySharedPreferences.USER_LATITUDE,"35"));
         Double longitude = Double.parseDouble(sp.getString(MySharedPreferences.USER_LONGITUDE,"123"));

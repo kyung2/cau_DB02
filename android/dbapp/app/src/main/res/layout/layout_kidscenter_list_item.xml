@@ -55,7 +55,8 @@
 
             android:foreground="?attr/selectableItemBackground"
             android:scaleType="centerCrop"
-            app:srcCompat="@drawable/ic_call" />
+            android:background="@color/white"
+            app:srcCompat="@drawable/call_icon" />
 
     </LinearLayout>
 
