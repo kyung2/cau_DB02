@@ -24,9 +24,9 @@ public class DetailHospitalActivity extends AppCompatActivity {
                 super.onPostExecute(jsonObject);try{
                     name.setText(jsonObject.getString("name"));
                     contents.setText(
-                            jsonObject.getString("name")+"</br>"+"\n"+"\n"+
-                                    jsonObject.getString("si_do")+"\n"+
-                                    jsonObject.getString("si_gun_gu")+"\n"+
+                           "이름" +"\n"+ jsonObject.getString("name")+"</br>"+"\n"+"\n"+
+                                   "주소" +"\n"+         jsonObject.getString("si_do")+
+                                    jsonObject.getString("si_gun_gu")+"\n"+ "\n"+"전화번호 " +"\n"+
                                     jsonObject.getString("tel")+"\n"+"\n"
                                      );
                 }catch (Exception e){

@@ -9,26 +9,26 @@ import com.example.eom.dbapp.network.DetailByIDTask;
 
 import org.json.JSONObject;
 
-public class DetailChildCareCenterActivity extends AppCompatActivity {
+public class DetailTrafficaccidentareaActivity extends AppCompatActivity {
     TextView name, contents;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_child_care_center);
+        setContentView(R.layout.activity_detail_trafficaccidentarea);
         name=(TextView)findViewById(R.id.tv_detail_name);
         contents=(TextView)findViewById(R.id.tv_detail_contents);
-        new DetailByIDTask(getIntent().getIntExtra("id",1),"/childCareCenter/detail/","childcarecenter"){
+        new DetailByIDTask(getIntent().getIntExtra("id",1),"/trafficAccidentArea/detail","trafficaccidentarea"){
             @Override
             protected void onPostExecute(JSONObject jsonObject) {
                 super.onPostExecute(jsonObject);try{
                     name.setText(jsonObject.getString("name"));
                     contents.setText(
-                            "이름 "+"\n"+ jsonObject.getString("name")+"\n"+"\n"+
-                                 "주소 "   +"\n"+jsonObject.getString("address")+"\n"+"\n"+
-                                    "전화번호  "+jsonObject.getString("tel")+"\n"+"\n"+
+
+                            "주소 "+"\n"+ jsonObject.getString("si_do ")+ jsonObject.getString("si_gun_gu")+"\n"+"\n"+
+                                    "근처 학교 "   +"\n"+jsonObject.getString("near_school") +"\n"+"\n"+
                                     "위도  " +jsonObject.getDouble("latitude")+"\n"+
-                                            "경도  "+jsonObject.getDouble("longitude")
+                                    "경도  "+jsonObject.getDouble("longitude")
                     );
                 }catch (Exception e){
                     e.printStackTrace();
