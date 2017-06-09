@@ -55,20 +55,19 @@ urlpatterns = [
 
     url(r'^func6/', views.func6, name='func6'),  # 댓글 수가 많은 유차원 내림차순
     url(r'^func7/', views.func7, name='func7'),  # 평가가 높은 유치원 내림차순
-
     url(r'^func8/', views.func8, name='func8'),  # 댓글 수가 많은 키즈카페 내림차순
     url(r'^func9/', views.func9, name='func9'),  # 평가가 높은 키즈카페 내림차순
     url(r'^func10/', views.func10, name='func10'),  # 평가가 낮은 키즈카페 오름차순
     url(r'^func11/', views.func11, name='func11'),  # 평가가 낮은 유치원 오름차순
 
-    url(r'^func12/', views.func12, name='func12'),  # 안양시 각 시설 2개씩 추천
+    url(r'^func12/', views.func12, name='func12'),  # 안양시 각 시설 2개씩 추천 - 시간 오래걸림 스킵 다른걸로 바꿀 예정
 
     url(r'^func13/', views.func13, name='func13'),  # 국공립 유치원 갯수
     url(r'^func14/', views.func14, name='func14'),  # 교통사고가 가장 많이 난 곳
 
-    url(r'^func15/', views.func15, name='func15'),  # 평가가 낮은 키즈카페 오름차순
-    url(r'^func16/', views.func16, name='func16'),  # 평가가 낮은 유치원 오름차순
-    url(r'^func17', views.func17, name='func17'),  # 안양시 각 시설 2개씩 추천
+    url(r'^func15/', views.func15, name='func15'),  # 평가가 낮은 키즈카페 오름차순 중복
+    url(r'^func16/', views.func16, name='func16'),  # 평가가 낮은 유치원 오름차순 중복
+    url(r'^func17', views.func17, name='func17'),  # 안양시 각 시설 2개씩 추천 중복
 
     url(r'^func18/', views.func18, name='func18'),  # 자격증이 2개 이상인 선생 list
     url(r'^func19/', views.func19, name='func19'),  # '장애', ' 특수교사' 를 가지고있는 선생이 있는 유치원

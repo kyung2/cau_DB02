@@ -582,7 +582,7 @@ def func5(request):
 @csrf_exempt
 def func6(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT count(comment) as coun, ps.id, ps.name, ps.type, ps.address, ps.tel FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_preschool`as ps on pe.preSchool_id_id = ps.id group by ps.id order by ps.id DESC')
+    cursor.execute('SELECT count(comment) as coun, ps.id, ps.name, ps.type, ps.address, ps.tel FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_preschool`as ps on pe.preSchool_id_id = ps.id group by ps.id order by coun DESC')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
@@ -602,7 +602,7 @@ def func6(request):
 @csrf_exempt
 def func7(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT avg(grade) as coun, ps.id, ps.name, ps.type, ps.address, ps.tel FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_preschool`as ps on pe.preSchool_id_id = ps.id group by ps.id order by ps.id desc')
+    cursor.execute('SELECT avg(grade) as coun, ps.id, ps.name, ps.type, ps.address, ps.tel FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_preschool`as ps on pe.preSchool_id_id = ps.id group by ps.id order by coun desc')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
@@ -622,7 +622,7 @@ def func7(request):
 @csrf_exempt
 def func8(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT count(comment) as coun, ps.id, ps.name, facility_size, ps.operation_state FROM `dbTeam_kidscafeevaluation` as ke inner join `dbTeam_kidscafe`as ps on ke.kids_cafe_id_id = ps.id group by ps.id order by ps.id DESC')
+    cursor.execute('SELECT count(comment) as coun, ps.id, ps.name, facility_size, ps.operation_state FROM `dbTeam_kidscafeevaluation` as ke inner join `dbTeam_kidscafe`as ps on ke.kids_cafe_id_id = ps.id group by ps.id order by coun DESC')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
@@ -643,17 +643,16 @@ def func8(request):
 def func9(request):
     cursor = connection.cursor()
     cursor.execute(
-        'SELECT avg(grade) as coun, ps.id, ps.name, facility_size, ps.operation_state FROM `dbTeam_kidscafeevaluation` as pe inner join `dbTeam_user`as u on pe.user_id_id = u.id group by pe.id order by ps.id desc')
+        'SELECT avg(grade) as coun, k.id, k.name, k.facility_size, k.operation_state FROM `dbTeam_kidscafeevaluation` as ke inner join `dbTeam_kidscafe`as k on ke.kids_cafe_id_id = k.id group by k.id order by coun desc')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
-        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
-        text += " 주  소 : " + f_list.get('address') + "\n"
-        text += "전화번호 : " + f_list.get('tel') + "\n"
+        text += "\t\t" + f_list.get('name') +"\n"
+        text += " 주  소 : " + f_list.get('operation_state') + "\n"
+        text += " 크  기 : " + str(f_list.get('facility_size')) + "\n"
         text += " 평  점 : " + str(f_list.get('coun')) + "\n"
         cursor.execute(
-            'SELECT grade, nick_name FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_user`as u on pe.user_id_id = u.id where pe.preSchool_id_id = ' + str(
-                f_list.get('id')))
+            'SELECT grade, nick_name FROM `dbTeam_kidscafeevaluation` as ke inner join `dbTeam_user`as u on ke.user_id_id = u.id where kids_cafe_id_id = ' + str(f_list.get('id')))
         g_list = dictFetchall(cursor)
         for grade in g_list:
             text += "\t" + grade.get('nick_name') + " : " + grade.get('grade') + " 점"
@@ -663,37 +662,47 @@ def func9(request):
 @csrf_exempt
 def func10(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    cursor.execute(
+        'SELECT avg(grade) as coun, k.id, k.name, k.facility_size, k.operation_state FROM `dbTeam_kidscafeevaluation` as ke inner join `dbTeam_kidscafe`as k on ke.kids_cafe_id_id = k.id group by k.id order by coun asc')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
-        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
-        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
-        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
-        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
-        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += "\t\t" + f_list.get('name') + "\n"
+        text += " 주  소 : " + f_list.get('operation_state') + "\n"
+        text += " 크  기 : " + str(f_list.get('facility_size')) + "\n"
+        text += " 평  점 : " + str(f_list.get('coun')) + "\n"
+        cursor.execute(
+            'SELECT grade, nick_name FROM `dbTeam_kidscafeevaluation` as ke inner join `dbTeam_user`as u on ke.user_id_id = u.id where kids_cafe_id_id = ' + str(
+                f_list.get('id')))
+        g_list = dictFetchall(cursor)
+        for grade in g_list:
+            text += "\t" + grade.get('nick_name') + " : " + grade.get('grade') + " 점"
         text += "\n\n"
-    return HttpResponse(text)
+        return HttpResponse(text)
 
 @csrf_exempt
 def func11(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    cursor.execute('SELECT avg(grade) as coun, ps.id, ps.name, ps.type, ps.address, ps.tel FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_preschool`as ps on pe.preSchool_id_id = ps.id group by ps.id order by coun asc')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
         text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
-        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
-        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
-        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
-        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += " 주  소 : " + f_list.get('address') + "\n"
+        text += "전화번호 : " + f_list.get('tel') + "\n"
+        text += " 평  점 : " + str(f_list.get('coun')) + "\n"
+        cursor.execute(
+            'SELECT grade, nick_name FROM `dbTeam_preschoolevaluation` as pe inner join `dbTeam_user`as u on pe.user_id_id = u.id where pe.preSchool_id_id = ' + str(f_list.get('id')))
+        g_list = dictFetchall(cursor)
+        for grade in g_list:
+            text += "\t" + grade.get('nick_name') + " : " + grade.get('grade') + " 점"
         text += "\n\n"
     return HttpResponse(text)
 
 @csrf_exempt
 def func12(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    cursor.execute('SELECT , accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
@@ -708,30 +717,25 @@ def func12(request):
 @csrf_exempt
 def func13(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    cursor.execute('SELECT count(si_do) as coun, si_do, tel,si_gun_gu FROM `dbTeam_preschool` where type = "국공립" group by si_do')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
-        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
-        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
-        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
-        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
-        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += " 시도 / 시군구 : " + f_list.get('si_do') + "/" + f_list.get('si_gun_gu') + "\n"
+        text += " 국공립 수 : " + str(f_list.get('coun')) + "\n"
         text += "\n\n"
     return HttpResponse(text)
 
 @csrf_exempt
 def func14(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    cursor.execute('SELECT count(near_school) as coun, si_do, near_school,si_gun_gu FROM `dbTeam_trafficaccidentarea` group by near_school order by coun desc')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
-        text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
-        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
-        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
-        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
-        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += " 시도 / 시군구 : " + f_list.get('si_do') + "/" + f_list.get('si_gun_gu') + "\n"
+        text += "근처 초등학교 : " + str(f_list.get('near_school')) + "\n"
+        text += " 교통사고 수 : " + str(f_list.get('coun')) + "\n"
         text += "\n\n"
     return HttpResponse(text)
 
