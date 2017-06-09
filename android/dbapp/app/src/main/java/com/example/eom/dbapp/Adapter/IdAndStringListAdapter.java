@@ -14,7 +14,8 @@ import com.example.eom.dbapp.DetailActivity.DetailElmSchoolActivity;
 import com.example.eom.dbapp.DetailActivity.DetailHospitalActivity;
 import com.example.eom.dbapp.DetailActivity.DetailPlayFacilityActivity;
 import com.example.eom.dbapp.DetailActivity.DetailSafeAreaActivity;
-import com.example.eom.dbapp.DetailActivity.DetailSafeAreaActivity;
+import com.example.eom.dbapp.DetailActivity.DetailTrafficaccidentareaActivity;
+import com.example.eom.dbapp.DetailActivity.DetailWalfareServiceActivity;
 import com.example.eom.dbapp.ListActivity.ChildCareCenterListActivity;
 import com.example.eom.dbapp.ListActivity.ElmSchoolListActivity;
 import com.example.eom.dbapp.ListActivity.HospitalListActivity;
@@ -70,10 +71,10 @@ public class IdAndStringListAdapter extends RecyclerView.Adapter<IdAndStringList
                     context.startActivity(new Intent(context,DetailSafeAreaActivity.class).putExtra("id",item.id));
 
                 }else if(item.type==IdAndString.TrafficAccidentAreaListActivity){
-                    context.startActivity(new Intent(context,TrafficAccidentAreaListActivity.class).putExtra("id",item.id));
+                    context.startActivity(new Intent(context,DetailTrafficaccidentareaActivity.class).putExtra("id",item.id));
 
                 }else if(item.type==IdAndString.WalfareServiceListActivity){
-                    context.startActivity(new Intent(context,WalfareServiceListActivity.class).putExtra("id",item.id));
+                    context.startActivity(new Intent(context,DetailWalfareServiceActivity.class).putExtra("id",item.id));
 
                 }
             }
