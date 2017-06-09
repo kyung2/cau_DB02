@@ -31,10 +31,10 @@ public class DetailWalfareServiceActivity  extends AppCompatActivity {
                                     "센터이름 "   +"\n"+jsonObject.getString("center_name") + "\n"+ "\n" +
                                     "운영 " + "\n" + jsonObject.getString("operator") +"\n"+"\n"+
                                     "운영_org " + "\n" + jsonObject.getString("operation_org") +"\n"+"\n"+
-                                    "운영 기관 " + "\n" + jsonObject.getString("operator") +"\n"+"\n"+
-                                    "운영 시작일 " +jsonObject.getString("op_start_date") + "\n"+
-                                    "운영 종료일 " +jsonObject.getString("op_end_data")
-
+                                    "운영 기관 " + "\n" + jsonObject.getString("operator") +"\n"+"\n"
+//                                    "운영 시작일 " +jsonObject.getString("op_start_date") + "\n"
+//                                    "운영 종료일 " +jsonObject.getString("op_end_data")
+//
 
                     );
                 }catch (Exception e){
