@@ -802,29 +802,28 @@ def func18(request):
 @csrf_exempt
 def func19(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    cursor.execute('SELECT p.name, p.tel, tq.detailed_type, p.address, p.type FROM `dbTeam_teacherqualification` as tq inner join `dbTeam_teacher` as t on tq.teacher_id_id = t.id inner join `dbTeam_preschool` as p on p.id = t.kindergarten_id where tq.detailed_type like "%장애%"')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
         text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
-        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
-        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
-        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
-        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += " 주  소 : " + f_list.get('address') + "\n"
+        text += "전화번호 : " + f_list.get('tel') + "\n"
+        text += "자격증 : " + f_list.get('detailed_type') + "\n"
         text += "\n\n"
     return HttpResponse(text)
 
 @csrf_exempt
 def func20(request):
     cursor = connection.cursor()
-    cursor.execute('SELECT name,type, accident_injuryordeath, indoor_o [...] pr on ac.accident_where_id = pr.id group by pr.id')
+    cursor.execute('SELECT p.name, p.capacity,p.tel, count(kindergarten_id) as coun, p.address, p.type FROM `dbTeam_teacher` as t inner join `dbTeam_preschool` as p on t.kindergarten_id = p.id where p.capacity >=50 group by kindergarten_id order by coun desc limit 20')
     list = dictFetchall(cursor)
     text = ""
     for f_list in list:
         text += "\t\t" + f_list.get('name') + "(" + f_list.get('type') + ")\n"
-        text += "사고 / 사망 : " + str(f_list.get('accident_injuryordeath')) + "\n"
-        text += "실내 / 실외 : " + str(f_list.get('indoor_outdoor')) + "\n"
-        text += "사고 유형 : " + str(f_list.get('accident_cause')) + "\n"
-        text += "사고 타입 : " + str(f_list.get('accident_type')) + "\n"
+        text += " 주  소 : " + f_list.get('address') + "\n"
+        text += "전화번호 : " + f_list.get('tel') + "\n"
+        text += "정 원 : " + str(f_list.get('capacity')) + " / "
+        text += "선생님 수: " + str(f_list.get('coun')) + "\n"
         text += "\n\n"
     return HttpResponse(text)
