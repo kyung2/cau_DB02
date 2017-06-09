@@ -24,7 +24,7 @@ public class DetailChildCareCenterActivity extends AppCompatActivity {
                 super.onPostExecute(jsonObject);try{
                     name.setText(jsonObject.getString("name"));
                     contents.setText(
-                                    jsonObject.getString("name")+"\n"+"\n"+
+                            "이름 :"+ jsonObject.getString("name")+"\n"+"\n"+
                                     jsonObject.getString("address")+"\n"+"\n"+
                                     "tel : "+jsonObject.getString("tel")+"\n"+"\n"+
                                     ""+jsonObject.getDouble("latitude")+"\n"+
