@@ -27,8 +27,11 @@ public class DetailHospitalActivity extends AppCompatActivity {
                            "이름" +"\n"+ jsonObject.getString("name")+"</br>"+"\n"+"\n"+
                                    "주소" +"\n"+         jsonObject.getString("si_do")+
                                     jsonObject.getString("si_gun_gu")+"\n"+ "\n"+"전화번호 " +"\n"+
-                                    jsonObject.getString("tel")+"\n"+"\n"
-                                     );
+
+
+                                   "전화번호" +  jsonObject.getString("tel")
+
+                    );
                 }catch (Exception e){
                     e.printStackTrace();
                 }

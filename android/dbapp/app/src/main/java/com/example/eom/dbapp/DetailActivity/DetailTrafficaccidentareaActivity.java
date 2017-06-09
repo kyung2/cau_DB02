@@ -18,7 +18,7 @@ public class DetailTrafficaccidentareaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_trafficaccidentarea);
         name=(TextView)findViewById(R.id.tv_detail_name);
         contents=(TextView)findViewById(R.id.tv_detail_contents);
-        new DetailByIDTask(getIntent().getIntExtra("id",1),"/trafficAccidentArea/detail","trafficaccidentarea"){
+        new DetailByIDTask(getIntent().getIntExtra("id",1),"/trafficAccidentArea/detail/","trafficaccidentarea"){
             @Override
             protected void onPostExecute(JSONObject jsonObject) {
                 super.onPostExecute(jsonObject);try{

@@ -19,7 +19,7 @@ public class DetailWalfareServiceActivity  extends AppCompatActivity {
         setContentView(R.layout.activity_detail_walfare_service);
         name=(TextView)findViewById(R.id.tv_detail_name);
         contents=(TextView)findViewById(R.id.tv_detail_contents);
-        new DetailByIDTask(getIntent().getIntExtra("id",1),"/walfareService/detail","walfareservice"){
+        new DetailByIDTask(getIntent().getIntExtra("id",1),"/walfareService/detail/","walfareservice"){
             @Override
             protected void onPostExecute(JSONObject jsonObject) {
                 super.onPostExecute(jsonObject);try{
